@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="profilepicfavicon.ico" />
+    <link rel="stylesheet" href="skillsstyle.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="skills-container">
+      <div class="mylanguages">technologys</div>
+      <div class="skill-card c_card">
+        <div class="logo-container">
+          <img src="c++.png" alt="C++ Logo" />
+          <p class="skill-name">C++</p>
+          <span class="c-level-badge">Intermediate</span>
+        </div>
+        <p class="loading-text">
+          Still Learning<span class="dot">.</span><span class="dot">.</span
+          ><span class="dot">.</span>
+        </p>
+        <div class="experience-container">
+          <div class="experience-bar">
+            <div class="c-experience-progress"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card html_card">
+        <div class="logo-container">
+          <img src="html.png" alt="HTML Logo" />
+          <p class="skill-name">HTML</p>
+          <span class="level-badge">Beginner</span>
+        </div>
+        <p class="loading-text">
+          Still Learning<span class="dot">.</span><span class="dot">.</span
+          ><span class="dot">.</span>
+        </p>
+        <div class="experience-container">
+          <div class="experience-bar">
+            <div class="experience-progress"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card css_card">
+        <div class="logo-container">
+          <img src="css.png" alt="CSS Logo" />
+          <p class="skill-name">CSS</p>
+          <span class="css-level-badge">Beginner</span>
+        </div>
+        <p class="loading-text">
+          Still Learning<span class="dot">.</span><span class="dot">.</span
+          ><span class="dot">.</span>
+        </p>
+        <div class="experience-container">
+          <div class="experience-bar">
+            <div class="css-experience-progress"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card javascript_card">
+        <div class="logo-container">
+          <img src="javascript.png" alt="JavaScript Logo" />
+          <p class="skill-name">JavaScript</p>
+          <span class="javascript-level-badge">Beginner</span>
+        </div>
+        <p class="loading-text">
+          Still Learning<span class="dot">.</span><span class="dot">.</span
+          ><span class="dot">.</span>
+        </p>
+        <div class="experience-container">
+          <div class="experience-bar">
+            <div class="javascript-experience-progress"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card react_card">
+        <div class="logo-container">
+          <img src="react.png" alt="React Logo" />
+          <p class="skill-name">React.js</p>
+          <span class="react-level-badge">Novice</span>
+        </div>
+        <p class="loading-text">
+          Still Learning<span class="dot">.</span><span class="dot">.</span
+          ><span class="dot">.</span>
+        </p>
+        <div class="experience-container">
+          <div class="experience-bar">
+            <div class="react-experience-progress"></div>
+          </div>
+        </div>
+      </div>
+      <div class="mylanguages">Languages</div>
+      <div class="skill-card arabic_card">
+        <div class="logo-container">
+          <img src="arabic.png" alt="Arabic Logo" />
+          <p class="language-name">Arabic</p>
+          <span class="arabic-level-badge">Native</span>
+        </div>
+      </div>
+
+      <div class="skill-card english_card">
+        <div class="logo-container">
+          <img src="english.png" alt="English Logo" />
+          <p class="language-name">English</p>
+          <span class="english-level-badge">Intermediate</span>
+        </div>
+      </div>
+
+      <div class="skill-card french_card">
+        <div class="logo-container">
+          <img src="french.png" alt="French Logo" />
+          <p class="language-name">French</p>
+          <span class="french-level-badge">Intermediate</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="menuOverlay" onclick="toggleMenu()"></div>
+    <script src="skillsscript.js"></script>
+  </body>
+</html>
