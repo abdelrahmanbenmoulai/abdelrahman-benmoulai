@@ -403,7 +403,7 @@ nav a.active::after {
     top: 0px;
     gap: 6vw;
     padding-top: 30px;
-    height: 40vh;
+    height: 33vh;
     right: 0;
     background: rgba(18, 18, 18, 0.9);
     flex-direction: column;
