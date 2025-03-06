@@ -76,14 +76,14 @@ nav a.active::after {
   z-index: 1000;
   position: fixed;
   left: 1.1vw;
-  top: 1.1vw;
+  top: 1.09vw;
 }
 
 .menu-toggle div {
   width: 1.83vw;
-  height: 0.2vh;
+  height: 0.37vh;
   background-color: #eeeeee;
-  border-radius: 0.9vw;
+  border-radius: 0.14vw;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -507,11 +507,11 @@ nav a.active::after {
     padding: 2.5vh;
   }
   nav ul {
-    gap: 3vw;
+    gap: 5vw;
     position: absolute;
     top: 0;
-    padding-top: 2.77vh;
-    height: 23.61vh;
+    padding-top: 7vh;
+    height: 38.61vh;
     right: 0;
     background: rgba(18, 18, 18, 0.9);
     flex-direction: column;
@@ -523,7 +523,7 @@ nav a.active::after {
     pointer-events: none;
   }
   nav a {
-    font-size: 3.2vw;
+    font-size: 5vw;
     padding-bottom: 0.59vw;
   }
   nav ul.show {
@@ -539,14 +539,14 @@ nav a.active::after {
     display: flex;
     transition: top 0.3s ease;
     gap: 0.77vw;
-    left: 2.91vw !important;
-    top: 2.91vw;
-    z-index: 50 !important;
+    left: 2.5vw;
+    top: 2.5vw;
+    z-index: 50;
   }
 
   .menu-toggle div {
     width: 5.9vw;
-    height: 0.6vh;
+    height: 0.8vh;
     border-radius: 0.9vw;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
@@ -761,13 +761,37 @@ nav a.active::after {
     height: 100vh;
   }
   nav ul {
-    height: 80vh;
-    padding-top: 10vh;
+    gap: 3vw;
+    padding-top: 14vh;
+    height: 80.61vh;
+    right: 0;
+    background: rgba(18, 18, 18, 0.9);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  nav a {
+    font-size: 3vw;
+  }
+  nav a::after {
+    bottom: -0.1vw;
+    height: 1vh;
+  }
+  .menu-toggle {
+    left: 1.91vw;
+    top: 1.91vw;
+  }
+  .menu-toggle div {
+    width: 4vw;
+    height: 1.1vh;
   }
 }
-
 /* 🔹 Mobile Navigation for Screens ≤ 390px */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 440px) {
   nav {
     position: fixed;
     padding: 15px;
@@ -800,7 +824,6 @@ nav a.active::after {
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
   }
-
   nav ul.show {
     opacity: 1;
     transform: translateY(0);
