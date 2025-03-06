@@ -1,22 +1,22 @@
-/* General styles */
 * {
+  color: #eeeeee;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #eeeeee;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #121212;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
-  overflow: hidden;
   position: relative;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -50,24 +50,25 @@ nav {
   position: fixed;
   top: 0;
   right: 0;
-  padding: 15px 50px;
+  padding: 1.09vw 3.66vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   z-index: 11;
+  transition: top 0.3s;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 3vw;
 }
 
 nav a {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.2vw;
   position: relative;
-  padding-bottom: 5px;
+  padding-bottom: 0.22vw;
   transition: color 0.3s ease-in-out;
 }
 
@@ -80,9 +81,9 @@ nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: -0.36vw;
   width: 100%;
-  height: 2px;
+  height: 0.18vh;
   background-color: #ff914d;
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
@@ -92,27 +93,28 @@ nav a.active::after {
   transform: scaleX(1);
 }
 
-/* Menu Toggle */
+/* 🔹 Mobile Menu */
 .menu-toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 4px;
+  gap: 0.29vw;
   z-index: 1000;
-  position: absolute;
-  left: 15px;
-  top: 15px;
+  position: fixed;
+  left: 1.1vw;
+  top: 1.09vw;
 }
 
 .menu-toggle div {
-  width: 25px;
-  height: 4px;
+  width: 1.83vw;
+  height: 0.37vh;
   background-color: #eeeeee;
-  border-radius: 2px;
+  border-radius: 0.14vw;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
 .menu-toggle.active div:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(0.74vh) rotate(45deg);
 }
 
 .menu-toggle.active div:nth-child(2) {
@@ -120,7 +122,7 @@ nav a.active::after {
 }
 
 .menu-toggle.active div:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-0.74vh) rotate(-45deg);
 }
 
 .menu-toggle:hover div,
@@ -152,16 +154,18 @@ nav a.active::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10vw;
   width: 100%;
   max-width: 1200px;
-  margin-top: 50px;
+  margin-left: auto; /* Ensure centering */
+  margin-right: auto; /* Ensure centering */
   position: relative;
   z-index: 1;
 }
 
 .hero-text {
   opacity: 0;
-  transform: translateY(20p);
+  transform: translateY(2.8vh);
   animation: fadeIn 1.5s ease-out forwards;
   font-weight: bold;
 }
@@ -169,7 +173,7 @@ nav a.active::after {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(2.8vh);
   }
   to {
     opacity: 1;
@@ -178,15 +182,15 @@ nav a.active::after {
 }
 
 .hero-text h1 {
-  font-size: clamp(3rem, 10vw, 4rem);
+  font-size: 5vw;
 }
 
 .hero-text p.bold-large {
-  font-size: clamp(4rem, 14vw, 4.5rem);
+  font-size: 6vw;
 }
 
 .hero-text p.large-bold {
-  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-size: 2vw;
 }
 
 .highlight {
@@ -195,11 +199,11 @@ nav a.active::after {
 
 /* Hero Image */
 .hero img {
-  width: 250px;
+  width: 20vw;
   max-width: 100%;
   border-radius: 50%;
   animation: floating 6s ease-in-out infinite;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1.5vh 2.5vh rgba(0, 0, 0, 0.4);
   transform: perspective(1000px);
 }
 
@@ -208,13 +212,13 @@ nav a.active::after {
     transform: translateY(0px) rotateY(0deg);
   }
   25% {
-    transform: translateY(-10px) rotateY(-15deg);
+    transform: translateY(-1.85vh) rotateY(-15deg);
   }
   50% {
     transform: translateY(0px) rotateY(0deg);
   }
   75% {
-    transform: translateY(10px) rotateY(15deg);
+    transform: translateY(1.85vh) rotateY(15deg);
   }
   100% {
     transform: translateY(0px) rotateY(0deg);
@@ -222,21 +226,181 @@ nav a.active::after {
 }
 
 /* ✅ Responsive Styles */
-@media (max-width: 932px) {
+@media (max-width: 1024px) {
+  body {
+    height: 100vh;
+  }
   nav {
+    padding: 2.5vh;
+  }
+  nav ul {
+    gap: 3vw;
+    position: absolute;
+    top: 0;
+    padding-top: 2.77vh;
+    height: 23vh;
+    right: 0;
+    background: rgba(18, 18, 18, 0.9);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  nav a {
+    font-size: 3.2vw;
+    padding-bottom: 0.59vw;
+  }
+  nav ul.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+  nav a::after {
+    bottom: -0.96vw;
+    height: 0.48vh;
+  }
+  .menu-toggle {
+    display: flex;
+    transition: top 0.3s ease;
+    gap: 0.77vw;
+    left: 2.91vw;
+    top: 2.91vw;
+    z-index: 50;
+  }
+
+  .menu-toggle div {
+    width: 5.9vw;
+    height: 0.8vh;
+    border-radius: 0.9vw;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  .menu-toggle.active div:nth-child(1) {
+    transform: translateY(1.97vh) rotate(45deg);
+  }
+
+  .menu-toggle.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active div:nth-child(3) {
+    transform: translateY(-1.97vh) rotate(-45deg);
+  }
+  .menu-toggle {
+    gap: 0.87vw;
+    left: 2.2vw;
+    top: 2.18vw;
+  }
+
+  .menu-toggle div {
+    width: 5.49vw;
+    height: 0.8vh;
+    border-radius: 0.8vw;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    margin-top: 5.2vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2.5rem, 9vw, 4rem);
+  }
+
+  .hero-text p.bold-large {
+    font-size: clamp(3rem, 12vw, 6rem);
+  }
+
+  .hero-text p.large-bold {
+    font-size: 5vw;
+  }
+
+  .hero img {
+    margin-top: 2.6vh;
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+  nav ul {
+    height: 65vh;
+    padding-top: 6vh;
+  }
+  .hero-text p.large-bold {
+    font-size: 3vw;
+  }
+}
+/* ✅ Landscape Mode (Height <= 500px) */
+@media screen and (max-height: 500px) {
+  body {
+    overflow-y: scroll; /* Ensure vertical scrolling is enabled */
+  }
+
+  .hero {
+    flex-direction: column;
+    justify-content: flex-start; /* Changed to flex-start to avoid pushing the content up */
+    margin-top: 20vh;
+    height: auto; /* Let it adjust its height dynamically */
+    min-height: 100vh; /* Ensure it's not too short */
+  }
+
+  .hero-text {
+    max-width: 70%;
+    margin-right: 0; /* Prevent overflow */
+    text-align: center; /* Center align the text */
+    margin-bottom: 2vh; /* Adds space between the text and image */
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Prevents it from getting too large */
+    margin-bottom: 1vh; /* Adds space below the header */
+  }
+
+  .hero-text p.bold-large {
+    font-size: clamp(3rem, 10vw, 4rem); /* Adjusted for better sizing */
+    margin-bottom: 1.5vh; /* Adds space below the paragraph */
+  }
+
+  .hero-text p {
+    font-size: clamp(
+      1rem,
+      3vw,
+      1.8rem
+    ); /* Adjusted font size for better readability */
+  }
+
+  .hero img {
+    width: 30vw; /* Adjusted image size to be larger */
+    max-width: 60%; /* Limit the image width so it doesn't stretch too wide */
+    margin-top: 2vh; /* Adds space between the image and text */
+  }
+}
+
+/* ✅ iPhone SE & Small Phones (<= 375px) */
+@media (max-width: 400px) {
+  nav {
+    position: fixed;
     padding: 15px;
     justify-content: space-between;
   }
-
-  .menu-toggle {
-    display: flex; /* Show toggle icon on small screens */
+  nav a {
+    font-size: 5vw;
   }
-
   nav ul {
     position: absolute;
     top: 0px;
+    gap: 6vw;
     padding-top: 30px;
-    height: 255px;
+    height: 33vh;
     right: 0;
     background: rgba(18, 18, 18, 0.9);
     flex-direction: column;
@@ -254,109 +418,22 @@ nav a.active::after {
     pointer-events: all;
   }
 
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    width: 90%;
-    margin-top: 50px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-text {
+  .hero img {
+    width: 45vw; /* Increased image size for small screens */
     max-width: 100%;
-  }
-
-  .hero-text h1 {
-    font-size: clamp(2.5rem, 9vw, 4rem);
-  }
-
-  .hero-text p.bold-large {
-    font-size: clamp(3rem, 12vw, 6rem);
-  }
-
-  .hero-text p {
-    font-size: clamp(1rem, 5vw, 2.5rem);
-  }
-
-  .hero img {
-    margin-top: 20px;
-    width: clamp(150px, 25vw, 200px); /* ✅ Scales dynamically */
-  }
-}
-
-/* ✅ iPhone SE & Small Phones (<= 375px) */
-@media (max-width: 320px) {
-  .hero {
-    flex-direction: column !important;
-    display: flex !important;
-    align-items: center !important; /* ✅ Ensure everything is centered */
-    justify-content: center !important;
-    text-align: center !important;
-    width: 100%;
-  }
-
-  .hero-text {
-    width: 100% !important; /* ✅ Make it full width */
-    max-width: 100%;
-    text-align: center !important;
-    margin: 0 auto; /* ✅ Remove unwanted shifting */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* ✅ Ensures internal content stays centered */
-  }
-
-  .hero-text h1 {
-    font-size: clamp(1.2rem, 7vw, 2.2rem);
-  }
-
-  .hero-text p.bold-large {
-    font-size: clamp(2rem, 8vw, 2.8rem);
-  }
-
-  .hero img {
-    width: clamp(90px, 25vw, 100px);
-    margin-top: 10px;
-  }
-}
-
-/* ✅ Landscape Mode (Height <= 500px) */
-@media screen and (max-height: 500px) {
-  .hero {
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .hero-text {
-    max-width: 70%;
-    margin-right: 50px;
-  }
-
-  .hero-text h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-  }
-
-  .hero-text p.bold-large {
-    font-size: clamp(3rem, 14vw, 3.5rem);
-  }
-
-  .hero-text p {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-  }
-
-  .hero img {
-    width: clamp(120px, 20vw, 150px);
   }
 }
 
 /* ✅ Larger Screens (Min Width 932px) */
-@media (min-width: 932px) {
-  .menu-toggle {
-    display: none !important;
-  }
-
+@media (min-width: 1024px) {
   nav {
     justify-content: flex-end;
+  }
+}
+@media (min-width: 2560px) {
+  .hero {
+    max-width: 90%; /* Adjust this to ensure the hero doesn't stretch too wide */
+    margin-left: auto;
+    margin-right: auto;
   }
 }
