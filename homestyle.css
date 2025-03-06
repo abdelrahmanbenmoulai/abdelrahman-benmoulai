@@ -440,3 +440,8 @@ nav a.active::after {
     margin-right: auto;
   }
 }
+@media screen and (max-width: 320px) {
+  nav ul {
+    height: 40vh;
+  }
+}
