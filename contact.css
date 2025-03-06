@@ -432,7 +432,7 @@ nav a.active::after {
 }
 @media only screen and (max-width: 932px) and (orientation: landscape) {
   nav ul {
-    height: 65vh;
+    height: 80vh;
     padding-top: 6vh;
   }
   .form-container {
