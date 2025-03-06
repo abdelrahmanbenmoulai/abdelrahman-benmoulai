@@ -86,17 +86,6 @@ nav a.active::after {
   border-radius: 0.14vw;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-.menu-toggle.active div:nth-child(1) {
-  transform: translateY(0.74vh) rotate(45deg);
-}
-
-.menu-toggle.active div:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active div:nth-child(3) {
-  transform: translateY(-0.74vh) rotate(-45deg);
-}
 
 .menu-toggle:hover div,
 .menu-toggle.active div {
@@ -560,17 +549,6 @@ nav a.active::after {
     height: 0.8vh;
     border-radius: 0.9vw;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  }
-  .menu-toggle.active div:nth-child(1) {
-    transform: translateY(1.97vh) rotate(45deg);
-  }
-
-  .menu-toggle.active div:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active div:nth-child(3) {
-    transform: translateY(-1.97vh) rotate(-45deg);
   }
   .skills-container {
     position: relative;
