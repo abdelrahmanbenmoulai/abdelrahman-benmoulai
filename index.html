@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abdelrahman Benmoulai</title>
+
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="profilepicfavicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="homestyle.css" />
+  </head>
+  <body>
+    <!-- Navigation Menu -->
+    <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul id="menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-text">
+        <p class="bold-large">Hello!</p>
+        <h1>I'm <span class="highlight">Benmoulai Abdelrahmane</span></h1>
+        <p class="large-bold">
+          A Computer Science student at the University of Amar Telidji in
+          Laghouat.
+        </p>
+      </div>
+      <img id="profilepic" src="profilepic.png" alt="Your Profile" />
+    </div>
+
+    <!-- Script -->
+    <script src="homescript.js"></script>
+  </body>
+</html>

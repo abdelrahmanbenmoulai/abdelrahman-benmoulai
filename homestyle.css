@@ -1,0 +1,441 @@
+* {
+  color: #eeeeee;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 145, 77, 0.2) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  animation: backgroundFade 5s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes backgroundFade {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Navbar */
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1.09vw 3.66vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 11;
+  transition: top 0.3s;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3vw;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.2vw;
+  position: relative;
+  padding-bottom: 0.22vw;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ff914d !important;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.36vw;
+  width: 100%;
+  height: 0.18vh;
+  background-color: #ff914d;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+nav a.active::after {
+  transform: scaleX(1);
+}
+/* 🔹 Mobile Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 0.29vw;
+  z-index: 1000;
+  position: fixed;
+  left: 1.1vw;
+  top: 1.1vw;
+}
+
+.menu-toggle div {
+  width: 1.83vw;
+  height: 0.2vh;
+  background-color: #eeeeee;
+  border-radius: 0.14vw;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Apply hover effect */
+.menu-toggle:hover div,
+.menu-toggle.active div {
+  background-color: #ff914d; /* Highlight color when hovered or active */
+}
+
+/* Display the toggle icon on mobile screens */
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* 🔹 Mobile Overlay */
+#menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10;
+}
+
+#menu.show ~ #menuOverlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Overlay */
+#menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10;
+}
+
+#menu.show ~ #menuOverlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10vw;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto; /* Ensure centering */
+  margin-right: auto; /* Ensure centering */
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  opacity: 0;
+  transform: translateY(2.8vh);
+  animation: fadeIn 1.5s ease-out forwards;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2.8vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text h1 {
+  font-size: 5vw;
+}
+
+.hero-text p.bold-large {
+  font-size: 6vw;
+}
+
+.hero-text p.large-bold {
+  font-size: 2vw;
+}
+
+.highlight {
+  color: #ff914d;
+}
+
+/* Hero Image */
+.hero img {
+  width: 20vw;
+  max-width: 100%;
+  border-radius: 50%;
+  animation: floating 6s ease-in-out infinite;
+  box-shadow: 0 1.5vh 2.5vh rgba(0, 0, 0, 0.4);
+  transform: perspective(1000px);
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-1.85vh) rotateY(-15deg);
+  }
+  50% {
+    transform: translateY(0px) rotateY(0deg);
+  }
+  75% {
+    transform: translateY(1.85vh) rotateY(15deg);
+  }
+  100% {
+    transform: translateY(0px) rotateY(0deg);
+  }
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 1024px) {
+  body {
+    height: 100vh;
+  }
+  nav {
+    padding: 2.5vh;
+  }
+  nav ul {
+    gap: 3vw;
+    position: absolute;
+    top: 0;
+    padding-top: 2.77vh;
+    height: 20vh;
+    right: 0;
+    background: rgba(18, 18, 18, 0.9);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  nav a {
+    font-size: 3.2vw;
+    padding-bottom: 0.59vw;
+  }
+  nav ul.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+  nav a::after {
+    bottom: -0.96vw;
+    height: 0.48vh;
+  }
+  .menu-toggle {
+    display: flex;
+    transition: top 0.3s ease;
+    gap: 0.77vw;
+    left: 2.91vw;
+    top: 2.91vw;
+    z-index: 50;
+  }
+
+  .menu-toggle div {
+    width: 5.9vw;
+    height: 0.6vh;
+    border-radius: 0.9vw;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  .menu-toggle {
+    gap: 0.87vw;
+    left: 2.2vw;
+    top: 2.2vw;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    margin-top: 5.2vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2.5rem, 9vw, 4rem);
+  }
+
+  .hero-text p.bold-large {
+    font-size: clamp(3rem, 12vw, 6rem);
+  }
+
+  .hero-text p.large-bold {
+    font-size: 5vw;
+  }
+
+  .hero img {
+    margin-top: 2.6vh;
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+  nav ul {
+    height: 80vh !important;
+    padding-top: 6vh;
+  }
+  .hero-text p.large-bold {
+    font-size: 3vw;
+  }
+}
+/* ✅ Landscape Mode (Height <= 500px) */
+@media screen and (max-height: 500px) {
+  body {
+    overflow-y: scroll; /* Ensure vertical scrolling is enabled */
+  }
+
+  .hero {
+    flex-direction: column;
+    justify-content: flex-start; /* Changed to flex-start to avoid pushing the content up */
+    margin-top: 20vh;
+    height: auto; /* Let it adjust its height dynamically */
+    min-height: 100vh; /* Ensure it's not too short */
+  }
+
+  .hero-text {
+    max-width: 70%;
+    margin-right: 0; /* Prevent overflow */
+    text-align: center; /* Center align the text */
+    margin-bottom: 2vh; /* Adds space between the text and image */
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Prevents it from getting too large */
+    margin-bottom: 1vh; /* Adds space below the header */
+  }
+
+  .hero-text p.bold-large {
+    font-size: clamp(3rem, 10vw, 4rem); /* Adjusted for better sizing */
+    margin-bottom: 1.5vh; /* Adds space below the paragraph */
+  }
+
+  .hero-text p {
+    font-size: clamp(
+      1rem,
+      3vw,
+      1.8rem
+    ); /* Adjusted font size for better readability */
+  }
+
+  .hero img {
+    width: 30vw; /* Adjusted image size to be larger */
+    max-width: 60%; /* Limit the image width so it doesn't stretch too wide */
+    margin-top: 2vh; /* Adds space between the image and text */
+  }
+}
+
+/* ✅ iPhone SE & Small Phones (<= 375px) */
+@media (max-width: 400px) {
+  nav {
+    position: fixed;
+    padding: 15px;
+    justify-content: space-between;
+  }
+  nav a {
+    font-size: 5vw;
+  }
+  nav ul {
+    position: absolute;
+    top: 0px;
+    gap: 6vw;
+    padding-top: 30px;
+    height: 33vh;
+    right: 0;
+    background: rgba(18, 18, 18, 0.9);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  nav ul.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .hero img {
+    width: 45vw; /* Increased image size for small screens */
+    max-width: 100%;
+  }
+}
+
+/* ✅ Larger Screens (Min Width 932px) */
+@media (min-width: 1024px) {
+  nav {
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 2560px) {
+  .hero {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 320px) {
+  nav ul {
+    height: 40vh;
+  }
+}
