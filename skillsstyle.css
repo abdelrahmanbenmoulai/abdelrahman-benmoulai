@@ -761,7 +761,7 @@ nav a.active::after {
     height: 100vh;
   }
   nav ul {
-    height: 75vh;
+    height: 80vh;
     padding-top: 10vh;
   }
 }
