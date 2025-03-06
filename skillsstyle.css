@@ -16,6 +16,7 @@ body {
   height: 100vh;
   position: relative;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 nav {
@@ -23,7 +24,7 @@ nav {
   position: fixed;
   top: 0;
   right: 0;
-  padding: 15px 50px;
+  padding: 1.09vw 3.66vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -34,14 +35,14 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 3vw;
 }
 
 nav a {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.2vw;
   position: relative;
-  padding-bottom: 3px;
+  padding-bottom: 0.22vw;
   transition: color 0.3s ease-in-out;
 }
 
@@ -54,9 +55,9 @@ nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: -0.36vw;
   width: 100%;
-  height: 2px;
+  height: 0.18vh;
   background-color: #ff914d;
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
@@ -71,22 +72,22 @@ nav a.active::after {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 4px;
+  gap: 0.29vw;
   z-index: 1000;
   position: fixed;
-  left: 15px;
-  top: 15px;
+  left: 1.1vw;
+  top: 1.09vw;
 }
 
 .menu-toggle div {
-  width: 25px;
-  height: 4px;
+  width: 1.83vw;
+  height: 0.37vh;
   background-color: #eeeeee;
-  border-radius: 2px;
+  border-radius: 0.14vw;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .menu-toggle.active div:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(0.74vh) rotate(45deg);
 }
 
 .menu-toggle.active div:nth-child(2) {
@@ -94,7 +95,7 @@ nav a.active::after {
 }
 
 .menu-toggle.active div:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-0.74vh) rotate(-45deg);
 }
 
 .menu-toggle:hover div,
@@ -132,15 +133,14 @@ nav a.active::after {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 5px;
-  width: 100%;
-  padding-bottom: 20px;
-  margin-top: 5vh;
+  gap: 0.5vw;
+  width: 100vw;
+  height: 100vh;
 }
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(1.85vh);
   }
   to {
     opacity: 1;
@@ -149,116 +149,111 @@ nav a.active::after {
 }
 .mylanguages {
   background-color: #1e1e1e;
-  border: 2px solid #eeeeee;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
-  font-size: 20px;
+  border: 0.15vw solid #eeeeee;
+  box-shadow: 0vw 0vw 0.37vw rgba(255, 255, 255, 0.4);
+  font-size: 1.2vw;
   font-weight: bold;
   width: 96vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
   box-sizing: border-box;
 }
 .skill-card {
-  width: 250px;
+  width: 19vw;
+  height: 38vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
   box-sizing: border-box;
-  height: 220px;
 }
 .c_card {
   text-align: center;
   background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #004482;
-  box-shadow: 0px 0px 10px rgba(0, 68, 130, 0.4);
-  width: 260px;
-  margin-top: 4px;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
+  border: 0.15vw solid #004482;
+  box-shadow: 0vw 0vw 0.73vw rgba(0, 68, 130, 0.4);
+  margin-top: 0.29vw;
   z-index: 2;
 }
 .html_card {
   text-align: center;
   background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #ff914d;
-  box-shadow: 0px 0px 10px rgba(255, 145, 77, 0.4);
-  width: 260px;
-  margin-top: 4px;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
+  border: 0.15vw solid #ff914d;
+  box-shadow: 0vw 0vw 0.73vw rgba(255, 145, 77, 0.4);
+  margin-top: 0.29vw;
   z-index: 2;
 }
 .css_card {
   text-align: center;
   background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #007bff;
-  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.4);
-  width: 260px;
-  margin-top: 4px;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
+  border: 0.15vw solid #007bff;
+  box-shadow: 0vw 0vw 0.73vw rgba(0, 123, 255, 0.4);
+  margin-top: 0.29vw;
   z-index: 2;
 }
 .javascript_card {
   text-align: center;
   background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #f7df1e;
-  box-shadow: 0px 0px 10px rgba(247, 223, 30, 0.4);
-  width: 260px;
-  margin-top: 4px;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
+  border: 0.15vw solid #f7df1e;
+  box-shadow: 0vw 0vw 0.73vw rgba(247, 223, 30, 0.4);
+  margin-top: 0.29vw;
   z-index: 2;
 }
 .react_card {
   text-align: center;
   background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #4db8ff;
-  box-shadow: 0px 0px 10px rgba(77, 184, 255, 0.4);
-  width: 260px;
-  margin-top: 4px;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
+  border: 0.15vw solid #4db8ff;
+  box-shadow: 0vw 0vw 0.73vw rgba(77, 184, 255, 0.4);
+  margin-top: 0.29vw;
   z-index: 2;
 }
 .arabic_card {
+  height: 28vh;
   text-align: center;
   background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #067a5a;
-  box-shadow: 0px 0px 10px rgba(14, 210, 144, 0.4);
-  width: 260px;
-  margin-top: 4px;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
+  border: 0.15vw solid #067a5a;
+  box-shadow: 0vw 0vw 0.73vw rgba(14, 210, 144, 0.4);
+  margin-top: 0.29vw;
   z-index: 2;
 }
 .english_card {
+  height: 28vh;
   text-align: center;
   background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #b50000;
-  box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
-  width: 260px;
-  margin-top: 4px;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
+  border: 0.15vw solid #b50000;
+  box-shadow: 0vw 0vw 0.73vw rgba(255, 0, 0, 0.6);
+  margin-top: 0.29vw;
   z-index: 2;
 }
 .french_card {
+  height: 28vh;
   text-align: center;
   background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #002654;
-  box-shadow: 0px 0px 15px rgba(0, 38, 84, 0.6);
-  width: 260px;
-  margin-top: 4px;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
+  border: 0.15vw solid #002654;
+  box-shadow: 0vw 0vw 0.73vw rgba(0, 38, 84, 0.6);
+  margin-top: 0.29vw;
   z-index: 2;
 }
 
@@ -268,132 +263,132 @@ nav a.active::after {
 }
 
 .logo-container img {
-  margin-top: 10px;
-  width: 80px;
+  margin-top: 1.8vh;
+  width: 5vw;
 }
 .skill-name {
-  margin-top: 10px;
-  font-size: 18px;
+  margin-top: 1.3vh;
+  font-size: 1.5vw;
   font-weight: bold;
   color: #eeeeee;
   text-align: center;
 }
 .language-name {
-  margin-top: 30px;
-  font-size: 18px;
+  margin-top: 1.3vh;
+  font-size: 1.5vw;
   font-weight: bold;
   color: #eeeeee;
   text-align: center;
 }
 .c-level-badge {
   position: absolute;
-  top: 18px;
+  top: 2.8vh;
   right: 0;
   background: linear-gradient(45deg, #0074b6, #004482);
   color: white;
-  font-size: 12px;
+  font-size: 0.88vw;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.22vw 0.59vw;
+  border-radius: 0.73vw;
+  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
 .level-badge {
   position: absolute;
-  top: 18px;
+  top: 2.8vh;
   right: 0;
   background: linear-gradient(45deg, #ff6f3c, #d84315);
   color: white;
-  font-size: 12px;
+  font-size: 0.88vw;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.22vw 0.59vw;
+  border-radius: 0.73vw;
+  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
 .css-level-badge {
   position: absolute;
-  top: 18px;
+  top: 2.8vh;
   right: 0;
   background: linear-gradient(45deg, #4a90e2, #1c3e80);
   color: white;
-  font-size: 12px;
+  font-size: 0.88vw;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.22vw 0.59vw;
+  border-radius: 0.73vw;
+  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
 .javascript-level-badge {
   position: absolute;
-  top: 18px;
-  right: 0;
+  top: 2.8vh;
+  left: 1.5vw;
   background: linear-gradient(45deg, #f7df1e, #e4c300);
   color: rgb(34, 30, 30);
-  font-size: 12px;
+  font-size: 0.88vw;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.22vw 0.59vw;
+  border-radius: 0.73vw;
+  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
 .react-level-badge {
   position: absolute;
-  top: 18px;
-  right: 0;
+  top: 2.8vh;
+  left: 1.5vw;
   background: linear-gradient(45deg, #61dafb, #2980b9);
   color: white;
-  font-size: 12px;
+  font-size: 0.88vw;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.22vw 0.59vw;
+  border-radius: 0.73vw;
+  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
 .arabic-level-badge {
   position: absolute;
-  top: 18px;
+  top: 2.8vh;
   right: 0;
   background: linear-gradient(45deg, #0ed290, #067a5a);
   color: white;
-  font-size: 12px;
+  font-size: 0.88vw;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.22vw 0.59vw;
+  border-radius: 0.73vw;
+  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
 .english-level-badge {
   position: absolute;
-  top: 18px;
+  top: 2.8vh;
   right: 0;
   background: linear-gradient(45deg, #ff3e3e, #d10000);
   color: white;
-  font-size: 12px;
+  font-size: 0.88vw;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.22vw 0.59vw;
+  border-radius: 0.73vw;
+  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
 .french-level-badge {
   position: absolute;
-  top: 18px;
+  top: 2.8vh;
   right: 0;
   background: linear-gradient(45deg, #0055a4, #002654);
   color: white;
-  font-size: 12px;
+  font-size: 0.88vw;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 0.22vw 0.59vw;
+  border-radius: 0.73vw;
+  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
@@ -408,9 +403,9 @@ nav a.active::after {
 
 /* 🔹 Loading Animation */
 .loading-text {
-  font-size: 18px;
+  font-size: 1.32vw;
   font-weight: 600;
-  margin-top: 5px;
+  margin-top: 0.46vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -418,7 +413,7 @@ nav a.active::after {
 
 .dot {
   animation: blink 1.5s infinite;
-  margin-left: 3px;
+  margin-left: 0.22vw;
 }
 
 .dot:nth-child(2) {
@@ -441,52 +436,52 @@ nav a.active::after {
 /* 🔹 Progress Bar */
 .experience-container {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 0.92vh;
 }
 
 .experience-bar {
-  height: 30px;
+  height: 2.77vh;
   background-color: #212121;
-  box-shadow: inset -2px 2px 4px #0c0c0c;
-  border-radius: 15px;
+  box-shadow: inset -0.15vw 0.15vw 0.29vw #0c0c0c;
+  border-radius: 1.1vw;
   display: flex;
   align-items: center;
-  padding: 5px;
+  padding: 0.34vw;
 }
 .c-experience-progress {
   width: 0%;
-  height: 20px;
+  height: 1.85vh;
   background: linear-gradient(0deg, #004482 0%, #5c9fd9 100%);
-  border-radius: 15px;
+  border-radius: 1.1vw;
   animation: fillExperience-c 3s ease-out forwards;
 }
 
 .experience-progress {
   width: 0%;
-  height: 20px;
+  height: 1.85vh;
   background: linear-gradient(0deg, #de4a0f 0%, #f9c74f 100%);
-  border-radius: 15px;
+  border-radius: 1.1vw;
   animation: fillExperience 3s ease-out forwards;
 }
 .css-experience-progress {
   width: 0%;
-  height: 20px;
+  height: 1.85vh;
   background: linear-gradient(0deg, #004aad 0%, #00a8e8 100%);
-  border-radius: 15px;
+  border-radius: 1.1vw;
   animation: fillExperience 3s ease-out forwards;
 }
 .javascript-experience-progress {
   width: 0%;
-  height: 20px;
+  height: 1.85vh;
   background: linear-gradient(0deg, #a39317 0%, #e4c300 100%);
-  border-radius: 15px;
+  border-radius: 1.1vw;
   animation: fillExperience 3s ease-out forwards;
 }
 .react-experience-progress {
   width: 0%;
-  height: 20px;
+  height: 1.85vh;
   background: linear-gradient(90deg, #00d8ff 0%, #007bff 100%);
-  border-radius: 15px;
+  border-radius: 1.1vw;
   animation: fillExperience-react 3s ease-out forwards;
 }
 @keyframes fillExperience-c {
@@ -515,23 +510,19 @@ nav a.active::after {
 }
 
 /* 🔹 Mobile Navigation for Screens ≤ 768px */
-@media (max-width: 932px) {
+@media (max-width: 1024px) {
+  body {
+    height: 100vh;
+  }
   nav {
-    padding: 15px;
-    justify-content: space-between;
+    padding: 2.5vh;
   }
-
-  .menu-toggle {
-    display: flex;
-    transition: top 0.3s ease;
-  }
-
-  /* Mobile menu styles */
   nav ul {
+    gap: 3vw;
     position: absolute;
-    top: 0px;
-    padding-top: 30px;
-    height: 255px;
+    top: 0;
+    padding-top: 2.77vh;
+    height: 23.61vh;
     right: 0;
     background: rgba(18, 18, 18, 0.9);
     flex-direction: column;
@@ -542,15 +533,45 @@ nav a.active::after {
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
   }
-
-  /* Show menu when active */
+  nav a {
+    font-size: 3.2vw;
+    padding-bottom: 0.59vw;
+  }
   nav ul.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
   }
+  nav a::after {
+    bottom: -0.96vw;
+    height: 0.48vh;
+  }
+  .menu-toggle {
+    display: flex;
+    transition: top 0.3s ease;
+    gap: 0.77vw;
+    left: 2.91vw;
+    top: 2.91vw;
+    z-index: 50;
+  }
 
-  /* Adjust skills container */
+  .menu-toggle div {
+    width: 5.9vw;
+    height: 0.8vh;
+    border-radius: 0.9vw;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  .menu-toggle.active div:nth-child(1) {
+    transform: translateY(1.97vh) rotate(45deg);
+  }
+
+  .menu-toggle.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active div:nth-child(3) {
+    transform: translateY(-1.97vh) rotate(-45deg);
+  }
   .skills-container {
     position: relative;
     z-index: 1;
@@ -558,10 +579,212 @@ nav a.active::after {
     transition: padding 0.3s ease-in-out;
     padding-bottom: 10px;
     overflow-y: auto;
+    gap: 1.33vw;
+    width: 100vw;
+    height: 100vh;
   }
-
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4.93vh);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .mylanguages {
+    border: 0.4vw solid #eeeeee;
+    box-shadow: 0vw 0vw 0.99vw rgba(255, 255, 255, 0.4);
+    font-size: 3.2vw;
+    width: 98vw;
+    padding: 3.89vw;
+    border-radius: 1.95vw;
+  }
   .skill-card {
     width: 98%;
+    height: 40vh;
+    padding: 3.89vw;
+    border-radius: 1.95vw;
+  }
+  .c_card {
+    padding: 3.89vw;
+    border-radius: 2vw;
+    border: 0.4vw solid #004482;
+    box-shadow: 0vw 0vw 1.95vw rgba(0, 68, 130, 0.4);
+    margin-top: 0.77vw;
+  }
+  .html_card {
+    padding: 3.89vw;
+    border-radius: 2vw;
+    border: 0.4vw solid #ff914d;
+    box-shadow: 0vw 0vw 1.95vw rgba(255, 145, 77, 0.4);
+    margin-top: 0.77vw;
+  }
+  .css_card {
+    padding: 3.89vw;
+    border-radius: 2vw;
+    border: 0.4vw solid #007bff;
+    box-shadow: 0vw 0vw 1.95vw rgba(0, 123, 255, 0.4);
+    margin-top: 0.77vw;
+  }
+  .javascript_card {
+    padding: 3.89vw;
+    border-radius: 2vw;
+    border: 0.4vw solid #f7df1e;
+    box-shadow: 0vw 0vw 1.95vw rgba(247, 223, 30, 0.4);
+    margin-top: 0.77vw;
+  }
+  .react_card {
+    padding: 3.89vw;
+    border-radius: 2vw;
+    border: 0.4vw solid #4db8ff;
+    box-shadow: 0vw 0vw 1.95vw rgba(77, 184, 255, 0.4);
+    margin-top: 0.77vw;
+  }
+  .arabic_card {
+    height: 30vh;
+    padding: 3.89vw;
+    border-radius: 2vw;
+    border: 0.4vw solid #067a5a;
+    box-shadow: 0vw 0vw 1.95vw rgba(14, 210, 144, 0.4);
+    margin-top: 0.77vw;
+  }
+  .english_card {
+    height: 30vh;
+    padding: 3.89vw;
+    border-radius: 2vw;
+    border: 0.4vw solid #b50000;
+    box-shadow: 0vw 0vw 1.95vw rgba(255, 0, 0, 0.6);
+    margin-top: 0.77vw;
+  }
+  .french_card {
+    height: 30vh;
+    padding: 3.89vw;
+    border-radius: 2vw;
+    border: 0.4vw solid #002654;
+    box-shadow: 0vw 0vw 1.95vw rgba(0, 38, 84, 0.6);
+    margin-top: 0.77vw;
+  }
+
+  .logo-container img {
+    margin-top: 4.8vh;
+    width: 13.33vw;
+  }
+  .skill-name {
+    margin-top: 3.47vh;
+    font-size: 4vw;
+  }
+  .language-name {
+    margin-top: 3.47vh;
+    font-size: 4vw;
+  }
+  .c-level-badge {
+    top: 6.47vh;
+    font-size: 2.35vw;
+    padding: 0.59vw 1.57vw;
+    border-radius: 1.95vw;
+    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
+  }
+  .level-badge {
+    top: 6.47vh;
+    font-size: 2.35vw;
+    padding: 0.59vw 1.57vw;
+    border-radius: 1.95vw;
+    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
+  }
+  .css-level-badge {
+    top: 6.47vh;
+    font-size: 2.35vw;
+    padding: 0.59vw 1.57vw;
+    border-radius: 1.95vw;
+    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
+  }
+  .javascript-level-badge {
+    top: 6.47vh;
+    left: 5vw;
+    font-size: 2.35vw;
+    padding: 0.59vw 1.57vw;
+    border-radius: 1.95vw;
+    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
+  }
+  .react-level-badge {
+    top: 6.47vh;
+    left: 5vw;
+    font-size: 2.35vw;
+    padding: 0.59vw 1.57vw;
+    border-radius: 1.95vw;
+    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
+  }
+  .arabic-level-badge {
+    top: 6.47vh;
+    font-size: 2.35vw;
+    padding: 0.59vw 1.57vw;
+    border-radius: 1.95vw;
+    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
+  }
+  .english-level-badge {
+    top: 6.47vh;
+    font-size: 2.35vw;
+    padding: 0.59vw 1.57vw;
+    border-radius: 1.95vw;
+    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
+  }
+  .french-level-badge {
+    top: 6.47vh;
+    font-size: 2.35vw;
+    padding: 0.59vw 1.57vw;
+    border-radius: 1.95vw;
+    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
+  }
+  /* 🔹 Loading Animation */
+  .loading-text {
+    font-size: 3.52vw;
+    margin-top: 1.23vh;
+  }
+
+  .experience-container {
+    margin-top: 2.45vh;
+  }
+
+  .experience-bar {
+    height: 4vh;
+    box-shadow: inset -0.4vw 0.4vw 0.77vw #0c0c0c;
+    border-radius: 2.93vw;
+    padding: 0.91vw;
+  }
+  .c-experience-progress {
+    height: 2.8vh;
+    border-radius: 2.2vw;
+  }
+
+  .experience-progress {
+    height: 2.8vh;
+    border-radius: 2.2vw;
+  }
+  .css-experience-progress {
+    height: 2.8vh;
+    border-radius: 2.2vw;
+  }
+  .javascript-experience-progress {
+    height: 2.8vh;
+    border-radius: 2.2vw;
+  }
+  .react-experience-progress {
+    height: 2.8vh;
+    border-radius: 2.2vw;
+  }
+}
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+  .skills-container {
+    margin-top: 2.9vh;
+  }
+  .skill-card {
+    height: 100vh;
+  }
+  nav ul {
+    height: 75vh;
+    padding-top: 10vh;
   }
 }
 
@@ -572,20 +795,23 @@ nav a.active::after {
     padding: 15px;
     justify-content: space-between;
   }
+  nav a {
+    font-size: 5vw;
+  }
 
   /* Ensure mobile menu toggle is visible */
   .menu-toggle {
     display: flex !important;
     position: fixed;
-    transition: top 0.3s ease;
   }
 
   /* Mobile menu styles */
   nav ul {
     position: absolute;
     top: 0px;
+    gap: 6vw;
     padding-top: 30px;
-    height: 255px;
+    height: 33vh;
     right: 0;
     background: rgba(18, 18, 18, 0.9);
     flex-direction: column;
@@ -602,14 +828,122 @@ nav a.active::after {
     transform: translateY(0);
     pointer-events: all;
   }
+  .mylanguages {
+    border: 0.6vw solid #eeeeee;
+    box-shadow: 0vw 0vw 1.95vw rgba(255, 255, 255, 0.4);
+    font-size: 3.9vw;
+  }
+  .c_card {
+    border: 0.6vw solid #004482;
+  }
+  .html_card {
+    border: 0.6vw solid #ff914d;
+  }
+  .css_card {
+    border: 0.6vw solid #007bff;
+  }
+  .javascript_card {
+    border: 0.6vw solid #f7df1e;
+  }
+  .react_card {
+    border: 0.6vw solid #4db8ff;
+  }
+  .arabic_card {
+    height: 30vh;
+    border: 0.6vw solid #067a5a;
+  }
+  .english_card {
+    height: 30vh;
+    border: 0.6vw solid #b50000;
+  }
+  .french_card {
+    height: 30vh;
+    border: 0.6vw solid #002654;
+  }
 
-  .skills-container {
-    position: relative;
-    z-index: 1;
-    padding-top: calc(30px + 8vh);
-    transition: padding 0.3s ease-in-out;
-    padding-bottom: 10px;
-    overflow-y: auto;
-    margin-top: 1vh !important;
+  .logo-container img {
+    width: 20vw;
+  }
+  .skill-name {
+    font-size: 6vw;
+  }
+  .language-name {
+    font-size: 6vw;
+  }
+  .c-level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .css-level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .javascript-level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .react-level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .arabic-level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .english-level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .french-level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .loading-text {
+    font-size: 5vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  nav ul {
+    height: 40vh;
+  }
+  .skill-card {
+    height: 50vh;
+  }
+  .arabic_card {
+    height: 40vh;
+  }
+  .english_card {
+    height: 40vh;
+  }
+  .french_card {
+    height: 40vh;
   }
 }
