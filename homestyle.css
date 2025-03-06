@@ -294,13 +294,7 @@ nav a.active::after {
   .menu-toggle {
     gap: 0.87vw;
     left: 2.2vw;
-    top: 2.18vw;
-  }
-
-  .menu-toggle div {
-    width: 5.49vw;
-    height: 0.8vh;
-    border-radius: 0.8vw;
+    top: 2.2vw;
   }
 
   .hero {
