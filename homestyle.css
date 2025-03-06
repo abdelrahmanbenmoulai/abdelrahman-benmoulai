@@ -101,12 +101,12 @@ nav a.active::after {
   z-index: 1000;
   position: fixed;
   left: 1.1vw;
-  top: 1.09vw;
+  top: 1.1vw;
 }
 
 .menu-toggle div {
   width: 1.83vw;
-  height: 0.37vh;
+  height: 0.2vh;
   background-color: #eeeeee;
   border-radius: 0.14vw;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
