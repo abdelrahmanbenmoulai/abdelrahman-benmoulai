@@ -29,10 +29,10 @@ function adjustContactContainerPosition() {
 
   if (toggle && contactContainer) {
     let toggleRect = toggle.getBoundingClientRect(); // Get toggle position
-    let gap = -5; // Adjust this if needed (use negative if needed)
+    let gap = window.innerWidth > 1024 ? 20 : 0; // Apply gap only if screen width > 1024px
 
     contactContainer.style.position = "absolute";
-    contactContainer.style.top = `${toggleRect.bottom + gap}px`; // Position it tightly
+    contactContainer.style.top = `${toggleRect.bottom + gap}px`; // Position it tightly with gap for larger screens
     contactContainer.style.left = "50%";
     contactContainer.style.transform = "translateX(-50%)";
     contactContainer.style.width = "95%";
