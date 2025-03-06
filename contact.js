@@ -44,3 +44,26 @@ function adjustContactContainerPosition() {
 window.addEventListener("load", adjustContactContainerPosition);
 window.addEventListener("resize", adjustContactContainerPosition);
 window.addEventListener("orientationchange", adjustContactContainerPosition);
+document.querySelector('form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  const form = event.target;
+  const inputs = form.querySelectorAll('.input, .textarea');
+  let isValid = true;
+
+  inputs.forEach(input => {
+    if (!input.checkValidity()) {
+      isValid = false;
+    }
+  });
+
+  const alert = form.querySelector('.alert');
+
+  if (!isValid) {
+    alert.textContent = 'Please fill out all fields correctly.';
+    alert.classList.add('show'); // Show the alert
+  } else {
+    alert.classList.remove('show'); // Hide the alert if form is valid
+    form.submit(); // Proceed with form submission
+  }
+});
