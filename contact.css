@@ -530,6 +530,14 @@ nav a.active::after {
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
   }
+    .form-container .form .textarea:valid {
+  border-left: 1vw solid #28a745; /* Green border */
+}
+
+/* Red border for invalid textarea */
+.form-container .form .textarea:invalid {
+  border-left: 1vw solid #e74c3c; /* Red border */
+}
 
   nav ul.show {
     opacity: 1;
