@@ -92,7 +92,6 @@ nav a::after {
 nav a.active::after {
   transform: scaleX(1);
 }
-
 /* 🔹 Mobile Menu */
 .menu-toggle {
   display: none;
@@ -113,21 +112,36 @@ nav a.active::after {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.menu-toggle.active div:nth-child(1) {
-  transform: translateY(0.74vh) rotate(45deg);
-}
-
-.menu-toggle.active div:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active div:nth-child(3) {
-  transform: translateY(-0.74vh) rotate(-45deg);
-}
-
+/* Apply hover effect */
 .menu-toggle:hover div,
 .menu-toggle.active div {
-  background-color: #ff914d;
+  background-color: #ff914d; /* Highlight color when hovered or active */
+}
+
+/* Display the toggle icon on mobile screens */
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* 🔹 Mobile Overlay */
+#menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10;
+}
+
+#menu.show ~ #menuOverlay {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* Overlay */
@@ -277,17 +291,6 @@ nav a.active::after {
     border-radius: 0.9vw;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
-  .menu-toggle.active div:nth-child(1) {
-    transform: translateY(1.97vh) rotate(45deg);
-  }
-
-  .menu-toggle.active div:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active div:nth-child(3) {
-    transform: translateY(-1.97vh) rotate(-45deg);
-  }
   .menu-toggle {
     gap: 0.87vw;
     left: 2.2vw;
@@ -400,7 +403,7 @@ nav a.active::after {
     top: 0px;
     gap: 6vw;
     padding-top: 30px;
-    height: 33vh;
+    height: 40vh;
     right: 0;
     background: rgba(18, 18, 18, 0.9);
     flex-direction: column;
