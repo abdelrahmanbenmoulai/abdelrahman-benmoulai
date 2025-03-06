@@ -15,7 +15,8 @@ body {
   align-items: center;
   height: 100vh;
   position: relative;
-  overflow-y: auto;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 nav {
@@ -23,24 +24,25 @@ nav {
   position: fixed;
   top: 0;
   right: 0;
-  padding: 15px 50px;
+  padding: 1.09vw 3.66vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   z-index: 11;
+  transition: top 0.3s;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 3vw;
 }
 
 nav a {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.2vw;
   position: relative;
-  padding-bottom: 5px;
+  padding-bottom: 0.22vw;
   transition: color 0.3s ease-in-out;
 }
 
@@ -53,9 +55,9 @@ nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: -0.36vw;
   width: 100%;
-  height: 2px;
+  height: 0.18vh;
   background-color: #ff914d;
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
@@ -67,25 +69,25 @@ nav a.active::after {
 
 /* 🔹 Mobile Menu */
 .menu-toggle {
-  display: none; /* Hide by default on larger screens */
+  display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 4px;
+  gap: 0.29vw;
   z-index: 1000;
-  position: absolute;
-  left: 15px;
-  top: 15px;
+  position: fixed;
+  left: 1.1vw;
+  top: 1.09vw;
 }
 
 .menu-toggle div {
-  width: 25px;
-  height: 4px;
+  width: 1.83vw;
+  height: 0.37vh;
   background-color: #eeeeee;
-  border-radius: 2px;
+  border-radius: 0.14vw;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .menu-toggle.active div:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(0.74vh) rotate(45deg);
 }
 
 .menu-toggle.active div:nth-child(2) {
@@ -93,7 +95,7 @@ nav a.active::after {
 }
 
 .menu-toggle.active div:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-0.74vh) rotate(-45deg);
 }
 
 .menu-toggle:hover div,
@@ -126,7 +128,8 @@ nav a.active::after {
   justify-content: center;
   text-align: center;
   overflow-y: auto;
-  padding-bottom: 10px;
+  padding-bottom: 0.73vw;
+  margin-top: 50vh; /* Added margin-top to create space from the nav */
 }
 .container {
   align-self: center;
@@ -137,17 +140,18 @@ nav a.active::after {
 }
 
 .form-container {
-  max-width: 500px;
+  max-width: 36.6vw;
   width: 100%;
+  height: 70vh;
   background-color: #272a2c;
-  margin-top: 70px;
-  padding: 30px;
-  border-left: 5px solid #ff7a01;
+  margin-top: 6.48vh;
+  padding: 2.2vw;
+  border-left: 0.37vw solid #ff7a01;
   clip-path: polygon(
     0 0,
     100% 0,
-    100% calc(100% - 20px),
-    calc(100% - 20px) 100%,
+    100% calc(100% - 1.46vw),
+    calc(100% - 1.46vw) 100%,
     0 100%
   );
   transform: scaleY(0);
@@ -167,69 +171,75 @@ nav a.active::after {
 .heading {
   display: block;
   color: white;
-  font-size: 1.5rem;
+  font-size: 2vw;
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 1.85vh;
 }
 
 .form-container .form .input {
   caret-color: #ff7a01;
   color: #ff7a01;
   width: 100%;
+  height: 4vh;
   background-color: #606161;
   border: none;
   outline: none;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 0.73vw;
+  margin-bottom: 2vh;
   font-weight: bold;
   transition: all 0.2s ease-in-out;
-  border-left: 1px solid transparent;
+  border-left: 0.07vw solid transparent;
+  font-size: 1vw;
 }
 
 .form-container .form .input:focus {
-  border-left: 5px solid #ff7a01;
+  border-left: 0.37vw solid #ff7a01;
 }
 
 .form-container .form .textarea {
   width: 100%;
-  padding: 10px;
+  height: 15vh;
+  padding: 0.73vw;
   border: none;
   outline: none;
   background-color: #606161;
   color: #ff7a01;
   font-weight: bold;
   resize: none;
-  max-height: 150px;
-  margin-bottom: 20px;
-  border-left: 1px solid transparent;
+  margin-bottom: 1.85vh;
+  border-left: 0.07vw solid transparent;
   transition: all 0.2s ease-in-out;
+  font-size: 1vw;
 }
 
 .form-container .form .textarea:focus {
-  border-left: 5px solid #ff7a01;
+  border-left: 0.37vw solid #ff7a01;
 }
 
 .form-container .form .button-container {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 0.73vw;
 }
 
 .form-container .form .button-container .send-button {
+  width: 1vw;
+  height: 4.9vh;
   flex-basis: 30%;
   background: #ff7a01;
-  padding: 10px;
+  padding: 0.32vw;
   color: #001925;
   cursor: pointer;
   text-align: center;
   font-weight: bold;
-  border: 1px solid transparent;
+  font-size: 1vw;
+  border: 0.07vw solid transparent;
   transition: all 0.2s ease-in-out;
 }
 
 .form-container .form .button-container .send-button:hover {
   background: transparent;
-  border: 1px solid #ff7a01;
+  border: 0.07vw solid #ff7a01;
   color: #ff7a01;
 }
 
@@ -244,17 +254,18 @@ nav a.active::after {
 .or {
   display: block;
   text-align: center;
-  padding: 13px;
+  padding: 7vh;
   font-weight: bold;
+  font-size: 1.3vw;
   color: #eeeeee;
 }
 .social-media {
   text-decoration: none;
 }
 .container button {
-  margin-top: 10px;
-  width: 45px;
-  height: 45px;
+  margin-top: 0.92vh;
+  width: 3.29vw;
+  height: 3.29vw;
   border: none;
   background-color: #313638;
   border-radius: 100px;
@@ -263,8 +274,8 @@ nav a.active::after {
 }
 
 .icon {
-  width: 26px;
-  height: 26px;
+  width: 1.99vw;
+  height: 1.99vw;
   fill: #fff;
 }
 
@@ -295,30 +306,24 @@ nav a.active::after {
 .title {
   color: gray;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 1.24vw;
   position: absolute;
-  top: -35px;
+  top: -3.24vh;
   left: 0;
 }
-@media (max-width: 932px) {
-  .form-container {
-    margin-top: 15px;
-    max-width: 932px;
+@media (max-width: 1024px) {
+  body {
+    height: 100vh;
   }
   nav {
-    padding: 15px;
-    justify-content: space-between;
+    padding: 2.5vh;
   }
-
-  .menu-toggle {
-    display: flex;
-  }
-  /* Mobile menu styles */
   nav ul {
+    gap: 3vw;
     position: absolute;
-    top: 0px;
-    padding-top: 30px;
-    height: 255px;
+    top: 0;
+    padding-top: 2.77vh;
+    height: 25.61vh;
     right: 0;
     background: rgba(18, 18, 18, 0.9);
     flex-direction: column;
@@ -329,12 +334,142 @@ nav a.active::after {
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
   }
-
-  /* Show menu when active */
+  nav a {
+    font-size: 3.2vw;
+    padding-bottom: 0.59vw;
+  }
   nav ul.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
+  }
+  nav a::after {
+    bottom: -0.96vw;
+    height: 0.48vh;
+  }
+  .menu-toggle {
+    display: flex;
+    transition: top 0.3s ease;
+    gap: 0.77vw;
+    left: 2.91vw;
+    top: 2.91vw;
+    z-index: 50;
+  }
+
+  .menu-toggle div {
+    width: 5.9vw;
+    height: 0.8vh;
+    border-radius: 0.9vw;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  .menu-toggle.active div:nth-child(1) {
+    transform: translateY(1.97vh) rotate(45deg);
+  }
+
+  .menu-toggle.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active div:nth-child(3) {
+    transform: translateY(-1.97vh) rotate(-45deg);
+  }
+  .menu-toggle {
+    gap: 0.87vw;
+    left: 2.2vw;
+    top: 2.18vw;
+  }
+
+  .menu-toggle div {
+    width: 5.49vw;
+    height: 0.8vh;
+    border-radius: 0.8vw;
+  }
+  .form-container {
+    margin-top: 1.38vh;
+    max-width: 1024px;
+    width: 100vw;
+    height: 85vh;
+    border-left: 1vw solid #ff7a01;
+  }
+  .contact-container {
+    padding-bottom: 0.73vw;
+  }
+
+  .heading {
+    font-size: 5vw;
+    margin-bottom: 2.85vh;
+  }
+
+  .form-container .form .input {
+    height: 4.5vh;
+    padding: 0.73vw;
+    margin-bottom: 2.5vh;
+    font-size: 4vw;
+    transition: all 0.2s ease-in-out;
+    border-left: 1vw solid transparent;
+  }
+
+  .form-container .form .input:focus {
+    border-left: 1vw solid #ff7a01;
+  }
+
+  .form-container .form .textarea {
+    height: 20vh;
+    border: none;
+    resize: none;
+    margin-bottom: 2.5vh;
+    border-left: 1vw solid transparent;
+    font-size: 4vw;
+  }
+
+  .form-container .form .textarea:focus {
+    border-left: 1vw solid #ff7a01;
+  }
+
+  .form-container .form .button-container {
+    gap: 1vw;
+  }
+
+  .form-container .form .button-container .send-button {
+    font-size: 4vw;
+    border: 1vw solid transparent;
+  }
+
+  .form-container .form .button-container .send-button:hover {
+    border: 0.1vw solid #ff7a01;
+  }
+
+  .or {
+    font-size: 4.5vw;
+  }
+  .container button {
+    width: 11vw;
+    height: 11vw;
+  }
+
+  .icon {
+    width: 7vw;
+    height: 7vw;
+  }
+}
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+  nav ul {
+    height: 65vh;
+    padding-top: 6vh;
+  }
+  .form-container {
+    margin-top: 5vh;
+    height: 170vh;
+  }
+  .form-container .form .input {
+    height: 13vh;
+  }
+  .form-container .form .textarea {
+    height: 45vh;
+  }
+  .form-container .form .button-container .send-button {
+    height: 10vh;
+    font-size: 3vw;
   }
 }
 @media screen and (max-width: 400px) {
@@ -350,6 +485,9 @@ nav a.active::after {
     padding: 15px;
     justify-content: space-between;
   }
+  nav a {
+    font-size: 5vw;
+  }
 
   /* Ensure mobile menu toggle is visible */
   .menu-toggle {
@@ -361,8 +499,9 @@ nav a.active::after {
   nav ul {
     position: absolute;
     top: 0px;
+    gap: 6vw;
     padding-top: 30px;
-    height: 255px;
+    height: 33vh;
     right: 0;
     background: rgba(18, 18, 18, 0.9);
     flex-direction: column;
@@ -381,7 +520,15 @@ nav a.active::after {
   }
 }
 @media screen and (max-width: 320px) {
+  nav ul {
+    height: 40vh;
+  }
   .form-container {
-    height: 125vh;
+    height: 80vh;
+  }
+}
+@media (min-width: 1024px) {
+  .form-container {
+    height: 80vh;
   }
 }
