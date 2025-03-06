@@ -184,7 +184,16 @@ nav a.active::after {
 .form-container .form .input:focus {
   border-left: 0.37vw solid #ff7a01;
 }
+/* Green border for valid input */
+.form-container .form .input:valid {
+  border-left: 0.37vw solid #28a745; /* Green border */
+}
 
+/* Red border for invalid input */
+.form-container .form .input:invalid {
+  border-left: 0.37vw solid #e74c3c; /* Red border */
+  }
+  
 .form-container .form .textarea {
   width: 100%;
   height: 15vh;
@@ -204,7 +213,33 @@ nav a.active::after {
 .form-container .form .textarea:focus {
   border-left: 0.37vw solid #ff7a01;
 }
+/* Green border for valid textarea */
+.form-container .form .textarea:valid {
+  border-left: 0.37vw solid #28a745; /* Green border */
+}
 
+/* Red border for invalid textarea */
+.form-container .form .textarea:invalid {
+  border-left: 0.37vw solid #e74c3c; /* Red border */
+}
+
+/* Custom Alert Styling */
+.form-container .form .alert {
+  background-color: #272a2c; /* Dark background color */
+  color: #ff7a01; /* Orange text */
+  padding: 1vw;
+  margin-top: 1vw;
+  border: 0.1vw solid #e74c3c; /* Red border for alert */
+  border-radius: 5px;
+  font-weight: bold;
+  display: none; /* Hidden by default, show with JavaScript */
+  text-align: center;
+}
+
+/* Show the alert when there is an error */
+.form-container .form .alert.show {
+  display: block;
+}
 .form-container .form .button-container {
   display: flex;
   justify-content: flex-end;
