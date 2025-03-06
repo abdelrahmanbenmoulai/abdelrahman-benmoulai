@@ -252,7 +252,7 @@ nav a.active::after {
     position: absolute;
     top: 0;
     padding-top: 2.77vh;
-    height: 23vh;
+    height: 20vh;
     right: 0;
     background: rgba(18, 18, 18, 0.9);
     flex-direction: column;
