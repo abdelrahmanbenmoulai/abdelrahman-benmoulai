@@ -435,6 +435,14 @@ nav a.active::after {
   .form-container .form .textarea:focus {
     border-left: 1vw solid #ff7a01;
   }
+  .form-container .form .textarea:valid {
+  border-left: 1vw solid #28a745; /* Green border */
+}
+
+/* Red border for invalid textarea */
+.form-container .form .textarea:invalid {
+  border-left: 1vw solid #e74c3c; /* Red border */
+}
 
   .form-container .form .button-container {
     gap: 1vw;
