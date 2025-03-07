@@ -142,7 +142,7 @@ nav a.active::after {
   box-shadow: 0vw 0vw 0.37vw rgba(255, 255, 255, 0.4);
   font-size: 1.2vw;
   font-weight: bold;
-  width: 96vw;
+  width: 97vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -272,7 +272,7 @@ nav a.active::after {
 .c-level-badge {
   position: absolute;
   top: 2.8vh;
-  right: 0;
+  right: -0.7vw;
   background: linear-gradient(45deg, #0074b6, #004482);
   color: white;
   font-size: 0.88vw;
@@ -328,7 +328,7 @@ nav a.active::after {
 .react-level-badge {
   position: absolute;
   top: 2.8vh;
-  left: 1.5vw;
+  left: 1vw;
   background: linear-gradient(45deg, #61dafb, #2980b9);
   color: white;
   font-size: 0.88vw;
@@ -507,11 +507,11 @@ nav a.active::after {
     padding: 2.5vh;
   }
   nav ul {
-    gap: 3vw;
+    gap: 5vw;
     position: absolute;
     top: 0;
-    padding-top: 2.77vh;
-    height: 23.61vh;
+    padding-top: 7vh;
+    height: 38.61vh;
     right: 0;
     background: rgba(18, 18, 18, 0.9);
     flex-direction: column;
@@ -523,7 +523,7 @@ nav a.active::after {
     pointer-events: none;
   }
   nav a {
-    font-size: 3.2vw;
+    font-size: 5vw;
     padding-bottom: 0.59vw;
   }
   nav ul.show {
@@ -539,8 +539,8 @@ nav a.active::after {
     display: flex;
     transition: top 0.3s ease;
     gap: 0.77vw;
-    left: 2.91vw;
-    top: 2.91vw;
+    left: 2.5vw;
+    top: 2.5vw;
     z-index: 50;
   }
 
@@ -761,8 +761,25 @@ nav a.active::after {
     height: 100vh;
   }
   nav ul {
-    height: 80vh;
-    padding-top: 10vh;
+    gap: 3vw;
+    padding-top: 14vh;
+    height: 80.61vh;
+    right: 0;
+    background: rgba(18, 18, 18, 0.9);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  nav a {
+    font-size: 3vw;
+  }
+  nav a::after {
+    bottom: -0.1vw;
+    height: 1vh;
   }
   .menu-toggle {
     left: 1.91vw;
@@ -772,164 +789,225 @@ nav a.active::after {
     width: 4vw;
     height: 1.1vh;
   }
-
-  /* 🔹 Mobile Navigation for Screens ≤ 390px */
-  @media screen and (max-width: 400px) {
-    nav {
-      position: fixed;
-      padding: 15px;
-      justify-content: space-between;
-    }
-    nav a {
-      font-size: 5vw;
-    }
-
-    /* Ensure mobile menu toggle is visible */
-    .menu-toggle {
-      display: flex !important;
-      position: fixed;
-    }
-
-    /* Mobile menu styles */
-    nav ul {
-      position: absolute;
-      top: 0px;
-      gap: 6vw;
-      padding-top: 30px;
-      height: 33vh;
-      right: 0;
-      background: rgba(18, 18, 18, 0.9);
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      pointer-events: none;
-    }
-
-    nav ul.show {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: all;
-    }
-    .mylanguages {
-      border: 0.6vw solid #eeeeee;
-      box-shadow: 0vw 0vw 1.95vw rgba(255, 255, 255, 0.4);
-      font-size: 3.9vw;
-    }
-    .c_card {
-      border: 0.6vw solid #004482;
-    }
-    .html_card {
-      border: 0.6vw solid #ff914d;
-    }
-    .css_card {
-      border: 0.6vw solid #007bff;
-    }
-    .javascript_card {
-      border: 0.6vw solid #f7df1e;
-    }
-    .react_card {
-      border: 0.6vw solid #4db8ff;
-    }
-    .arabic_card {
-      height: 30vh;
-      border: 0.6vw solid #067a5a;
-    }
-    .english_card {
-      height: 30vh;
-      border: 0.6vw solid #b50000;
-    }
-    .french_card {
-      height: 30vh;
-      border: 0.6vw solid #002654;
-    }
-
-    .logo-container img {
-      width: 20vw;
-    }
-    .skill-name {
-      font-size: 6vw;
-    }
-    .language-name {
-      font-size: 6vw;
-    }
-    .c-level-badge {
-      top: 6.47vh;
-      font-size: 4vw;
-      padding: 1vw 2vw;
-      border-radius: 2.2vw;
-      box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-    }
-    .level-badge {
-      top: 6.47vh;
-      font-size: 4vw;
-      padding: 1vw 2vw;
-      border-radius: 2.2vw;
-      box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-    }
-    .css-level-badge {
-      top: 6.47vh;
-      font-size: 4vw;
-      padding: 1vw 2vw;
-      border-radius: 2.2vw;
-      box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-    }
-    .javascript-level-badge {
-      top: 6.47vh;
-      font-size: 4vw;
-      padding: 1vw 2vw;
-      border-radius: 2.2vw;
-      box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-    }
-    .react-level-badge {
-      top: 6.47vh;
-      font-size: 4vw;
-      padding: 1vw 2vw;
-      border-radius: 2.2vw;
-      box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-    }
-    .arabic-level-badge {
-      top: 6.47vh;
-      font-size: 4vw;
-      padding: 1vw 2vw;
-      border-radius: 2.2vw;
-      box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-    }
-    .english-level-badge {
-      top: 6.47vh;
-      font-size: 4vw;
-      padding: 1vw 2vw;
-      border-radius: 2.2vw;
-      box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-    }
-    .french-level-badge {
-      top: 6.47vh;
-      font-size: 4vw;
-      padding: 1vw 2vw;
-      border-radius: 2.2vw;
-      box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-    }
-    .loading-text {
-      font-size: 5vw;
-    }
+  .experience-bar {
+    height: 11.54vh;
   }
-  @media screen and (max-width: 320px) {
-    nav ul {
-      height: 40vh;
-    }
-    .skill-card {
-      height: 50vh;
-    }
-    .arabic_card {
-      height: 40vh;
-    }
-    .english_card {
-      height: 40vh;
-    }
-    .french_card {
-      height: 40vh;
-    }
+  .c-experience-progress {
+    height: 10vh;
+  }
+  
+  .experience-progress {
+    height: 10vh;
+  }
+  .css-experience-progress {
+    height: 10vh;
+  }
+  .javascript-experience-progress {
+    height: 10vh;
+  }
+  .react-experience-progress {
+    height: 10vh;
+
+  }
+  .arabic_card {
+    height: 80vh;
+  }
+  .english_card {
+    height: 80vh;
+  }
+  .french_card {
+    height: 80vh;
+  }
+
+  .c-level-badge {
+    top: 6.47vh;
+    right: -2vw;
+  }
+  .level-badge {
+    top: 7.47vh;
+  }
+  .css-level-badge {
+    top: 7.47vh;
+  }
+  .javascript-level-badge {
+    top: 7.47vh;
+    left: 3vw;
+  }
+  .react-level-badge {
+    top: 6.47vh;
+    left: 2vw;
+  }
+  .arabic-level-badge {
+    top: 6.47vh;
+  }
+  .english-level-badge {
+    top: 6.47vh;
+    right: -2vw;
+  }
+  .french-level-badge {
+    top: 4.8vh;
+    right: -2vw;
+  }
+}
+/* 🔹 Mobile Navigation for Screens ≤ 390px */
+@media screen and (max-width: 440px) {
+  nav {
+    position: fixed;
+    padding: 15px;
+    justify-content: space-between;
+  }
+  nav a {
+    font-size: 5vw;
+  }
+
+  /* Ensure mobile menu toggle is visible */
+  .menu-toggle {
+    display: flex !important;
+    position: fixed;
+  }
+
+  /* Mobile menu styles */
+  nav ul {
+    position: absolute;
+    top: 0px;
+    gap: 6vw;
+    padding-top: 30px;
+    height: 33vh;
+    right: 0;
+    background: rgba(18, 18, 18, 0.9);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  nav ul.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+  .mylanguages {
+    border: 0.6vw solid #eeeeee;
+    box-shadow: 0vw 0vw 1.95vw rgba(255, 255, 255, 0.4);
+    font-size: 3.9vw;
+  }
+  .c_card {
+    border: 0.6vw solid #004482;
+  }
+  .html_card {
+    border: 0.6vw solid #ff914d;
+  }
+  .css_card {
+    border: 0.6vw solid #007bff;
+  }
+  .javascript_card {
+    border: 0.6vw solid #f7df1e;
+  }
+  .react_card {
+    border: 0.6vw solid #4db8ff;
+  }
+  .arabic_card {
+    height: 30vh;
+    border: 0.6vw solid #067a5a;
+  }
+  .english_card {
+    height: 30vh;
+    border: 0.6vw solid #b50000;
+  }
+  .french_card {
+    height: 30vh;
+    border: 0.6vw solid #002654;
+  }
+
+  .logo-container img {
+    width: 20vw;
+  }
+  .skill-name {
+    font-size: 6vw;
+  }
+  .language-name {
+    font-size: 6vw;
+  }
+  .c-level-badge {
+    top: 6.47vh;
+    right: -4vw;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .css-level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .javascript-level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .react-level-badge {
+    top: 6.47vh;
+    right: 2.8vw;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .arabic-level-badge {
+    top: 6.47vh;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .english-level-badge {
+    top: 6.47vh;
+    right: -5vw;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .french-level-badge {
+    top: 4.8vh;
+    right: -5vw;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 2.2vw;
+    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
+  }
+  .loading-text {
+    font-size: 5vw;
+  }
+}
+@media screen and (max-width: 320px) {
+  nav ul {
+    height: 40vh;
+  }
+  .skill-card {
+    height: 50vh;
+  }
+  .arabic_card {
+    height: 40vh;
+  }
+  .english_card {
+    height: 40vh;
+  }
+  .french_card {
+    height: 40vh;
   }
 }

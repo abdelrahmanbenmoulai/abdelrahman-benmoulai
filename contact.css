@@ -112,11 +112,12 @@ nav a.active::after {
 }
 .contact-container {
   width: 98%;
+  height: 85vh;
   max-width: none;
   display: flex;
   justify-content: center;
   text-align: center;
-  overflow-y: auto;
+  overflow-y: hidden;
   padding-bottom: 0.73vw;
   margin-top: 50vh; /* Added margin-top to create space from the nav */
 }
@@ -131,7 +132,7 @@ nav a.active::after {
 .form-container {
   max-width: 36.6vw;
   width: 100%;
-  height: 70vh;
+  height: 85vh;
   background-color: #272a2c;
   margin-top: 6.48vh;
   padding: 2.2vw;
@@ -372,26 +373,20 @@ nav a.active::after {
     bottom: -0.96vw;
     height: 0.48vh;
   }
-  .menu-toggle {
-    display: flex;
-    transition: top 0.3s ease;
-    gap: 0.77vw;
-    left: 2.91vw;
-    top: 2.91vw;
-    z-index: 50;
-  }
 
   .menu-toggle div {
     width: 5.9vw;
-    height: 0.6vh;
+    height: 0.8vh;
     border-radius: 0.9vw;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
   .menu-toggle {
-    gap: 0.87vw;
-    left: 2.2vw;
-    top: 2.2vw;
-    border-radius: 0.8v;
+    display: flex;
+    transition: top 0.3s ease;
+    gap: 0.77vw;
+    left: 2.5vw;
+    top: 2.5vw;
+    z-index: 50;
   }
 
   .form-container {
@@ -482,7 +477,19 @@ nav a.active::after {
 @media only screen and (max-width: 932px) and (orientation: landscape) {
   nav ul {
     height: 80vh;
-    padding-top: 6vh;
+    padding-top: 14vh;
+  }
+  nav a::after {
+    bottom: -0.1vw;
+    height: 1vh;
+  }
+  .menu-toggle {
+    left: 1.91vw;
+    top: 1.91vw;
+  }
+  .menu-toggle div {
+    width: 4vw;
+    height: 1.1vh;
   }
   .form-container {
     margin-top: 5vh;
@@ -498,14 +505,21 @@ nav a.active::after {
     height: 10vh;
     font-size: 3vw;
   }
+  .contact-container {
+    height: 90vh;
+    overflow-y: auto;
+  }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 440px) {
   .or {
     padding: 27px;
   }
   .form-container {
     margin-top: 15px;
     height: 90vh;
+  }
+  .contact-container {
+    height: 75vh;
   }
   nav {
     position: fixed;
@@ -550,7 +564,10 @@ nav a.active::after {
     height: 40vh;
   }
   .form-container {
-    height: 80vh;
+    height: 90vh;
+  }
+  .contact-container {
+    height: 85vh;
   }
 }
 @media (min-width: 1024px) {
