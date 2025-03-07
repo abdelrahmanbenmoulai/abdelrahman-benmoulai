@@ -272,7 +272,7 @@ nav a.active::after {
 .c-level-badge {
   position: absolute;
   top: 2.8vh;
-  right: 0;
+  right: -0.7vw;
   background: linear-gradient(45deg, #0074b6, #004482);
   color: white;
   font-size: 0.88vw;
@@ -328,7 +328,7 @@ nav a.active::after {
 .react-level-badge {
   position: absolute;
   top: 2.8vh;
-  left: 1.5vw;
+  left: 1vw;
   background: linear-gradient(45deg, #61dafb, #2980b9);
   color: white;
   font-size: 0.88vw;
@@ -789,6 +789,35 @@ nav a.active::after {
     width: 4vw;
     height: 1.1vh;
   }
+  .c-level-badge {
+    top: 6.47vh;
+    right: -2vw;
+  }
+  .level-badge {
+    top: 7.47vh;
+  }
+  .css-level-badge {
+    top: 7.47vh;
+  }
+  .javascript-level-badge {
+    top: 7.47vh;
+    left: 3vw;
+  }
+  .react-level-badge {
+    top: 6.47vh;
+    left: 2vw;
+  }
+  .arabic-level-badge {
+    top: 6.47vh;
+  }
+  .english-level-badge {
+    top: 6.47vh;
+    right: -2vw;
+  }
+  .french-level-badge {
+    top: 4.8vh;
+    right: -2vw;
+  }
 }
 /* 🔹 Mobile Navigation for Screens ≤ 390px */
 @media screen and (max-width: 440px) {
@@ -873,6 +902,7 @@ nav a.active::after {
   }
   .c-level-badge {
     top: 6.47vh;
+    right: -4vw;
     font-size: 4vw;
     padding: 1vw 2vw;
     border-radius: 2.2vw;
@@ -901,6 +931,7 @@ nav a.active::after {
   }
   .react-level-badge {
     top: 6.47vh;
+    right: 2.8vw;
     font-size: 4vw;
     padding: 1vw 2vw;
     border-radius: 2.2vw;
@@ -915,13 +946,15 @@ nav a.active::after {
   }
   .english-level-badge {
     top: 6.47vh;
+    right: -5vw;
     font-size: 4vw;
     padding: 1vw 2vw;
     border-radius: 2.2vw;
     box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
   }
   .french-level-badge {
-    top: 6.47vh;
+    top: 4.8vh;
+    right: -5vw;
     font-size: 4vw;
     padding: 1vw 2vw;
     border-radius: 2.2vw;
