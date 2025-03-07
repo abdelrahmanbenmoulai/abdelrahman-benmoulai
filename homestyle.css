@@ -223,19 +223,13 @@ nav a.active::after {
 
 @keyframes floating {
   0% {
-    transform: translateY(0px) rotateY(0deg);
-  }
-  25% {
-    transform: translateY(-1.85vh) rotateY(-15deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(0px) rotateY(0deg);
-  }
-  75% {
-    transform: translateY(1.85vh) rotateY(15deg);
+    transform: translateY(-1.85vh);
   }
   100% {
-    transform: translateY(0px) rotateY(0deg);
+    transform: translateY(0px);
   }
 }
 
