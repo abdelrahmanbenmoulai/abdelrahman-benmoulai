@@ -142,7 +142,7 @@ nav a.active::after {
   box-shadow: 0vw 0vw 0.37vw rgba(255, 255, 255, 0.4);
   font-size: 1.2vw;
   font-weight: bold;
-  width: 96vw;
+  width: 97vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -789,6 +789,36 @@ nav a.active::after {
     width: 4vw;
     height: 1.1vh;
   }
+  .experience-bar {
+    height: 11.54vh;
+  }
+  .c-experience-progress {
+    height: 10vh;
+  }
+  
+  .experience-progress {
+    height: 10vh;
+  }
+  .css-experience-progress {
+    height: 10vh;
+  }
+  .javascript-experience-progress {
+    height: 10vh;
+  }
+  .react-experience-progress {
+    height: 10vh;
+
+  }
+  .arabic_card {
+    height: 80vh;
+  }
+  .english_card {
+    height: 80vh;
+  }
+  .french_card {
+    height: 80vh;
+  }
+
   .c-level-badge {
     top: 6.47vh;
     right: -2vw;
