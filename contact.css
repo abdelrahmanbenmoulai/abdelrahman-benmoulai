@@ -499,7 +499,7 @@ nav a.active::after {
     height: 13vh;
   }
   .form-container .form .textarea {
-    height: 40vh;
+    height: 45vh;
   }
   .form-container .form .button-container .send-button {
     height: 10vh;
