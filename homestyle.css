@@ -1,3 +1,4 @@
+
 * {
   color: #eeeeee;
   box-sizing: border-box;
@@ -216,26 +217,20 @@ nav a.active::after {
   width: 20vw;
   max-width: 100%;
   border-radius: 50%;
-  animation: floating 6s ease-in-out infinite;
+  animation: floating 3s ease-in-out infinite;
   box-shadow: 0 1.5vh 2.5vh rgba(0, 0, 0, 0.4);
   transform: perspective(1000px);
 }
 
 @keyframes floating {
   0% {
-    transform: translateY(0px) rotateY(0deg);
-  }
-  25% {
-    transform: translateY(-1.85vh) rotateY(-15deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(0px) rotateY(0deg);
-  }
-  75% {
-    transform: translateY(1.85vh) rotateY(15deg);
+    transform: translateY(-1.85vh);
   }
   100% {
-    transform: translateY(0px) rotateY(0deg);
+    transform: translateY(0px);
   }
 }
 
@@ -459,3 +454,4 @@ nav a.active::after {
     height: 40vh;
   }
 }
+
