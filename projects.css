@@ -200,7 +200,7 @@ nav a.active::after {
 .iframe-container {
   width: 100%;
   height: clamp(300px, 50vh, 600px);
-  height: 70vh;
+  height: 75vh;
 }
 
 .project-frame {
