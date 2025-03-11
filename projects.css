@@ -184,8 +184,8 @@ nav a.active::after {
   background: white;
   border-radius: 15px;
   border: solid #ff7a01;
-  filter: drop-shadow(0 0 5px rgba(255, 122, 1, 0.7))  
-  drop-shadow(0 0 10px rgba(255, 122, 1, 0.5));
+  filter: drop-shadow(0 0 3px rgba(255, 122, 1, 0.5))  
+        drop-shadow(0 0 6px rgba(255, 122, 1, 0.3));
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
