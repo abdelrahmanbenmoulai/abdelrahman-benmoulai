@@ -17,6 +17,7 @@ body {
   position: relative;
   overflow: auto;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 nav {
@@ -113,7 +114,7 @@ nav a.active::after {
 
 /* 🔹 Card */
 .skills-container {
-  animation: fadeIn 0.7s ease-out forwards;
+  margin-top: -40px;
   position: absolute;
   top: auto;
   left: auto;
@@ -126,17 +127,56 @@ nav a.active::after {
   width: 100vw;
   height: 100vh;
 }
-@keyframes fadeIn {
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(1.85vh);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-.mylanguages {
+
+/* Add animation classes with different delays */
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+}
+.delay-3 {
+  animation-delay: 0.3s;
+}
+.delay-4 {
+  animation-delay: 0.4s;
+}
+.delay-5 {
+  animation-delay: 0.5s;
+}
+.delay-6 {
+  animation-delay: 0.6s;
+}
+.delay-7 {
+  animation-delay: 0.7s;
+}
+.delay-8 {
+  animation-delay: 0.8s;
+}
+.delay-9 {
+  animation-delay: 0.9s;
+}
+.delay-10 {
+  animation-delay: 1s;
+}
+
+.technologys {
   background-color: #1e1e1e;
   border: 0.15vw solid #eeeeee;
   box-shadow: 0vw 0vw 0.37vw rgba(255, 255, 255, 0.4);
@@ -150,6 +190,8 @@ nav a.active::after {
   padding: 1.46vw;
   border-radius: 0.73vw;
   box-sizing: border-box;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 0.6s;
 }
 .skill-card {
   width: 19vw;
@@ -171,6 +213,8 @@ nav a.active::after {
   box-shadow: 0vw 0vw 0.73vw rgba(0, 68, 130, 0.4);
   margin-top: 0.29vw;
   z-index: 2;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 1.8s;
 }
 .html_card {
   text-align: center;
@@ -181,6 +225,8 @@ nav a.active::after {
   box-shadow: 0vw 0vw 0.73vw rgba(255, 145, 77, 0.4);
   margin-top: 0.29vw;
   z-index: 2;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 3.6s;
 }
 .css_card {
   text-align: center;
@@ -191,6 +237,8 @@ nav a.active::after {
   box-shadow: 0vw 0vw 0.73vw rgba(0, 123, 255, 0.4);
   margin-top: 0.29vw;
   z-index: 2;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 5.4s;
 }
 .javascript_card {
   text-align: center;
@@ -201,6 +249,8 @@ nav a.active::after {
   box-shadow: 0vw 0vw 0.73vw rgba(247, 223, 30, 0.4);
   margin-top: 0.29vw;
   z-index: 2;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 7.2s;
 }
 .react_card {
   text-align: center;
@@ -211,6 +261,25 @@ nav a.active::after {
   box-shadow: 0vw 0vw 0.73vw rgba(77, 184, 255, 0.4);
   margin-top: 0.29vw;
   z-index: 2;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 9s;
+}
+.languages {
+  background-color: #1e1e1e;
+  border: 0.15vw solid #eeeeee;
+  box-shadow: 0vw 0vw 0.37vw rgba(255, 255, 255, 0.4);
+  font-size: 1.2vw;
+  font-weight: bold;
+  width: 97vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
+  box-sizing: border-box;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 10.8s;
 }
 .arabic_card {
   height: 28vh;
@@ -222,6 +291,8 @@ nav a.active::after {
   box-shadow: 0vw 0vw 0.73vw rgba(14, 210, 144, 0.4);
   margin-top: 0.29vw;
   z-index: 2;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 12.6s;
 }
 .english_card {
   height: 28vh;
@@ -233,6 +304,8 @@ nav a.active::after {
   box-shadow: 0vw 0vw 0.73vw rgba(255, 0, 0, 0.6);
   margin-top: 0.29vw;
   z-index: 2;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 14.4s;
 }
 .french_card {
   height: 28vh;
@@ -244,6 +317,8 @@ nav a.active::after {
   box-shadow: 0vw 0vw 0.73vw rgba(0, 38, 84, 0.6);
   margin-top: 0.29vw;
   z-index: 2;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 16.2s;
 }
 
 .logo-container {
@@ -502,6 +577,7 @@ nav a.active::after {
 @media (max-width: 1024px) {
   body {
     height: 100vh;
+    overflow-y: scroll;
   }
   nav {
     padding: 2.5vh;
@@ -551,6 +627,7 @@ nav a.active::after {
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
   .skills-container {
+    margin-top: -2.7vh;
     position: relative;
     z-index: 1;
     padding-top: calc(30px + 8vh);
@@ -561,17 +638,15 @@ nav a.active::after {
     width: 100vw;
     height: 100vh;
   }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(4.93vh);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .technologys {
+    border: 0.4vw solid #eeeeee;
+    box-shadow: 0vw 0vw 0.99vw rgba(255, 255, 255, 0.4);
+    font-size: 3.2vw;
+    width: 98vw;
+    padding: 3.89vw;
+    border-radius: 1.95vw;
   }
-  .mylanguages {
+  .languages {
     border: 0.4vw solid #eeeeee;
     box-shadow: 0vw 0vw 0.99vw rgba(255, 255, 255, 0.4);
     font-size: 3.2vw;
@@ -752,10 +827,77 @@ nav a.active::after {
     height: 2.8vh;
     border-radius: 2.2vw;
   }
+
+  .skill-card,
+  .technologys,
+  .languages {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .technologys.visible {
+    animation: cardReveal 0.6s ease-out forwards;
+  }
+
+  .technologys.shrink {
+    animation: cardShrink 0.6s ease-out forwards;
+  }
+
+  .languages.visible {
+    animation: cardReveal 0.6s ease-out forwards;
+  }
+
+  .languages.shrink {
+    animation: cardShrink 0.6s ease-out forwards; /* This was using cardReveal instead of cardShrink */
+  }
+
+  .skill-card.visible {
+    animation: cardReveal 0.6s ease-out forwards;
+  }
+
+  .skill-card.shrink {
+    animation: cardShrink 0.6s ease-out forwards;
+  }
+
+  @keyframes cardRevealDown {
+    from {
+      opacity: 0;
+      transform: scale(0.8) translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes cardRevealUp {
+    from {
+      opacity: 0;
+      transform: scale(0.8) translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes cardShrink {
+    from {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.8) translateY(30px);
+    }
+  }
+  .visible-up {
+    animation: cardRevealUp 0.6s ease-out forwards;
+  }
 }
 @media only screen and (max-width: 932px) and (orientation: landscape) {
   .skills-container {
-    margin-top: 2.9vh;
+    margin-top: 2.2vh;
   }
   .skill-card {
     height: 100vh;
@@ -795,7 +937,7 @@ nav a.active::after {
   .c-experience-progress {
     height: 10vh;
   }
-  
+
   .experience-progress {
     height: 10vh;
   }
@@ -807,7 +949,6 @@ nav a.active::after {
   }
   .react-experience-progress {
     height: 10vh;
-
   }
   .arabic_card {
     height: 80vh;
@@ -888,7 +1029,12 @@ nav a.active::after {
     transform: translateY(0);
     pointer-events: all;
   }
-  .mylanguages {
+  .technologys {
+    border: 0.6vw solid #eeeeee;
+    box-shadow: 0vw 0vw 1.95vw rgba(255, 255, 255, 0.4);
+    font-size: 3.9vw;
+  }
+  .languages {
     border: 0.6vw solid #eeeeee;
     box-shadow: 0vw 0vw 1.95vw rgba(255, 255, 255, 0.4);
     font-size: 3.9vw;

@@ -65,3 +65,35 @@ window.onscroll = function () {
   }
   prevScrollpos = currentScrollPos;
 };
+document.addEventListener('DOMContentLoaded', () => {
+  const isMobile = window.innerWidth <= 768;
+  const cards = document.querySelectorAll('.skill-card, .technologys, .languages');
+  
+  if (isMobile) {
+    let lastScrollPosition = window.pageYOffset;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const currentScroll = window.pageYOffset;
+            const scrollingDown = currentScroll > lastScrollPosition;
+            
+            if (entry.isIntersecting && scrollingDown) {
+                entry.target.classList.add('visible');
+                entry.target.classList.remove('shrink', 'visible-up');
+            } else if (entry.intersectionRatio > 0.95 && !scrollingDown) {
+                entry.target.classList.add('visible-up');
+                entry.target.classList.remove('shrink', 'visible');
+            } else if (!entry.isIntersecting && !scrollingDown) {
+                entry.target.classList.add('shrink');
+                entry.target.classList.remove('visible', 'visible-up');
+            }
+            
+            lastScrollPosition = currentScroll;
+        });
+    }, { 
+        threshold: [0.2, 0.95]  // Added higher threshold for upward scrolling
+    });
+
+    cards.forEach(card => observer.observe(card));
+  }
+});
