@@ -183,6 +183,7 @@ nav a.active::after {
 .project-card {
   background: white;
   border-radius: 15px;
+  border: solid #ff7a01;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -201,6 +202,11 @@ nav a.active::after {
   width: 100%;
   height: clamp(300px, 50vh, 600px);
   height: 75vh;
+  box-shadow:  
+    0 0 5px rgba(255, 122, 1, 0.8),  
+    0 0 10px rgba(255, 122, 1, 0.6),  
+    0 0 20px rgba(255, 122, 1, 0.4),  
+    0 0 40px rgba(255, 122, 1, 0.2);
 }
 
 .project-frame {
