@@ -23,4 +23,6 @@ function toggleMenu() {
        overlay.style.pointerEvents = "all";
      }
    }
- 
+ window.onload = function () {
+  window.scrollTo(0, 0);
+ };
