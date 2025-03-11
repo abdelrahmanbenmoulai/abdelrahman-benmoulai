@@ -10,13 +10,11 @@ function toggleMenu() {
   let isOpen = menu.classList.contains("show");
 
   if (isOpen) {
-    // Close menu
     menu.classList.remove("show");
     menuToggle.classList.remove("active");
     overlay.style.opacity = "0";
     overlay.style.pointerEvents = "none";
   } else {
-    // Open menu
     menu.classList.add("show");
     menuToggle.classList.add("active");
     overlay.style.opacity = "1";
@@ -28,19 +26,18 @@ function adjustContactContainerPosition() {
   const contactContainer = document.querySelector(".contact-container");
 
   if (toggle && contactContainer) {
-    let toggleRect = toggle.getBoundingClientRect(); // Get toggle position
-    let gap = window.innerWidth > 1024 ? 20 : 0; // Apply gap only if screen width > 1024px
+    let toggleRect = toggle.getBoundingClientRect();
+    let gap = window.innerWidth > 1024 ? 20 : 0;
 
     contactContainer.style.position = "absolute";
-    contactContainer.style.top = `${toggleRect.bottom + gap}px`; // Position it tightly with gap for larger screens
+    contactContainer.style.top = `${toggleRect.bottom + gap}px`;
     contactContainer.style.left = "50%";
     contactContainer.style.transform = "translateX(-50%)";
     contactContainer.style.width = "95%";
-    contactContainer.style.margin = "0"; // Ensure no extra margin
+    contactContainer.style.margin = "0";
   }
 }
 
-// Run function on page load & resize
 window.addEventListener("load", adjustContactContainerPosition);
 window.addEventListener("resize", adjustContactContainerPosition);
 window.addEventListener("orientationchange", adjustContactContainerPosition);
@@ -56,18 +53,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     inputs.forEach((input) => {
       if (input.value.trim() === "") {
-        input.style.borderLeft = "1vw solid #e74c3c"; // Red border for empty input
+        input.style.borderLeft = "1vw solid #e74c3c";
         isValid = false;
       } else if (input.checkValidity()) {
-        input.style.borderLeft = "1vw solid #28a745"; // Green border for valid input
+        input.style.borderLeft = "1vw solid #28a745";
       } else {
-        input.style.borderLeft = "1vw solid #e74c3c"; // Red border for invalid input
+        input.style.borderLeft = "1vw solid #e74c3c";
         isValid = false;
       }
     });
 
     if (!isValid) {
-      event.preventDefault(); // Prevent form submission if there are invalid fields
+      event.preventDefault();
     }
   });
 });

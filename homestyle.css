@@ -1,4 +1,3 @@
-
 * {
   color: #eeeeee;
   box-sizing: border-box;
@@ -45,7 +44,6 @@ body::before {
   }
 }
 
-/* Navbar */
 nav {
   width: 100%;
   position: fixed;
@@ -93,7 +91,7 @@ nav a::after {
 nav a.active::after {
   transform: scaleX(1);
 }
-/* 🔹 Mobile Menu */
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -113,20 +111,17 @@ nav a.active::after {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* Apply hover effect */
 .menu-toggle:hover div,
 .menu-toggle.active div {
-  background-color: #ff914d; /* Highlight color when hovered or active */
+  background-color: #ff914d;
 }
 
-/* Display the toggle icon on mobile screens */
 @media (max-width: 1024px) {
   .menu-toggle {
     display: flex;
   }
 }
 
-/* 🔹 Mobile Overlay */
 #menuOverlay {
   position: fixed;
   top: 0;
@@ -145,7 +140,6 @@ nav a.active::after {
   pointer-events: all;
 }
 
-/* Overlay */
 #menuOverlay {
   position: fixed;
   top: 0;
@@ -164,7 +158,6 @@ nav a.active::after {
   pointer-events: all;
 }
 
-/* Hero Section */
 .hero {
   display: flex;
   align-items: center;
@@ -172,13 +165,12 @@ nav a.active::after {
   gap: 10vw;
   width: 100%;
   max-width: 1200px;
-  margin-left: auto; /* Ensure centering */
-  margin-right: auto; /* Ensure centering */
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   z-index: 1;
 }
 
-/* Remove the duplicate fade-in-up class and hero-text opacity settings */
 .hero-text {
   font-weight: bold;
 }
@@ -200,7 +192,6 @@ nav a.active::after {
   }
 }
 
-/* Update animation settings for each element */
 .hero-text p.bold-large {
   font-size: 6vw;
   animation: fadeInUp 1.2s ease-out forwards;
@@ -224,22 +215,27 @@ nav a.active::after {
   max-width: 100%;
   border-radius: 50%;
   box-shadow: 0 1.5vh 2.5vh rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 1.2s ease-out forwards, floating 3s ease-in-out infinite 1.2s;
+  animation: fadeInUp 1.2s ease-out forwards,
+    floating 3s ease-in-out infinite 1.2s;
   animation-delay: 6.5s;
 }
 
-/* Floating Animation for the Image */
 @keyframes floating {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-1.5vh); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .highlight {
   color: #ff914d;
 }
 
-/* ✅ Responsive Styles */
 @media (max-width: 1024px) {
   body {
     height: 100vh;
@@ -356,53 +352,48 @@ nav a.active::after {
     font-size: 3vw;
   }
 }
-/* ✅ Landscape Mode (Height <= 500px) */
+
 @media screen and (max-height: 500px) {
   body {
-    overflow-y: scroll; /* Ensure vertical scrolling is enabled */
+    overflow-y: scroll;
   }
 
   .hero {
     flex-direction: column;
-    justify-content: flex-start; /* Changed to flex-start to avoid pushing the content up */
+    justify-content: flex-start;
     margin-top: 20vh;
-    height: auto; /* Let it adjust its height dynamically */
-    min-height: 100vh; /* Ensure it's not too short */
+    height: auto;
+    min-height: 100vh;
   }
 
   .hero-text {
     max-width: 70%;
-    margin-right: 0; /* Prevent overflow */
-    text-align: center; /* Center align the text */
-    margin-bottom: 2vh; /* Adds space between the text and image */
+    margin-right: 0;
+    text-align: center;
+    margin-bottom: 2vh;
   }
 
   .hero-text h1 {
-    font-size: clamp(2rem, 5vw, 3rem); /* Prevents it from getting too large */
-    margin-bottom: 1vh; /* Adds space below the header */
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1vh;
   }
 
   .hero-text p.bold-large {
-    font-size: clamp(3rem, 10vw, 4rem); /* Adjusted for better sizing */
-    margin-bottom: 1.5vh; /* Adds space below the paragraph */
+    font-size: clamp(3rem, 10vw, 4rem);
+    margin-bottom: 1.5vh;
   }
 
   .hero-text p {
-    font-size: clamp(
-      1rem,
-      3vw,
-      1.8rem
-    ); /* Adjusted font size for better readability */
+    font-size: clamp(1rem, 3vw, 1.8rem);
   }
 
   .hero img {
-    width: 30vw; /* Adjusted image size to be larger */
-    max-width: 60%; /* Limit the image width so it doesn't stretch too wide */
-    margin-top: 2vh; /* Adds space between the image and text */
+    width: 30vw;
+    max-width: 60%;
+    margin-top: 2vh;
   }
 }
 
-/* ✅ iPhone SE & Small Phones (<= 375px) */
 @media (max-width: 440px) {
   nav {
     position: fixed;
@@ -436,12 +427,11 @@ nav a.active::after {
   }
 
   .hero img {
-    width: 45vw; /* Increased image size for small screens */
+    width: 45vw;
     max-width: 100%;
   }
 }
 
-/* ✅ Larger Screens (Min Width 932px) */
 @media (min-width: 1024px) {
   nav {
     justify-content: flex-end;
@@ -459,4 +449,3 @@ nav a.active::after {
     height: 40vh;
   }
 }
-

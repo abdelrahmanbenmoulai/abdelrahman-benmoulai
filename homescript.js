@@ -19,12 +19,12 @@ document.addEventListener("click", (e) => {
     n.contains(e.target) ||
     (t.classList.remove("show"), n.classList.remove("active"));
 }),
-document.addEventListener('DOMContentLoaded', () => {
-  const animatedElements = document.querySelectorAll('.fade-in-up');
-  
-  animatedElements.forEach(element => {
-    element.style.visibility = 'visible';
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
+  document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".fade-in-up");
+
+    animatedElements.forEach((element) => {
+      element.style.visibility = "visible";
+      element.style.opacity = "0";
+      element.style.transform = "translateY(20px)";
+    });
   });
-});
