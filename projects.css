@@ -274,4 +274,46 @@ nav a.active::after {
     margin-top: 5vh;
     padding: 0.8rem;
   }
+  nav {
+    position: fixed;
+    padding: 15px;
+    justify-content: space-between;
+  }
+  nav a {
+    font-size: 5vw;
+  }
+
+  /* Ensure mobile menu toggle is visible */
+  .menu-toggle {
+    display: flex !important;
+    position: fixed;
+  }
+
+  /* Mobile menu styles */
+  nav ul {
+    position: absolute;
+    top: 0px;
+    gap: 6vw;
+    padding-top: 30px;
+    height: 33vh;
+    right: 0;
+    background: rgba(18, 18, 18, 0.9);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  nav ul.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+}
+@media screen and (max-width: 320px) {
+  nav ul {
+    height: 40vh;
+  }
 }
