@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: clamp(1rem, 5vw, 2rem);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: min(90%, 500px);
+}
+
+
+.input-container {
+    display: flex;
+    gap: clamp(5px, 2vw, 10px);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+input {
+    flex: 1;
+    min-width: 200px;
+    padding: clamp(8px, 2vw, 12px);
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: clamp(14px, 2vw, 16px);
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #fda085;
+}
+
+button {
+    padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 24px);
+    background: #fda085;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: clamp(14px, 2vw, 16px);
+    white-space: nowrap;
+}
+
+button:hover {
+    background: #f6d365;
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding: clamp(8px, 2vw, 12px);
+    background: #f8f8f8;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+li span {
+    flex: 1;
+    font-size: clamp(14px, 2vw, 16px);
+    word-break: break-word;
+}
+
+li button {
+    padding: clamp(6px, 1.5vw, 8px) clamp(8px, 2vw, 12px);
+    background: #ff7675;
+    margin-left: auto;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+    .input-container {
+        flex-direction: column;
+    }
+    
+    input {
+        width: 100%;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    li {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    li button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (hover: hover) {
+    li:hover {
+        transform: translateX(5px);
+    }
+}
