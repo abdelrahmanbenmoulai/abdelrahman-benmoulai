@@ -126,11 +126,15 @@ nav a.active::after {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  will-change: transform, opacity;
 }
 
 @keyframes fadeInUp {
@@ -246,9 +250,8 @@ nav a.active::after {
 
   .project-card {
     opacity: 0;
-    transform: translateY(30px);
-    height: auto;
-    margin-bottom: 1vh;
+    transform: translateZ(0) translateY(30px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   }
 
   .project-card:first-child {

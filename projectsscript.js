@@ -36,19 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
           const currentScroll = window.pageYOffset;
           const scrollingDown = currentScroll > lastScrollPosition;
-
-          if (entry.isIntersecting && scrollingDown) {
-            entry.target.classList.add("visible");
-            entry.target.classList.remove("shrink");
-          } else if (!entry.isIntersecting && !scrollingDown) {
-            entry.target.classList.add("shrink");
-            entry.target.classList.remove("visible");
+    
+          if (entry.isIntersecting) {
+            requestAnimationFrame(() => {
+              entry.target.classList.add(scrollingDown ? "visible" : "visible-up");
+              entry.target.classList.remove("shrink");
+            });
           }
-
           lastScrollPosition = currentScroll;
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: "20px" }
     );
 
     cards.forEach((card) => observer.observe(card));
