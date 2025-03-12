@@ -24,32 +24,3 @@ function toggleMenu() {
 window.onload = function () {
   window.scrollTo(0, 0);
 };
-document.addEventListener("DOMContentLoaded", () => {
-  const isMobile = window.innerWidth <= 768;
-  const cards = document.querySelectorAll(".project-card");
-
-  if (isMobile) {
-    let lastScrollPosition = window.pageYOffset;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const currentScroll = window.pageYOffset;
-          const scrollingDown = currentScroll > lastScrollPosition;
-    
-          if (entry.isIntersecting) {
-            requestAnimationFrame(() => {
-              entry.target.classList.add(scrollingDown ? "visible" : "visible-up");
-              entry.target.classList.remove("shrink");
-            });
-          }
-          lastScrollPosition = currentScroll;
-        });
-      },
-      { threshold: 0.1, rootMargin: "20px" }
-    );
-
-    cards.forEach((card) => observer.observe(card));
-  }
-});
-z

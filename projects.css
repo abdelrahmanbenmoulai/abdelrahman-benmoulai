@@ -114,7 +114,6 @@ nav a.active::after {
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: clamp(1rem, 2vw, 2rem);
   max-width: 1400px;
-  animation: fadeIn 2s ease-out forwards;
 }
 
 .project-card {
@@ -226,9 +225,9 @@ nav a.active::after {
 
 @media (max-width: 1024px) {
   body {
-    height: 100vh;
-    overflow-y: scroll;
-  }
+    overflow-y: auto;
+    height: auto;
+}
   nav {
     padding: 2.5vh;
   }
@@ -280,18 +279,21 @@ nav a.active::after {
     height: clamp(250px, 100vh, 550px);
   }
   .projects-grid {
-    margin-top: 8vh;
-    padding: 2vh;
-    gap: 1vh;
     display: flex;
     flex-direction: column;
-    grid-template-columns: 1fr;
-  }
+    margin-top: 80px;
+    padding: 15px;
+    gap: 10px; 
+}
 
-  .project-card {
-    opacity: 0;
-    transform: translateZ(0) translateY(30px);
-  }
+.project-card {
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
+}
+.card-content {
+  height: 250px;
+}
 
 }
 
@@ -339,11 +341,14 @@ nav a.active::after {
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 480px) {
   .projects-grid {
-    margin-top: 8vh;
-    padding: 0.8rem;
-  }
+    margin-top: 60px;
+    padding: 10px;
+}
+.card-content {
+  height: 200px;
+}
   nav {
     position: fixed;
     padding: 15px;
