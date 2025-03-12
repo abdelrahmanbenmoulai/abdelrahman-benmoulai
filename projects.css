@@ -291,58 +291,8 @@ nav a.active::after {
   .project-card {
     opacity: 0;
     transform: translateZ(0) translateY(30px);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   }
 
-  .project-card:first-child {
-    opacity: 1;
-    transform: none;
-  }
-
-  .project-card.visible {
-    animation: cardReveal 0.6s ease-out forwards;
-  }
-
-  .project-card.visible-up {
-    animation: cardRevealUp 0.6s ease-out forwards;
-  }
-
-  .project-card.shrink {
-    animation: cardShrink 0.6s ease-out forwards;
-  }
-
-  @keyframes cardReveal {
-    from {
-      opacity: 0;
-      transform: scale(0.8) translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
-
-  @keyframes cardRevealUp {
-    from {
-      opacity: 0;
-      transform: scale(0.8) translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
-
-  @keyframes cardShrink {
-    from {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-    to {
-      opacity: 0;
-      transform: scale(0.8) translateY(30px);
-    }
-  }
 }
 
 @media only screen and (max-width: 1024px) and (orientation: landscape) {
