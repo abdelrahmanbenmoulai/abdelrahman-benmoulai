@@ -52,3 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.forEach((card) => observer.observe(card));
   }
 });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const frame = entry.target;
+      frame.src = frame.getAttribute('data-src');
+    }
+  });
+}, { rootMargin: '50px' });

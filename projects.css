@@ -129,6 +129,9 @@ nav a.active::after {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 .fade-in-up {
   opacity: 0;
@@ -185,6 +188,11 @@ nav a.active::after {
 }
 
 @media (max-width: 1024px) {
+  .project-card {
+    opacity: 0;
+    transform: translateZ(0) translateY(30px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
   body {
     height: 100vh;
     overflow-y: scroll;
@@ -247,13 +255,6 @@ nav a.active::after {
     flex-direction: column;
     grid-template-columns: 1fr;
   }
-
-  .project-card {
-    opacity: 0;
-    transform: translateZ(0) translateY(30px);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-  }
-
   .project-card:first-child {
     opacity: 1;
     transform: none;
