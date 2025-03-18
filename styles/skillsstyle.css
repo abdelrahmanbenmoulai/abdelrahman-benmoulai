@@ -635,7 +635,7 @@ nav a.active::after {
     border: 0.4vw solid #eeeeee;
     box-shadow: 0vw 0vw 0.99vw rgba(255, 255, 255, 0.4);
     font-size: 3.2vw;
-    width: 98vw;
+    width: 92vw;
     padding: 3.89vw;
     border-radius: 1.95vw;
   }
@@ -643,12 +643,12 @@ nav a.active::after {
     border: 0.4vw solid #eeeeee;
     box-shadow: 0vw 0vw 0.99vw rgba(255, 255, 255, 0.4);
     font-size: 3.2vw;
-    width: 98vw;
+    width: 92vw;
     padding: 3.89vw;
     border-radius: 1.95vw;
   }
   .skill-card {
-    width: 98%;
+    width: 92vw;
     height: 40vh;
     padding: 3.89vw;
     border-radius: 1.95vw;
@@ -756,7 +756,7 @@ nav a.active::after {
   }
   .react-level-badge {
     top: 6.47vh;
-    left: 5vw;
+    left: 2.5vw;
     font-size: 2.35vw;
     padding: 0.59vw 1.57vw;
     border-radius: 1.95vw;
