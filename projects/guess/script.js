@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     let randomNumber = generateRandomNumber();
     let attempts = 0;
-    
+
     const guessInput = document.getElementById('guessInput');
     const checkBtn = document.getElementById('checkBtn');
     const message = document.getElementById('message');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkGuess() {
         const userGuess = parseInt(guessInput.value);
-        
+
         if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
             updateMessage('Please enter a valid number between 1 and 100');
             return;
@@ -62,6 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initial focus
+
     guessInput.focus();
 });

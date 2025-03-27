@@ -1,3 +1,4 @@
+/* Global reset and base styles */
 * {
   color: #eeeeee;
   box-sizing: border-box;
@@ -6,6 +7,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Body styling and layout */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #121212;
@@ -19,6 +21,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Radial gradient background effect */
 body::before {
   content: "";
   position: fixed;
@@ -26,24 +29,25 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 145, 77, 0.2) 0%,
-    rgba(0, 0, 0, 0) 70%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 145, 77, 0.2) 0%,
+      rgba(0, 0, 0, 0) 70%);
   animation: backgroundFade 5s infinite alternate;
   z-index: -1;
 }
 
+/* Background fade animation */
 @keyframes backgroundFade {
   0% {
     opacity: 0.6;
   }
+
   100% {
     opacity: 1;
   }
 }
 
+/* Navigation bar styling */
 nav {
   width: 100%;
   position: fixed;
@@ -57,12 +61,14 @@ nav {
   transition: top 0.3s;
 }
 
+/* Navigation menu list */
 nav ul {
   list-style: none;
   display: flex;
   gap: 3vw;
 }
 
+/* Navigation links */
 nav a {
   text-decoration: none;
   font-size: 1.2vw;
@@ -71,11 +77,13 @@ nav a {
   transition: color 0.3s ease-in-out;
 }
 
+/* Hover and active states for nav links */
 nav a:hover,
 nav a.active {
   color: #ff914d !important;
 }
 
+/* Underline effect for nav links */
 nav a::after {
   content: "";
   position: absolute;
@@ -88,10 +96,12 @@ nav a::after {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Active link underline */
 nav a.active::after {
   transform: scaleX(1);
 }
 
+/* Hamburger menu toggle button (hidden by default) */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -103,6 +113,7 @@ nav a.active::after {
   top: 1.1vw;
 }
 
+/* Hamburger menu bars */
 .menu-toggle div {
   width: 1.83vw;
   height: 0.2vh;
@@ -111,17 +122,20 @@ nav a.active::after {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+/* Hover and active states for hamburger menu */
 .menu-toggle:hover div,
 .menu-toggle.active div {
   background-color: #ff914d;
 }
 
+/* Show hamburger menu on smaller screens */
 @media (max-width: 1024px) {
   .menu-toggle {
     display: flex;
   }
 }
 
+/* Menu overlay for mobile navigation */
 #menuOverlay {
   position: fixed;
   top: 0;
@@ -135,29 +149,13 @@ nav a.active::after {
   z-index: 10;
 }
 
-#menu.show ~ #menuOverlay {
+/* Show overlay when menu is active */
+#menu.show~#menuOverlay {
   opacity: 1;
   pointer-events: all;
 }
 
-#menuOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 10;
-}
-
-#menu.show ~ #menuOverlay {
-  opacity: 1;
-  pointer-events: all;
-}
-
+/* Hero section layout */
 .hero {
   display: flex;
   align-items: center;
@@ -171,45 +169,53 @@ nav a.active::after {
   z-index: 1;
 }
 
+/* Hero text styling */
 .hero-text {
   font-weight: bold;
 }
 
+/* Animation base class for fade-in elements */
 .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
   visibility: hidden;
 }
 
+/* Fade-in animation keyframes */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* Greeting text animation */
 .hero-text p.bold-large {
   font-size: 6vw;
   animation: fadeInUp 1.2s ease-out forwards;
   animation-delay: 0.6s;
 }
 
+/* Main heading animation */
 .hero-text h1 {
   font-size: 5vw;
   animation: fadeInUp 1.2s ease-out forwards;
   animation-delay: 1.8s;
 }
 
+/* Description text animation */
 .hero-text p.large-bold {
   font-size: 2vw;
   animation: fadeInUp 1.2s ease-out forwards;
   animation-delay: 3.9s;
 }
 
+/* Profile image styling and animation */
 .hero img {
   width: 20vw;
   max-width: 100%;
@@ -220,29 +226,37 @@ nav a.active::after {
   animation-delay: 6.5s;
 }
 
+/* Floating animation for profile image */
 @keyframes floating {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-1.5vh);
   }
+
   100% {
     transform: translateY(0);
   }
 }
 
+/* Highlight color for text */
 .highlight {
   color: #ff914d;
 }
 
+/* Tablet/mobile responsive styles */
 @media (max-width: 1024px) {
   body {
     height: 100vh;
   }
+
   nav {
     padding: 2.5vh;
   }
+
+  /* Mobile navigation menu */
   nav ul {
     gap: 3vw;
     position: absolute;
@@ -259,19 +273,25 @@ nav a.active::after {
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
   }
+
   nav a {
     font-size: 3.2vw;
     padding-bottom: 0.59vw;
   }
+
+  /* Show mobile menu */
   nav ul.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
   }
+
   nav a::after {
     bottom: -0.96vw;
     height: 0.48vh;
   }
+
+  /* Mobile hamburger menu */
   .menu-toggle {
     display: flex;
     transition: top 0.3s ease;
@@ -288,6 +308,7 @@ nav a.active::after {
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
 
+  /* Mobile hero section layout */
   .hero {
     flex-direction: column;
     text-align: center;
@@ -301,6 +322,7 @@ nav a.active::after {
     max-width: 100%;
   }
 
+  /* Responsive text sizes */
   .hero-text h1 {
     font-size: clamp(2.5rem, 9vw, 4rem);
   }
@@ -318,6 +340,8 @@ nav a.active::after {
     width: 40vw;
   }
 }
+
+/* Landscape orientation on mobile devices */
 @media only screen and (max-width: 932px) and (orientation: landscape) {
   nav ul {
     gap: 3vw;
@@ -333,26 +357,32 @@ nav a.active::after {
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
   }
+
   nav a {
     font-size: 3vw;
   }
+
   nav a::after {
     bottom: -0.1vw;
     height: 1vh;
   }
+
   .menu-toggle {
     left: 1.91vw;
     top: 1.91vw;
   }
+
   .menu-toggle div {
     width: 4vw;
     height: 1.1vh;
   }
+
   .hero-text p.large-bold {
     font-size: 3vw;
   }
 }
 
+/* Short height screens */
 @media screen and (max-height: 500px) {
   body {
     overflow-y: scroll;
@@ -394,15 +424,18 @@ nav a.active::after {
   }
 }
 
+/* Small mobile devices */
 @media (max-width: 440px) {
   nav {
     position: fixed;
     padding: 15px;
     justify-content: space-between;
   }
+
   nav a {
     font-size: 5vw;
   }
+
   nav ul {
     position: absolute;
     top: 0px;
@@ -432,11 +465,14 @@ nav a.active::after {
   }
 }
 
+/* Desktop screens */
 @media (min-width: 1024px) {
   nav {
     justify-content: flex-end;
   }
 }
+
+/* Large desktop screens */
 @media (min-width: 2560px) {
   .hero {
     max-width: 90%;
@@ -444,8 +480,40 @@ nav a.active::after {
     margin-right: auto;
   }
 }
+
+/* Very small mobile devices */
 @media screen and (max-width: 320px) {
   nav ul {
     height: 40vh;
   }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #121212;
+}
+
+/* IE scrollbar */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
 }

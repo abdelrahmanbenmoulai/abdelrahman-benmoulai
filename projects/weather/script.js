@@ -1,4 +1,4 @@
-const API_KEY = '91632fb61d50db82e95dffd1e4d345a5'; // Replace with your OpenWeatherMap API key
+const API_KEY = '91632fb61d50db82e95dffd1e4d345a5';
 
 async function getWeather() {
     const cityInput = document.getElementById('city-input');
@@ -14,13 +14,13 @@ async function getWeather() {
 
         if (response.ok) {
             document.getElementById('city').textContent = data.name;
-            document.getElementById('temperature').textContent = 
+            document.getElementById('temperature').textContent =
                 `${Math.round(data.main.temp)}°C`;
-            document.getElementById('description').textContent = 
+            document.getElementById('description').textContent =
                 data.weather[0].description;
-            document.getElementById('humidity').textContent = 
+            document.getElementById('humidity').textContent =
                 `Humidity: ${data.main.humidity}%`;
-            document.getElementById('wind').textContent = 
+            document.getElementById('wind').textContent =
                 `Wind: ${Math.round(data.wind.speed)} km/h`;
         } else {
             alert('City not found. Please try again.');
@@ -30,7 +30,6 @@ async function getWeather() {
     }
 }
 
-// Add Enter key support
 document.getElementById('city-input').addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
         getWeather();
@@ -113,27 +112,27 @@ async function getWeather() {
 
         if (response.ok) {
             document.getElementById('city').textContent = data.name;
-            
+
             const weatherMain = data.weather[0].main;
             const currentTime = new Date().getTime() / 1000;
             const sunrise = data.sys.sunrise;
             const sunset = data.sys.sunset;
             const isDaytime = currentTime > sunrise && currentTime < sunset;
-            
-            const iconClass = weatherIcons[weatherMain] 
-                ? (isDaytime ? weatherIcons[weatherMain].day : weatherIcons[weatherMain].night)
-                : 'fa-cloud';
+
+            const iconClass = weatherIcons[weatherMain] ?
+                (isDaytime ? weatherIcons[weatherMain].day : weatherIcons[weatherMain].night) :
+                'fa-cloud';
 
             const iconElement = document.querySelector('#weather-icon i');
             iconElement.className = `fas ${iconClass}`;
-            
-            document.getElementById('temperature').textContent = 
+
+            document.getElementById('temperature').textContent =
                 `${Math.round(data.main.temp)}°C`;
-            document.getElementById('description').textContent = 
+            document.getElementById('description').textContent =
                 data.weather[0].description;
-            document.getElementById('humidity').textContent = 
+            document.getElementById('humidity').textContent =
                 `Humidity: ${data.main.humidity}%`;
-            document.getElementById('wind').textContent = 
+            document.getElementById('wind').textContent =
                 `Wind: ${Math.round(data.wind.speed)} km/h`;
         }
     } catch (error) {

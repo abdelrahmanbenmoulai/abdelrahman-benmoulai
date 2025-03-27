@@ -11,7 +11,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
+
 .back-button {
     position: fixed;
     top: 20px;
@@ -121,8 +124,20 @@ button:hover {
         font-size: 1.75rem;
     }
 
-    input, button {
+    input,
+    button {
         font-size: 1rem;
         padding: 0.7rem;
     }
+}
+
+.back-button button {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+
+.back-button button:active {
+    transform: scale(0.98);
+    opacity: 0.9;
 }

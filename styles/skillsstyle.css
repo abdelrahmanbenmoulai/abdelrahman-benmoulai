@@ -1,14 +1,16 @@
+/* Universal reset for consistent styling across browsers */
 * {
   color: #eeeeee;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile devices */
 }
 
+/* Main body styling with dark theme and centered content */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #121212;
+  background-color: #121212; /* Dark background for the theme */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,6 +22,7 @@ body {
   overflow-y: hidden;
 }
 
+/* Navigation bar styling */
 nav {
   width: 100%;
   position: fixed;
@@ -30,15 +33,17 @@ nav {
   justify-content: flex-end;
   align-items: center;
   z-index: 11;
-  transition: top 0.3s;
+  transition: top 0.3s; /* Smooth transition for navbar hiding/showing */
 }
 
+/* Navigation list styling */
 nav ul {
   list-style: none;
   display: flex;
   gap: 3vw;
 }
 
+/* Navigation link styling */
 nav a {
   text-decoration: none;
   font-size: 1.2vw;
@@ -47,11 +52,13 @@ nav a {
   transition: color 0.3s ease-in-out;
 }
 
+/* Hover and active states for navigation links */
 nav a:hover,
 nav a.active {
-  color: #ff914d !important;
+  color: #ff914d !important; /* Orange highlight color */
 }
 
+/* Underline effect for navigation links */
 nav a::after {
   content: "";
   position: absolute;
@@ -64,10 +71,12 @@ nav a::after {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Active state underline for navigation */
 nav a.active::after {
   transform: scaleX(1);
 }
 
+/* Mobile menu toggle button (hidden by default) */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -79,6 +88,7 @@ nav a.active::after {
   top: 1.09vw;
 }
 
+/* Hamburger menu lines */
 .menu-toggle div {
   width: 1.83vw;
   height: 0.37vh;
@@ -87,11 +97,13 @@ nav a.active::after {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+/* Hover and active states for menu toggle */
 .menu-toggle:hover div,
 .menu-toggle.active div {
   background-color: #ff914d;
 }
 
+/* Menu overlay for mobile */
 #menuOverlay {
   position: fixed;
   top: 0;
@@ -105,11 +117,13 @@ nav a.active::after {
   z-index: 10;
 }
 
+/* Show menu overlay when menu is active */
 #menu.show ~ #menuOverlay {
   opacity: 1;
   pointer-events: all;
 }
 
+/* Container for skills section */
 .skills-container {
   margin-top: -40px;
   position: absolute;
@@ -124,12 +138,15 @@ nav a.active::after {
   width: 100vw;
   height: 100vh;
 }
+
+/* Animation for elements fading in from bottom */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
+/* Keyframes for fade-in animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -141,37 +158,19 @@ nav a.active::after {
   }
 }
 
-.delay-1 {
-  animation-delay: 0.1s;
-}
-.delay-2 {
-  animation-delay: 0.2s;
-}
-.delay-3 {
-  animation-delay: 0.3s;
-}
-.delay-4 {
-  animation-delay: 0.4s;
-}
-.delay-5 {
-  animation-delay: 0.5s;
-}
-.delay-6 {
-  animation-delay: 0.6s;
-}
-.delay-7 {
-  animation-delay: 0.7s;
-}
-.delay-8 {
-  animation-delay: 0.8s;
-}
-.delay-9 {
-  animation-delay: 0.9s;
-}
-.delay-10 {
-  animation-delay: 1s;
-}
+/* Animation delay classes for staggered animations */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+.delay-9 { animation-delay: 0.9s; }
+.delay-10 { animation-delay: 1s; }
 
+/* Technology section container */
 .technologys {
   background-color: #1e1e1e;
   border: 0.15vw solid #eeeeee;
@@ -187,8 +186,10 @@ nav a.active::after {
   border-radius: 0.73vw;
   box-sizing: border-box;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 0.6s;
+  animation-delay: 1s;
 }
+
+/* Generic skill card styling */
 .skill-card {
   width: 19vw;
   height: 38vh;
@@ -200,6 +201,8 @@ nav a.active::after {
   border-radius: 0.73vw;
   box-sizing: border-box;
 }
+
+/* Specific styling for C programming card */
 .c_card {
   text-align: center;
   background-color: #1e1e1e;
@@ -210,8 +213,10 @@ nav a.active::after {
   margin-top: 0.29vw;
   z-index: 2;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 1.8s;
+  animation-delay: 2s;
 }
+
+/* HTML card styling with orange theme */
 .html_card {
   text-align: center;
   background-color: #1e1e1e;
@@ -222,8 +227,10 @@ nav a.active::after {
   margin-top: 0.29vw;
   z-index: 2;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 3.6s;
+  animation-delay: 3s;
 }
+
+/* CSS card styling with blue theme */
 .css_card {
   text-align: center;
   background-color: #1e1e1e;
@@ -234,8 +241,10 @@ nav a.active::after {
   margin-top: 0.29vw;
   z-index: 2;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 5.4s;
+  animation-delay: 4s;
 }
+
+/* JavaScript card styling with yellow theme */
 .javascript_card {
   text-align: center;
   background-color: #1e1e1e;
@@ -246,8 +255,10 @@ nav a.active::after {
   margin-top: 0.29vw;
   z-index: 2;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 7.2s;
+  animation-delay: 5s;
 }
+
+/* React card styling with light blue theme */
 .react_card {
   text-align: center;
   background-color: #1e1e1e;
@@ -258,8 +269,10 @@ nav a.active::after {
   margin-top: 0.29vw;
   z-index: 2;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 9s;
+  animation-delay: 6s;
 }
+
+/* Languages section container */
 .languages {
   background-color: #1e1e1e;
   border: 0.15vw solid #eeeeee;
@@ -275,8 +288,10 @@ nav a.active::after {
   border-radius: 0.73vw;
   box-sizing: border-box;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 10.8s;
+  animation-delay: 7s;
 }
+
+/* Arabic language card with green theme */
 .arabic_card {
   height: 28vh;
   text-align: center;
@@ -288,8 +303,10 @@ nav a.active::after {
   margin-top: 0.29vw;
   z-index: 2;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 12.6s;
+  animation-delay: 8s;
 }
+
+/* English language card with red theme */
 .english_card {
   height: 28vh;
   text-align: center;
@@ -301,8 +318,10 @@ nav a.active::after {
   margin-top: 0.29vw;
   z-index: 2;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 14.4s;
+  animation-delay: 9s;
 }
+
+/* French language card with blue theme */
 .french_card {
   height: 28vh;
   text-align: center;
@@ -314,18 +333,22 @@ nav a.active::after {
   margin-top: 0.29vw;
   z-index: 2;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 16.2s;
+  animation-delay: 10s;
 }
 
+/* Container for skill logos */
 .logo-container {
   position: relative;
   display: inline-block;
 }
 
+/* Logo image sizing */
 .logo-container img {
   margin-top: 1.8vh;
   width: 5vw;
 }
+
+/* Skill name text styling */
 .skill-name {
   margin-top: 1.3vh;
   font-size: 1.5vw;
@@ -333,6 +356,8 @@ nav a.active::after {
   color: #eeeeee;
   text-align: center;
 }
+
+/* Language name text styling */
 .language-name {
   margin-top: 1.3vh;
   font-size: 1.5vw;
@@ -340,6 +365,8 @@ nav a.active::after {
   color: #eeeeee;
   text-align: center;
 }
+
+/* Level badge for C programming */
 .c-level-badge {
   position: absolute;
   top: 2.8vh;
@@ -354,6 +381,8 @@ nav a.active::after {
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
+
+/* Generic level badge styling */
 .level-badge {
   position: absolute;
   top: 2.8vh;
@@ -368,6 +397,8 @@ nav a.active::after {
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
+
+/* CSS level badge with blue gradient */
 .css-level-badge {
   position: absolute;
   top: 2.8vh;
@@ -382,6 +413,8 @@ nav a.active::after {
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
+
+/* JavaScript level badge with yellow gradient */
 .javascript-level-badge {
   position: absolute;
   top: 2.8vh;
@@ -396,6 +429,8 @@ nav a.active::after {
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
+
+/* React level badge with blue gradient */
 .react-level-badge {
   position: absolute;
   top: 2.8vh;
@@ -410,6 +445,8 @@ nav a.active::after {
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
+
+/* Arabic level badge with green gradient */
 .arabic-level-badge {
   position: absolute;
   top: 2.8vh;
@@ -424,6 +461,8 @@ nav a.active::after {
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
+
+/* English level badge with red gradient */
 .english-level-badge {
   position: absolute;
   top: 2.8vh;
@@ -438,6 +477,8 @@ nav a.active::after {
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
+
+/* French level badge with blue gradient */
 .french-level-badge {
   position: absolute;
   top: 2.8vh;
@@ -452,6 +493,8 @@ nav a.active::after {
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
+
+/* Animation for badge pulsing effect */
 @keyframes pulseBadge {
   0% {
     transform: translate(50%, -50%) scale(1);
@@ -461,6 +504,7 @@ nav a.active::after {
   }
 }
 
+/* Loading text styling */
 .loading-text {
   font-size: 1.32vw;
   font-weight: 600;
@@ -470,11 +514,13 @@ nav a.active::after {
   align-items: center;
 }
 
+/* Dots for loading animation */
 .dot {
   animation: blink 1.5s infinite;
   margin-left: 0.22vw;
 }
 
+/* Staggered animation for loading dots */
 .dot:nth-child(2) {
   animation-delay: 0.3s;
 }
@@ -482,9 +528,9 @@ nav a.active::after {
   animation-delay: 0.6s;
 }
 
+/* Blinking animation for loading dots */
 @keyframes blink {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 0;
   }
   50% {
@@ -492,11 +538,13 @@ nav a.active::after {
   }
 }
 
+/* Container for experience bars */
 .experience-container {
   width: 100%;
   margin-top: 0.92vh;
 }
 
+/* Base styling for experience bars */
 .experience-bar {
   height: 2.77vh;
   background-color: #212121;
@@ -506,6 +554,8 @@ nav a.active::after {
   align-items: center;
   padding: 0.34vw;
 }
+
+/* C programming experience progress bar */
 .c-experience-progress {
   width: 0%;
   height: 1.85vh;
@@ -514,6 +564,7 @@ nav a.active::after {
   animation: fillExperience-c 3s ease-out forwards;
 }
 
+/* Generic experience progress bar */
 .experience-progress {
   width: 0%;
   height: 1.85vh;
@@ -521,6 +572,8 @@ nav a.active::after {
   border-radius: 1.1vw;
   animation: fillExperience 3s ease-out forwards;
 }
+
+/* CSS experience progress bar */
 .css-experience-progress {
   width: 0%;
   height: 1.85vh;
@@ -528,6 +581,8 @@ nav a.active::after {
   border-radius: 1.1vw;
   animation: fillExperience 3s ease-out forwards;
 }
+
+/* JavaScript experience progress bar */
 .javascript-experience-progress {
   width: 0%;
   height: 1.85vh;
@@ -535,6 +590,8 @@ nav a.active::after {
   border-radius: 1.1vw;
   animation: fillExperience 3s ease-out forwards;
 }
+
+/* React experience progress bar */
 .react-experience-progress {
   width: 0%;
   height: 1.85vh;
@@ -542,6 +599,8 @@ nav a.active::after {
   border-radius: 1.1vw;
   animation: fillExperience-react 3s ease-out forwards;
 }
+
+/* Animation for C experience bar filling */
 @keyframes fillExperience-c {
   0% {
     width: 0%;
@@ -550,6 +609,8 @@ nav a.active::after {
     width: 30%;
   }
 }
+
+/* Animation for standard experience bar filling */
 @keyframes fillExperience {
   0% {
     width: 0%;
@@ -558,6 +619,8 @@ nav a.active::after {
     width: 20%;
   }
 }
+
+/* Animation for React experience bar filling */
 @keyframes fillExperience-react {
   0% {
     width: 0%;
@@ -567,14 +630,20 @@ nav a.active::after {
   }
 }
 
+/* Media queries for responsive design */
 @media (max-width: 1024px) {
+  /* Adjust body for mobile scrolling */
   body {
     height: 100vh;
     overflow-y: scroll;
   }
+  
+  /* Adjust navigation for mobile */
   nav {
     padding: 2.5vh;
   }
+  
+  /* Mobile navigation menu styling */
   nav ul {
     gap: 5vw;
     position: absolute;
@@ -591,19 +660,27 @@ nav a.active::after {
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
   }
+  
+  /* Larger font size for mobile navigation */
   nav a {
     font-size: 5vw;
     padding-bottom: 0.59vw;
   }
+  
+  /* Show mobile navigation when active */
   nav ul.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
   }
+  
+  /* Adjust underline for mobile navigation */
   nav a::after {
     bottom: -0.96vw;
     height: 0.48vh;
   }
+  
+  /* Show hamburger menu on mobile */
   .menu-toggle {
     display: flex;
     transition: top 0.3s ease;
@@ -612,13 +689,16 @@ nav a.active::after {
     top: 2.5vw;
     z-index: 50;
   }
-
+  
+  /* Larger hamburger menu lines for mobile */
   .menu-toggle div {
     width: 5.9vw;
     height: 0.8vh;
     border-radius: 0.9vw;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
+  
+  /* Adjust skills container for mobile */
   .skills-container {
     margin-top: -2.7vh;
     position: relative;
@@ -631,6 +711,8 @@ nav a.active::after {
     width: 100vw;
     height: 100vh;
   }
+  
+  /* Adjust technology section for mobile */
   .technologys {
     border: 0.4vw solid #eeeeee;
     box-shadow: 0vw 0vw 0.99vw rgba(255, 255, 255, 0.4);
@@ -639,6 +721,8 @@ nav a.active::after {
     padding: 3.89vw;
     border-radius: 1.95vw;
   }
+  
+  /* Adjust languages section for mobile */
   .languages {
     border: 0.4vw solid #eeeeee;
     box-shadow: 0vw 0vw 0.99vw rgba(255, 255, 255, 0.4);
@@ -647,12 +731,16 @@ nav a.active::after {
     padding: 3.89vw;
     border-radius: 1.95vw;
   }
+  
+  /* Adjust skill cards for mobile */
   .skill-card {
     width: 92vw;
     height: 40vh;
     padding: 3.89vw;
     border-radius: 1.95vw;
   }
+  
+  /* Adjust specific skill cards for mobile */
   .c_card {
     padding: 3.89vw;
     border-radius: 2vw;
@@ -660,6 +748,7 @@ nav a.active::after {
     box-shadow: 0vw 0vw 1.95vw rgba(0, 68, 130, 0.4);
     margin-top: 0.77vw;
   }
+  
   .html_card {
     padding: 3.89vw;
     border-radius: 2vw;
@@ -667,6 +756,7 @@ nav a.active::after {
     box-shadow: 0vw 0vw 1.95vw rgba(255, 145, 77, 0.4);
     margin-top: 0.77vw;
   }
+  
   .css_card {
     padding: 3.89vw;
     border-radius: 2vw;
@@ -674,6 +764,7 @@ nav a.active::after {
     box-shadow: 0vw 0vw 1.95vw rgba(0, 123, 255, 0.4);
     margin-top: 0.77vw;
   }
+  
   .javascript_card {
     padding: 3.89vw;
     border-radius: 2vw;
@@ -681,6 +772,7 @@ nav a.active::after {
     box-shadow: 0vw 0vw 1.95vw rgba(247, 223, 30, 0.4);
     margin-top: 0.77vw;
   }
+  
   .react_card {
     padding: 3.89vw;
     border-radius: 2vw;
@@ -688,6 +780,8 @@ nav a.active::after {
     box-shadow: 0vw 0vw 1.95vw rgba(77, 184, 255, 0.4);
     margin-top: 0.77vw;
   }
+  
+  /* Adjust language cards for mobile */
   .arabic_card {
     height: 30vh;
     padding: 3.89vw;
@@ -696,6 +790,7 @@ nav a.active::after {
     box-shadow: 0vw 0vw 1.95vw rgba(14, 210, 144, 0.4);
     margin-top: 0.77vw;
   }
+  
   .english_card {
     height: 30vh;
     padding: 3.89vw;
@@ -704,6 +799,7 @@ nav a.active::after {
     box-shadow: 0vw 0vw 1.95vw rgba(255, 0, 0, 0.6);
     margin-top: 0.77vw;
   }
+  
   .french_card {
     height: 30vh;
     padding: 3.89vw;
@@ -712,439 +808,112 @@ nav a.active::after {
     box-shadow: 0vw 0vw 1.95vw rgba(0, 38, 84, 0.6);
     margin-top: 0.77vw;
   }
-
+  
+  /* Adjust logo size for mobile */
   .logo-container img {
     margin-top: 4.8vh;
     width: 13.33vw;
   }
+  
+  /* Larger text for skill names on mobile */
   .skill-name {
     margin-top: 3.47vh;
     font-size: 4vw;
   }
+  
+  /* Larger text for language names on mobile */
   .language-name {
     margin-top: 3.47vh;
     font-size: 4vw;
   }
+  
+  /* Adjust level badges for mobile */
   .c-level-badge {
     top: 6.47vh;
     font-size: 2.35vw;
     padding: 0.59vw 1.57vw;
     border-radius: 1.95vw;
-    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
   }
-  .level-badge {
+  
+  .html-level-badge {
     top: 6.47vh;
     font-size: 2.35vw;
     padding: 0.59vw 1.57vw;
     border-radius: 1.95vw;
-    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
   }
+  
   .css-level-badge {
     top: 6.47vh;
     font-size: 2.35vw;
     padding: 0.59vw 1.57vw;
     border-radius: 1.95vw;
-    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
   }
+  
   .javascript-level-badge {
     top: 6.47vh;
-    left: 5vw;
     font-size: 2.35vw;
     padding: 0.59vw 1.57vw;
     border-radius: 1.95vw;
-    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
   }
+  
   .react-level-badge {
     top: 6.47vh;
-    left: 2.5vw;
     font-size: 2.35vw;
     padding: 0.59vw 1.57vw;
     border-radius: 1.95vw;
-    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
   }
+  
   .arabic-level-badge {
     top: 6.47vh;
     font-size: 2.35vw;
     padding: 0.59vw 1.57vw;
     border-radius: 1.95vw;
-    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
   }
+  
   .english-level-badge {
     top: 6.47vh;
     font-size: 2.35vw;
     padding: 0.59vw 1.57vw;
     border-radius: 1.95vw;
-    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
   }
+  
   .french-level-badge {
     top: 6.47vh;
     font-size: 2.35vw;
     padding: 0.59vw 1.57vw;
     border-radius: 1.95vw;
-    box-shadow: 0 0.4vw 0.99vw rgba(0, 0, 0, 0.3);
   }
-
+  
+  /* Larger loading text for mobile */
   .loading-text {
     font-size: 3.52vw;
     margin-top: 1.23vh;
   }
-
+  
+  /* Adjust dot spacing for mobile */
+  .dot {
+    margin-left: 0.59vw;
+  }
+  
+  /* Adjust experience container for mobile */
   .experience-container {
-    margin-top: 2.45vh;
+    margin-top: 2.46vh;
   }
-
+  
+  /* Taller experience bars for mobile */
   .experience-bar {
-    height: 4vh;
-    box-shadow: inset -0.4vw 0.4vw 0.77vw #0c0c0c;
+    height: 7.38vh;
     border-radius: 2.93vw;
-    padding: 0.91vw;
+    padding: 0.9vw;
   }
-  .c-experience-progress {
-    height: 2.8vh;
-    border-radius: 2.2vw;
-  }
-
-  .experience-progress {
-    height: 2.8vh;
-    border-radius: 2.2vw;
-  }
-  .css-experience-progress {
-    height: 2.8vh;
-    border-radius: 2.2vw;
-  }
-  .javascript-experience-progress {
-    height: 2.8vh;
-    border-radius: 2.2vw;
-  }
+  
+  /* Taller experience progress for mobile */
+  .c-experience-progress, 
+  .experience-progress, 
+  .css-experience-progress, 
+  .javascript-experience-progress, 
   .react-experience-progress {
-    height: 2.8vh;
-    border-radius: 2.2vw;
-  }
-
-  .skill-card,
-  .technologys,
-  .languages {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  .technologys.visible {
-    animation: cardReveal 0.6s ease-out forwards;
-  }
-
-  .technologys.shrink {
-    animation: cardShrink 0.6s ease-out forwards;
-  }
-
-  .languages.visible {
-    animation: cardReveal 0.6s ease-out forwards;
-  }
-
-  .languages.shrink {
-    animation: cardShrink 0.6s ease-out forwards;
-  }
-
-  .skill-card.visible {
-    animation: cardReveal 0.6s ease-out forwards;
-  }
-
-  .skill-card.shrink {
-    animation: cardShrink 0.6s ease-out forwards;
-  }
-
-  @keyframes cardRevealDown {
-    from {
-      opacity: 0;
-      transform: scale(0.8) translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
-
-  @keyframes cardRevealUp {
-    from {
-      opacity: 0;
-      transform: scale(0.8) translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-  }
-
-  @keyframes cardShrink {
-    from {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
-    to {
-      opacity: 0;
-      transform: scale(0.8) translateY(30px);
-    }
-  }
-  .visible-up {
-    animation: cardRevealUp 0.6s ease-out forwards;
-  }
-}
-@media only screen and (max-width: 932px) and (orientation: landscape) {
-  .skills-container {
-    margin-top: 2.2vh;
-  }
-  .skill-card {
-    height: 100vh;
-  }
-  nav ul {
-    gap: 3vw;
-    padding-top: 14vh;
-    height: 80.61vh;
-    right: 0;
-    background: rgba(18, 18, 18, 0.9);
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-  }
-  nav a {
-    font-size: 3vw;
-  }
-  nav a::after {
-    bottom: -0.1vw;
-    height: 1vh;
-  }
-  .menu-toggle {
-    left: 1.91vw;
-    top: 1.91vw;
-  }
-  .menu-toggle div {
-    width: 4vw;
-    height: 1.1vh;
-  }
-  .experience-bar {
-    height: 11.54vh;
-  }
-  .c-experience-progress {
-    height: 10vh;
-  }
-
-  .experience-progress {
-    height: 10vh;
-  }
-  .css-experience-progress {
-    height: 10vh;
-  }
-  .javascript-experience-progress {
-    height: 10vh;
-  }
-  .react-experience-progress {
-    height: 10vh;
-  }
-  .arabic_card {
-    height: 80vh;
-  }
-  .english_card {
-    height: 80vh;
-  }
-  .french_card {
-    height: 80vh;
-  }
-
-  .c-level-badge {
-    top: 6.47vh;
-    right: -2vw;
-  }
-  .level-badge {
-    top: 7.47vh;
-  }
-  .css-level-badge {
-    top: 7.47vh;
-  }
-  .javascript-level-badge {
-    top: 7.47vh;
-    left: 3vw;
-  }
-  .react-level-badge {
-    top: 6.47vh;
-    left: 2vw;
-  }
-  .arabic-level-badge {
-    top: 6.47vh;
-  }
-  .english-level-badge {
-    top: 6.47vh;
-    right: -2vw;
-  }
-  .french-level-badge {
-    top: 4.8vh;
-    right: -2vw;
-  }
-}
-
-@media screen and (max-width: 440px) {
-  nav {
-    position: fixed;
-    padding: 15px;
-    justify-content: space-between;
-  }
-  nav a {
-    font-size: 5vw;
-  }
-
-  .menu-toggle {
-    display: flex !important;
-    position: fixed;
-  }
-
-  nav ul {
-    position: absolute;
-    top: 0px;
-    gap: 6vw;
-    padding-top: 30px;
-    height: 33vh;
-    right: 0;
-    background: rgba(18, 18, 18, 0.9);
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-  }
-  nav ul.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-  }
-  .technologys {
-    border: 0.6vw solid #eeeeee;
-    box-shadow: 0vw 0vw 1.95vw rgba(255, 255, 255, 0.4);
-    font-size: 3.9vw;
-  }
-  .languages {
-    border: 0.6vw solid #eeeeee;
-    box-shadow: 0vw 0vw 1.95vw rgba(255, 255, 255, 0.4);
-    font-size: 3.9vw;
-  }
-  .c_card {
-    border: 0.6vw solid #004482;
-  }
-  .html_card {
-    border: 0.6vw solid #ff914d;
-  }
-  .css_card {
-    border: 0.6vw solid #007bff;
-  }
-  .javascript_card {
-    border: 0.6vw solid #f7df1e;
-  }
-  .react_card {
-    border: 0.6vw solid #4db8ff;
-  }
-  .arabic_card {
-    height: 30vh;
-    border: 0.6vw solid #067a5a;
-  }
-  .english_card {
-    height: 30vh;
-    border: 0.6vw solid #b50000;
-  }
-  .french_card {
-    height: 30vh;
-    border: 0.6vw solid #002654;
-  }
-
-  .logo-container img {
-    width: 20vw;
-  }
-  .skill-name {
-    font-size: 6vw;
-  }
-  .language-name {
-    font-size: 6vw;
-  }
-  .c-level-badge {
-    top: 6.47vh;
-    right: -4vw;
-    font-size: 4vw;
-    padding: 1vw 2vw;
-    border-radius: 2.2vw;
-    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-  }
-  .level-badge {
-    top: 6.47vh;
-    font-size: 4vw;
-    padding: 1vw 2vw;
-    border-radius: 2.2vw;
-    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-  }
-  .css-level-badge {
-    top: 6.47vh;
-    font-size: 4vw;
-    padding: 1vw 2vw;
-    border-radius: 2.2vw;
-    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-  }
-  .javascript-level-badge {
-    top: 6.47vh;
-    font-size: 4vw;
-    padding: 1vw 2vw;
-    border-radius: 2.2vw;
-    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-  }
-  .react-level-badge {
-    top: 6.47vh;
-    right: 2.8vw;
-    font-size: 4vw;
-    padding: 1vw 2vw;
-    border-radius: 2.2vw;
-    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-  }
-  .arabic-level-badge {
-    top: 6.47vh;
-    font-size: 4vw;
-    padding: 1vw 2vw;
-    border-radius: 2.2vw;
-    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-  }
-  .english-level-badge {
-    top: 6.47vh;
-    right: -5vw;
-    font-size: 4vw;
-    padding: 1vw 2vw;
-    border-radius: 2.2vw;
-    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-  }
-  .french-level-badge {
-    top: 4.8vh;
-    right: -5vw;
-    font-size: 4vw;
-    padding: 1vw 2vw;
-    border-radius: 2.2vw;
-    box-shadow: 0 0.9vw 1.8vw rgba(0, 0, 0, 0.3);
-  }
-  .loading-text {
-    font-size: 5vw;
-  }
-}
-@media screen and (max-width: 320px) {
-  nav ul {
-    height: 40vh;
-  }
-  .skill-card {
-    height: 50vh;
-  }
-  .arabic_card {
-    height: 40vh;
-  }
-  .english_card {
-    height: 40vh;
-  }
-  .french_card {
-    height: 40vh;
+    height: 4.92vh;
+    border-radius: 2.93vw;
   }
 }

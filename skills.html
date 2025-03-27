@@ -1,60 +1,80 @@
 <!DOCTYPE html>
+<!-- HTML5 declaration -->
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Basic meta tags for character encoding and responsive design -->
+    
     <title>Abdelrahman Benmoulai</title>
+    
+    <!-- Various favicon and icon links -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="icon" type="image/x-icon" href="images/profilepicfavicon.ico" />
+    
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="styles/skillsstyle.css" />
   </head>
+
   <body>
+    <!-- Navigation bar with hamburger menu for mobile -->
     <nav>
       <div class="menu-toggle" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
       </div>
+
       <ul id="menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li> <!-- Current page -->
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
+    <!-- Main skills container -->
     <div class="skills-container">
+      <!-- Technology section header -->
       <div class="technologys fade-in-up delay-1">technologys</div>
+
+      <!-- C++ skill card -->
       <div class="skill-card c_card fade-in-up delay-2">
         <div class="logo-container">
           <img src="images/c++.png" alt="C++ Logo" />
           <p class="skill-name">C++</p>
           <span class="c-level-badge">Intermediate</span>
         </div>
+
         <p class="loading-text">
           Still Learning<span class="dot">.</span><span class="dot">.</span
           ><span class="dot">.</span>
         </p>
+
         <div class="experience-container">
           <div class="experience-bar">
-            <div class="c-experience-progress"></div>
+            <div class="c-experience-progress"></div> <!-- Progress indicator -->
           </div>
         </div>
       </div>
 
+      <!-- HTML skill card -->
       <div class="skill-card html_card fade-in-up delay-3">
         <div class="logo-container">
           <img src="images/html.png" alt="HTML Logo" />
           <p class="skill-name">HTML</p>
           <span class="level-badge">Beginner</span>
         </div>
+
         <p class="loading-text">
           Still Learning<span class="dot">.</span><span class="dot">.</span
           ><span class="dot">.</span>
         </p>
+
         <div class="experience-container">
           <div class="experience-bar">
             <div class="experience-progress"></div>
@@ -62,16 +82,19 @@
         </div>
       </div>
 
+      <!-- CSS skill card -->
       <div class="skill-card css_card fade-in-up delay-4">
         <div class="logo-container">
           <img src="images/css.png" alt="CSS Logo" />
           <p class="skill-name">CSS</p>
           <span class="css-level-badge">Beginner</span>
         </div>
+
         <p class="loading-text">
           Still Learning<span class="dot">.</span><span class="dot">.</span
           ><span class="dot">.</span>
         </p>
+
         <div class="experience-container">
           <div class="experience-bar">
             <div class="css-experience-progress"></div>
@@ -79,16 +102,19 @@
         </div>
       </div>
 
+      <!-- JavaScript skill card -->
       <div class="skill-card javascript_card fade-in-up delay-5">
         <div class="logo-container">
           <img src="images/javascript.png" alt="JavaScript Logo" />
           <p class="skill-name">JavaScript</p>
           <span class="javascript-level-badge">Beginner</span>
         </div>
+
         <p class="loading-text">
           Still Learning<span class="dot">.</span><span class="dot">.</span
           ><span class="dot">.</span>
         </p>
+
         <div class="experience-container">
           <div class="experience-bar">
             <div class="javascript-experience-progress"></div>
@@ -96,23 +122,30 @@
         </div>
       </div>
 
+      <!-- React skill card -->
       <div class="skill-card react_card fade-in-up delay-6">
         <div class="logo-container">
           <img src="images/react.png" alt="React Logo" />
           <p class="skill-name">React.js</p>
           <span class="react-level-badge">Novice</span>
         </div>
+
         <p class="loading-text">
           Still Learning<span class="dot">.</span><span class="dot">.</span
           ><span class="dot">.</span>
         </p>
+
         <div class="experience-container">
           <div class="experience-bar">
             <div class="react-experience-progress"></div>
           </div>
         </div>
       </div>
+
+      <!-- Languages section header -->
       <div class="languages fade-in-up delay-7">Languages</div>
+
+      <!-- Arabic language card -->
       <div class="skill-card arabic_card fade-in-up delay-8">
         <div class="logo-container">
           <img src="images/arabic.png" alt="Arabic Logo" />
@@ -121,6 +154,7 @@
         </div>
       </div>
 
+      <!-- English language card -->
       <div class="skill-card english_card fade-in-up delay-9">
         <div class="logo-container">
           <img src="images/english.png" alt="English Logo" />
@@ -129,6 +163,7 @@
         </div>
       </div>
 
+      <!-- French language card -->
       <div class="skill-card french_card fade-in-up delay-10">
         <div class="logo-container">
           <img src="images/french.png" alt="French Logo" />
@@ -138,7 +173,10 @@
       </div>
     </div>
 
+    <!-- Menu overlay for mobile navigation -->
     <div id="menuOverlay" onclick="toggleMenu()"></div>
+    
+    <!-- JavaScript file -->
     <script src="scripts/skillsscript.js"></script>
   </body>
 </html>

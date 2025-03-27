@@ -12,7 +12,10 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
+
 .back-button {
     position: fixed;
     top: 20px;
@@ -122,20 +125,20 @@ li button {
     .input-container {
         flex-direction: column;
     }
-    
+
     input {
         width: 100%;
     }
-    
+
     button {
         width: 100%;
     }
-    
+
     li {
         flex-direction: column;
         text-align: center;
     }
-    
+
     li button {
         width: 100%;
         margin-left: 0;
@@ -146,4 +149,26 @@ li button {
     li:hover {
         transform: translateX(5px);
     }
+}
+
+.back-button button {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+
+.back-button button:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+
+.back-button button {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+
+.back-button button:active {
+    transform: scale(0.98);
+    opacity: 0.9;
 }

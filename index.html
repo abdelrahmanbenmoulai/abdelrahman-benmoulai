@@ -1,49 +1,63 @@
 <!DOCTYPE html>
+<!-- HTML5 declaration -->
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abdelrahman Benmoulai</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
-    <link rel="icon" type="image/x-icon" href="images/profilepicfavicon.ico" />
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="stylesheet" href="styles/homestyle.css" />
-  </head>
-  <body>
-    <nav>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul id="menu">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
-    <div class="hero">
-      <div class="hero-text">
-        <p class="bold-large fade-in-up">Hello!</p>
-        <h1 class="fade-in-up">
-          I'm <span class="highlight">Benmoulai Abdelrahmane</span>
-        </h1>
-        <p class="large-bold fade-in-up">
-          A Computer Science student at the University of Amar Telidji in
-          Laghouat.
-        </p>
-      </div>
-      <img
-        id="profilepic"
-        class="fade-in-up"
-        src="images/profilepic.png"
-        alt="my Profile pic"
-      />
+
+<head>
+  <!-- Meta information and resources -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdelrahman Benmoulai</title>
+
+  <!-- Favicon and icon links -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+  <link rel="icon" type="image/x-icon" href="images/profilepicfavicon.ico" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles/homestyle.css" />
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <nav>
+    <!-- Mobile menu hamburger button -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <script src="scripts/homescript.js" defer></script>
-  </body>
+
+    <!-- Navigation links -->
+    <ul id="menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+  <!-- Hero section with introduction -->
+  <div class="hero">
+    <div class="hero-text">
+      <p class="bold-large fade-in-up">Hello!</p>
+      <h1 class="fade-in-up">
+        I'm <span class="highlight">Benmoulai Abdelrahmane</span>
+      </h1>
+      <p class="large-bold fade-in-up">
+        A Computer Science student at the University of Amar Telidji in Laghouat.
+      </p>
+    </div>
+    <img id="profilepic" class="fade-in-up" src="images/profilepic.png" alt="my Profile pic" />
+  </div>
+
+  <!-- JavaScript -->
+  <script src="scripts/homescript.js" defer></script>
+</body>
+
 </html>

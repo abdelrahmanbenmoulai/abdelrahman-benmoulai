@@ -1,3 +1,4 @@
+/* Global reset for all elements */
 * {
   color: #eeeeee;
   box-sizing: border-box;
@@ -6,6 +7,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Main body styling */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #121212;
@@ -19,6 +21,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Navigation bar styling */
 nav {
   width: 100%;
   position: fixed;
@@ -32,12 +35,14 @@ nav {
   transition: top 0.3s;
 }
 
+/* Navigation list styling */
 nav ul {
   list-style: none;
   display: flex;
   gap: 3vw;
 }
 
+/* Navigation links styling */
 nav a {
   text-decoration: none;
   font-size: 1.2vw;
@@ -46,11 +51,13 @@ nav a {
   transition: color 0.3s ease-in-out;
 }
 
+/* Hover and active states for navigation links */
 nav a:hover,
 nav a.active {
   color: #ff914d !important;
 }
 
+/* Underline effect for navigation links */
 nav a::after {
   content: "";
   position: absolute;
@@ -63,10 +70,12 @@ nav a::after {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Active state underline for navigation links */
 nav a.active::after {
   transform: scaleX(1);
 }
 
+/* Mobile menu toggle button */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -78,6 +87,7 @@ nav a.active::after {
   top: 1.1vw;
 }
 
+/* Menu toggle button bars */
 .menu-toggle div {
   width: 1.83vw;
   height: 0.2vh;
@@ -86,11 +96,13 @@ nav a.active::after {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+/* Hover and active states for menu toggle */
 .menu-toggle:hover div,
 .menu-toggle.active div {
   background-color: #ff914d;
 }
 
+/* Menu overlay for mobile */
 #menuOverlay {
   position: fixed;
   top: 0;
@@ -104,10 +116,13 @@ nav a.active::after {
   z-index: 10;
 }
 
-#menu.show ~ #menuOverlay {
+/* Show menu overlay when menu is active */
+#menu.show~#menuOverlay {
   opacity: 1;
   pointer-events: all;
 }
+
+/* Contact section container */
 .contact-container {
   width: 98%;
   height: 85vh;
@@ -119,14 +134,19 @@ nav a.active::after {
   padding-bottom: 0.73vw;
   margin-top: 50vh;
 }
+
+/* General container styling */
 .container {
   align-self: center;
   margin-top: auto;
 }
+
+/* Orange text color class */
 .orange {
   color: #ff7a01;
 }
 
+/* Form container styling */
 .form-container {
   max-width: 36.6vw;
   width: 100%;
@@ -135,27 +155,30 @@ nav a.active::after {
   margin-top: 6.48vh;
   padding: 2.2vw;
   border-left: 0.37vw solid #ff7a01;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 1.46vw),
-    calc(100% - 1.46vw) 100%,
-    0 100%
-  );
+  clip-path: polygon(0 0,
+      100% 0,
+      100% calc(100% - 1.46vw),
+      calc(100% - 1.46vw) 100%,
+      0 100%);
   transform: scaleY(0);
   transform-origin: center;
   animation: scrollOpen 0.7s ease-out forwards;
 }
+
+/* Animation for form container opening */
 @keyframes scrollOpen {
   from {
     transform: scaleY(0);
     opacity: 0;
   }
+
   to {
     transform: scaleY(1);
     opacity: 1;
   }
 }
+
+/* Form heading style */
 .heading {
   display: block;
   color: white;
@@ -164,6 +187,7 @@ nav a.active::after {
   margin-bottom: 1.85vh;
 }
 
+/* Form input fields styling */
 .form-container .form .input {
   caret-color: #ff7a01;
   color: #ff7a01;
@@ -180,18 +204,22 @@ nav a.active::after {
   font-size: 1vw;
 }
 
+/* Focus state for input fields */
 .form-container .form .input:focus {
   border-left: 0.37vw solid #ff7a01;
 }
 
+/* Valid state for input fields */
 .form-container .form .input:valid {
   border-left: 0.37vw solid #28a745;
 }
 
+/* Invalid state for input fields */
 .form-container .form .input:invalid {
   border-left: 0.37vw solid #e74c3c;
 }
 
+/* Textarea styling */
 .form-container .form .textarea {
   width: 100%;
   height: 15vh;
@@ -208,18 +236,22 @@ nav a.active::after {
   font-size: 1vw;
 }
 
+/* Focus state for textarea */
 .form-container .form .textarea:focus {
   border-left: 0.37vw solid #ff7a01;
 }
 
+/* Valid state for textarea */
 .form-container .form .textarea:valid {
   border-left: 0.37vw solid #28a745;
 }
 
+/* Invalid state for textarea */
 .form-container .form .textarea:invalid {
   border-left: 0.37vw solid #e74c3c;
 }
 
+/* Alert message styling */
 .form-container .form .alert {
   background-color: #272a2c;
   color: #ff7a01;
@@ -232,16 +264,19 @@ nav a.active::after {
   text-align: center;
 }
 
+/* Show alert when needed */
 .form-container .form .alert.show {
   display: block;
 }
 
+/* Button container styling */
 .form-container .form .button-container {
   display: flex;
   justify-content: flex-end;
   gap: 0.73vw;
 }
 
+/* Send button styling */
 .form-container .form .button-container .send-button {
   width: 1vw;
   height: 4.9vh;
@@ -257,20 +292,20 @@ nav a.active::after {
   transition: all 0.2s ease-in-out;
 }
 
+/* Hover state for send button */
 .form-container .form .button-container .send-button:hover {
   background: transparent;
   border: 0.07vw solid #ff7a01;
   color: #ff7a01;
 }
 
-.form-container
-  .form
-  .button-container
-  .reset-button-container
-  .reset-button:hover {
+/* Hover state for reset button */
+.form-container .form .button-container .reset-button-container .reset-button:hover {
   background: #ff7a01;
   color: #001925;
 }
+
+/* OR divider styling */
 .or {
   display: block;
   text-align: center;
@@ -279,9 +314,13 @@ nav a.active::after {
   font-size: 1.3vw;
   color: #eeeeee;
 }
+
+/* Social media links styling */
 .social-media {
   text-decoration: none;
 }
+
+/* Social media buttons */
 .container button {
   margin-top: 0.92vh;
   width: 3.29vw;
@@ -293,12 +332,14 @@ nav a.active::after {
   cursor: pointer;
 }
 
+/* Social media icons */
 .icon {
   width: 1.99vw;
   height: 1.99vw;
   fill: #fff;
 }
 
+/* Hover states for different social media buttons */
 .container a:nth-child(1) button:hover {
   background-color: #2753a7;
 }
@@ -323,6 +364,7 @@ nav a.active::after {
   background-color: #0274b3;
 }
 
+/* Title styling */
 .title {
   color: gray;
   font-weight: 700;
@@ -331,13 +373,17 @@ nav a.active::after {
   top: -3.24vh;
   left: 0;
 }
+
+/* Responsive styles for tablets */
 @media (max-width: 1024px) {
   body {
     height: 100vh;
   }
+
   nav {
     padding: 2.5vh;
   }
+
   nav ul {
     gap: 3vw;
     position: absolute;
@@ -354,15 +400,18 @@ nav a.active::after {
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
   }
+
   nav a {
     font-size: 3.2vw;
     padding-bottom: 0.59vw;
   }
+
   nav ul.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
   }
+
   nav a::after {
     bottom: -0.96vw;
     height: 0.48vh;
@@ -374,6 +423,7 @@ nav a.active::after {
     border-radius: 0.9vw;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
+
   .menu-toggle {
     display: flex;
     transition: top 0.3s ease;
@@ -390,6 +440,7 @@ nav a.active::after {
     height: 85vh;
     border-left: 1vw solid #ff7a01;
   }
+
   .contact-container {
     padding-bottom: 0.73vw;
   }
@@ -432,6 +483,7 @@ nav a.active::after {
   .form-container .form .input:invalid {
     border-left: 1vw solid #e74c3c;
   }
+
   .form-container .form .textarea:valid {
     border-left: 1vw solid #28a745;
   }
@@ -456,6 +508,7 @@ nav a.active::after {
   .or {
     font-size: 4.5vw;
   }
+
   .container button {
     width: 11vw;
     height: 11vw;
@@ -466,58 +519,86 @@ nav a.active::after {
     height: 7vw;
   }
 }
+
+/* Responsive styles for landscape mode on mobile */
 @media only screen and (max-width: 932px) and (orientation: landscape) {
   nav ul {
     height: 80vh;
     padding-top: 14vh;
   }
+
   nav a::after {
     bottom: -0.1vw;
     height: 1vh;
   }
+}
+/* Responsive styles for landscape mode on mobile */
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+  nav ul {
+    height: 80vh;
+    padding-top: 14vh;
+  }
+
+  nav a::after {
+    bottom: -0.1vw;
+    height: 1vh;
+  }
+
   .menu-toggle {
     left: 1.91vw;
     top: 1.91vw;
   }
+
   .menu-toggle div {
     width: 4vw;
     height: 1.1vh;
   }
+
   .form-container {
     margin-top: 5vh;
     height: 170vh;
   }
+
   .form-container .form .input {
     height: 13vh;
   }
+
   .form-container .form .textarea {
     height: 45vh;
   }
+
   .form-container .form .button-container .send-button {
     height: 10vh;
     font-size: 3vw;
   }
+
   .contact-container {
     height: 90vh;
     overflow-y: auto;
   }
 }
+
+/* Responsive styles for small mobile devices */
 @media screen and (max-width: 440px) {
   .or {
     padding: 27px;
   }
+
   .form-container {
     margin-top: 15px;
     height: 90vh;
   }
+
   .contact-container {
     height: 75vh;
   }
+
   nav {
     position: fixed;
     padding: 15px;
     justify-content: space-between;
   }
+
   nav a {
     font-size: 5vw;
   }
@@ -543,25 +624,62 @@ nav a.active::after {
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
   }
+
   nav ul.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
   }
 }
+
+/* Responsive styles for extra small devices */
 @media screen and (max-width: 320px) {
   nav ul {
     height: 40vh;
   }
+
   .form-container {
     height: 90vh;
   }
+
   .contact-container {
     height: 85vh;
   }
 }
+
+/* Responsive styles for large screens */
 @media (min-width: 1024px) {
   .form-container {
     height: 80vh;
   }
+}
+
+/* Custom scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Custom scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #121212;
+}
+
+/* IE scrollbar styling */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
 }

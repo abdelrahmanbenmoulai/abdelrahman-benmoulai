@@ -12,8 +12,10 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
-/* Add this to each project's CSS file */
+
 .back-button {
     position: fixed;
     top: 20px;
@@ -114,30 +116,39 @@ button:hover {
     text-transform: capitalize;
 }
 
-#humidity, #wind {
+#humidity,
+#wind {
     font-size: clamp(16px, 3vw, 18px);
     margin: 10px 0;
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
-/* Touch device optimizations */
+
 @media (hover: none) {
     button:hover {
         transform: none;
     }
 }
 
-/* Small screen optimizations */
+
 @media screen and (max-width: 380px) {
     .container {
         padding: 10px;
     }
-    
+
     .weather-card {
         padding: 15px;
     }

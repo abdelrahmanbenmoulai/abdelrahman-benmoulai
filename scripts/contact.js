@@ -1,7 +1,6 @@
-function toggleMenu() {
-  document.getElementById("menu").classList.toggle("show");
-  document.querySelector(".menu-toggle").classList.toggle("active");
-}
+/**
+ * Toggles the mobile menu visibility
+ */
 function toggleMenu() {
   let menu = document.getElementById("menu");
   let menuToggle = document.querySelector(".menu-toggle");
@@ -21,6 +20,10 @@ function toggleMenu() {
     overlay.style.pointerEvents = "all";
   }
 }
+
+/**
+ * Adjusts the position of the contact container based on viewport size
+ */
 function adjustContactContainerPosition() {
   const toggle = document.querySelector(".menu-toggle");
   const contactContainer = document.querySelector(".contact-container");
@@ -38,9 +41,12 @@ function adjustContactContainerPosition() {
   }
 }
 
+// Event listeners for responsive layout adjustments
 window.addEventListener("load", adjustContactContainerPosition);
 window.addEventListener("resize", adjustContactContainerPosition);
 window.addEventListener("orientationchange", adjustContactContainerPosition);
+
+// Form validation
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form-container .form");
   const inputs = document.querySelectorAll(
