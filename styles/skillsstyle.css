@@ -1,16 +1,16 @@
-/* Universal reset for consistent styling across browsers */
+/* Global reset and base styles */
 * {
   color: #eeeeee;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile devices */
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Main body styling with dark theme and centered content */
+/* Body styling and layout */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #121212; /* Dark background for the theme */
+  background-color: #121212;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +19,6 @@ body {
   position: relative;
   overflow: auto;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 /* Navigation bar styling */
@@ -27,105 +26,50 @@ nav {
   width: 100%;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   padding: 1.09vw 3.66vw;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   z-index: 11;
-  transition: top 0.3s; /* Smooth transition for navbar hiding/showing */
+  transition: top 0.3s;
+  backdrop-filter: blur(5px);
+  background-color: rgba(18, 18, 18, 0.5);
 }
 
-/* Navigation list styling */
+/* Navigation menu list */
 nav ul {
   list-style: none;
   display: flex;
   gap: 3vw;
 }
 
-/* Navigation link styling */
+/* Navigation links */
 nav a {
   text-decoration: none;
   font-size: 1.2vw;
   position: relative;
-  padding-bottom: 0.22vw;
-  transition: color 0.3s ease-in-out;
+  padding: 0.5vw 1vw;
+  transition: all 0.2s ease-in-out;
+  background: transparent;
+  border: 0.07vw solid transparent;
 }
 
-/* Hover and active states for navigation links */
-nav a:hover,
+/* Hover state for navigation links */
+nav a:hover {
+  color: #ff7a01  !important;
+  border: 0.07vw solid #ff7a01 ;
+}
+
+/* Active state for navigation links */
 nav a.active {
-  color: #ff914d !important; /* Orange highlight color */
-}
-
-/* Underline effect for navigation links */
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.36vw;
-  width: 100%;
-  height: 0.18vh;
-  background-color: #ff914d;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Active state underline for navigation */
-nav a.active::after {
-  transform: scaleX(1);
-}
-
-/* Mobile menu toggle button (hidden by default) */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 0.29vw;
-  z-index: 1000;
-  position: fixed;
-  left: 1.1vw;
-  top: 1.09vw;
-}
-
-/* Hamburger menu lines */
-.menu-toggle div {
-  width: 1.83vw;
-  height: 0.37vh;
-  background-color: #eeeeee;
-  border-radius: 0.14vw;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-/* Hover and active states for menu toggle */
-.menu-toggle:hover div,
-.menu-toggle.active div {
-  background-color: #ff914d;
-}
-
-/* Menu overlay for mobile */
-#menuOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 10;
-}
-
-/* Show menu overlay when menu is active */
-#menu.show ~ #menuOverlay {
-  opacity: 1;
-  pointer-events: all;
+  color: #000000 !important;
+  background:  #ff7a01  !important;
 }
 
 /* Container for skills section */
 .skills-container {
-  margin-top: -40px;
+  margin-top: 15vh;
   position: absolute;
   top: auto;
   left: auto;
@@ -158,20 +102,8 @@ nav a.active::after {
   }
 }
 
-/* Animation delay classes for staggered animations */
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-.delay-5 { animation-delay: 0.5s; }
-.delay-6 { animation-delay: 0.6s; }
-.delay-7 { animation-delay: 0.7s; }
-.delay-8 { animation-delay: 0.8s; }
-.delay-9 { animation-delay: 0.9s; }
-.delay-10 { animation-delay: 1s; }
-
 /* Technology section container */
-.technologys {
+.skill-section {
   background-color: #1e1e1e;
   border: 0.15vw solid #eeeeee;
   box-shadow: 0vw 0vw 0.37vw rgba(255, 255, 255, 0.4);
@@ -186,11 +118,14 @@ nav a.active::after {
   border-radius: 0.73vw;
   box-sizing: border-box;
   animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 1s;
 }
 
 /* Generic skill card styling */
 .skill-card {
+  text-align: center;
+  background-color: #1e1e1e;
+  padding: 1.46vw;
+  border-radius: 0.73vw;
   width: 19vw;
   height: 38vh;
   display: flex;
@@ -200,139 +135,92 @@ nav a.active::after {
   padding: 1.46vw;
   border-radius: 0.73vw;
   box-sizing: border-box;
+  margin-top: 0.29vw;
+  z-index: 2;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.languages-hieght {
+  height: 30vh;
 }
 
 /* Specific styling for C programming card */
-.c_card {
-  text-align: center;
-  background-color: #1e1e1e;
-  padding: 1.46vw;
-  border-radius: 0.73vw;
+#c_card {
   border: 0.15vw solid #004482;
   box-shadow: 0vw 0vw 0.73vw rgba(0, 68, 130, 0.4);
-  margin-top: 0.29vw;
-  z-index: 2;
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 2s;
 }
 
 /* HTML card styling with orange theme */
-.html_card {
-  text-align: center;
-  background-color: #1e1e1e;
-  padding: 1.46vw;
-  border-radius: 0.73vw;
+#html_card {
   border: 0.15vw solid #ff914d;
   box-shadow: 0vw 0vw 0.73vw rgba(255, 145, 77, 0.4);
-  margin-top: 0.29vw;
-  z-index: 2;
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 3s;
 }
 
 /* CSS card styling with blue theme */
-.css_card {
-  text-align: center;
-  background-color: #1e1e1e;
-  padding: 1.46vw;
-  border-radius: 0.73vw;
+#css_card {
   border: 0.15vw solid #007bff;
   box-shadow: 0vw 0vw 0.73vw rgba(0, 123, 255, 0.4);
-  margin-top: 0.29vw;
-  z-index: 2;
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 4s;
 }
 
 /* JavaScript card styling with yellow theme */
-.javascript_card {
-  text-align: center;
-  background-color: #1e1e1e;
-  padding: 1.46vw;
-  border-radius: 0.73vw;
+#javascript_card {
   border: 0.15vw solid #f7df1e;
   box-shadow: 0vw 0vw 0.73vw rgba(247, 223, 30, 0.4);
-  margin-top: 0.29vw;
-  z-index: 2;
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 5s;
 }
 
 /* React card styling with light blue theme */
-.react_card {
-  text-align: center;
-  background-color: #1e1e1e;
-  padding: 1.46vw;
-  border-radius: 0.73vw;
+#react_card {
   border: 0.15vw solid #4db8ff;
   box-shadow: 0vw 0vw 0.73vw rgba(77, 184, 255, 0.4);
-  margin-top: 0.29vw;
-  z-index: 2;
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 6s;
-}
-
-/* Languages section container */
-.languages {
-  background-color: #1e1e1e;
-  border: 0.15vw solid #eeeeee;
-  box-shadow: 0vw 0vw 0.37vw rgba(255, 255, 255, 0.4);
-  font-size: 1.2vw;
-  font-weight: bold;
-  width: 97vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.46vw;
-  border-radius: 0.73vw;
-  box-sizing: border-box;
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 7s;
 }
 
 /* Arabic language card with green theme */
-.arabic_card {
-  height: 28vh;
-  text-align: center;
-  background-color: #1e1e1e;
-  padding: 1.46vw;
-  border-radius: 0.73vw;
+#arabic_card {
   border: 0.15vw solid #067a5a;
   box-shadow: 0vw 0vw 0.73vw rgba(14, 210, 144, 0.4);
-  margin-top: 0.29vw;
-  z-index: 2;
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 8s;
 }
 
 /* English language card with red theme */
-.english_card {
-  height: 28vh;
-  text-align: center;
-  background-color: #1e1e1e;
-  padding: 1.46vw;
-  border-radius: 0.73vw;
+#english_card {
   border: 0.15vw solid #b50000;
   box-shadow: 0vw 0vw 0.73vw rgba(255, 0, 0, 0.6);
-  margin-top: 0.29vw;
-  z-index: 2;
-  animation: fadeInUp 1.2s ease-out forwards;
-  animation-delay: 9s;
 }
 
 /* French language card with blue theme */
-.french_card {
-  height: 28vh;
-  text-align: center;
-  background-color: #1e1e1e;
-  padding: 1.46vw;
-  border-radius: 0.73vw;
+#french_card {
   border: 0.15vw solid #002654;
   box-shadow: 0vw 0vw 0.73vw rgba(0, 38, 84, 0.6);
-  margin-top: 0.29vw;
-  z-index: 2;
-  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* Animation delay classes for staggered animations */
+.delay-1 {
+  animation-delay: 1s;
+}
+.delay-2 {
+  animation-delay: 2s;
+}
+.delay-3 {
+  animation-delay: 3s;
+}
+.delay-4 {
+  animation-delay: 4s;
+}
+.delay-5 {
+  animation-delay: 5s;
+}
+.delay-6 {
+  animation-delay: 6s;
+}
+.delay-7 {
+  animation-delay: 7s;
+}
+.delay-8 {
+  animation-delay: 8s;
+}
+.delay-9 {
+  animation-delay: 9s;
+}
+.delay-10 {
   animation-delay: 10s;
 }
 
@@ -349,7 +237,7 @@ nav a.active::after {
 }
 
 /* Skill name text styling */
-.skill-name {
+.skill-languages-name {
   margin-top: 1.3vh;
   font-size: 1.5vw;
   font-weight: bold;
@@ -357,21 +245,10 @@ nav a.active::after {
   text-align: center;
 }
 
-/* Language name text styling */
-.language-name {
-  margin-top: 1.3vh;
-  font-size: 1.5vw;
-  font-weight: bold;
-  color: #eeeeee;
-  text-align: center;
-}
-
-/* Level badge for C programming */
-.c-level-badge {
+.badge {
   position: absolute;
   top: 2.8vh;
   right: -0.7vw;
-  background: linear-gradient(45deg, #0074b6, #004482);
   color: white;
   font-size: 0.88vw;
   font-weight: bold;
@@ -380,118 +257,51 @@ nav a.active::after {
   box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
+}
+/* Level badge for C programming */
+#c-level-badge {
+  background: linear-gradient(45deg, #0074b6, #004482);
 }
 
 /* Generic level badge styling */
-.level-badge {
-  position: absolute;
-  top: 2.8vh;
-  right: 0;
+#html-level-badge {
   background: linear-gradient(45deg, #ff6f3c, #d84315);
-  color: white;
-  font-size: 0.88vw;
-  font-weight: bold;
-  padding: 0.22vw 0.59vw;
-  border-radius: 0.73vw;
-  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
-  transform: translate(50%, -50%);
-  animation: pulseBadge 1.5s infinite alternate;
+  right: -0.1vw;
 }
 
 /* CSS level badge with blue gradient */
-.css-level-badge {
-  position: absolute;
-  top: 2.8vh;
-  right: 0;
+#css-level-badge {
   background: linear-gradient(45deg, #4a90e2, #1c3e80);
-  color: white;
-  font-size: 0.88vw;
-  font-weight: bold;
-  padding: 0.22vw 0.59vw;
-  border-radius: 0.73vw;
-  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
-  transform: translate(50%, -50%);
-  animation: pulseBadge 1.5s infinite alternate;
+  right: -0.1vw;
 }
 
 /* JavaScript level badge with yellow gradient */
-.javascript-level-badge {
-  position: absolute;
-  top: 2.8vh;
-  left: 1.5vw;
+#javascript-level-badge {
   background: linear-gradient(45deg, #f7df1e, #e4c300);
-  color: rgb(34, 30, 30);
-  font-size: 0.88vw;
-  font-weight: bold;
-  padding: 0.22vw 0.59vw;
-  border-radius: 0.73vw;
-  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
-  transform: translate(50%, -50%);
-  animation: pulseBadge 1.5s infinite alternate;
+  color: black;
+  right: 1vw;
 }
 
 /* React level badge with blue gradient */
-.react-level-badge {
-  position: absolute;
-  top: 2.8vh;
-  left: 1vw;
+#react-level-badge {
   background: linear-gradient(45deg, #61dafb, #2980b9);
-  color: white;
-  font-size: 0.88vw;
-  font-weight: bold;
-  padding: 0.22vw 0.59vw;
-  border-radius: 0.73vw;
-  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
-  transform: translate(50%, -50%);
-  animation: pulseBadge 1.5s infinite alternate;
+  right: 0.9vw;
 }
 
 /* Arabic level badge with green gradient */
-.arabic-level-badge {
-  position: absolute;
-  top: 2.8vh;
-  right: 0;
+#arabic-level-badge {
   background: linear-gradient(45deg, #0ed290, #067a5a);
-  color: white;
-  font-size: 0.88vw;
-  font-weight: bold;
-  padding: 0.22vw 0.59vw;
-  border-radius: 0.73vw;
-  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
-  transform: translate(50%, -50%);
-  animation: pulseBadge 1.5s infinite alternate;
+  right: 0.2vw;
 }
 
 /* English level badge with red gradient */
-.english-level-badge {
-  position: absolute;
-  top: 2.8vh;
-  right: 0;
+#english-level-badge {
   background: linear-gradient(45deg, #ff3e3e, #d10000);
-  color: white;
-  font-size: 0.88vw;
-  font-weight: bold;
-  padding: 0.22vw 0.59vw;
-  border-radius: 0.73vw;
-  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
-  transform: translate(50%, -50%);
-  animation: pulseBadge 1.5s infinite alternate;
 }
 
 /* French level badge with blue gradient */
-.french-level-badge {
-  position: absolute;
-  top: 2.8vh;
-  right: 0;
+#french-level-badge {
   background: linear-gradient(45deg, #0055a4, #002654);
-  color: white;
-  font-size: 0.88vw;
-  font-weight: bold;
-  padding: 0.22vw 0.59vw;
-  border-radius: 0.73vw;
-  box-shadow: 0 0.15vw 0.37vw rgba(0, 0, 0, 0.3);
-  transform: translate(50%, -50%);
-  animation: pulseBadge 1.5s infinite alternate;
 }
 
 /* Animation for badge pulsing effect */
@@ -530,7 +340,8 @@ nav a.active::after {
 
 /* Blinking animation for loading dots */
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0;
   }
   50% {
@@ -546,7 +357,7 @@ nav a.active::after {
 
 /* Base styling for experience bars */
 .experience-bar {
-  height: 2.77vh;
+  height: 3.77vh;
   background-color: #212121;
   box-shadow: inset -0.15vw 0.15vw 0.29vw #0c0c0c;
   border-radius: 1.1vw;
@@ -555,48 +366,36 @@ nav a.active::after {
   padding: 0.34vw;
 }
 
-/* C programming experience progress bar */
-.c-experience-progress {
+.experience-progress {
   width: 0%;
-  height: 1.85vh;
-  background: linear-gradient(0deg, #004482 0%, #5c9fd9 100%);
+  height: 2.85vh;
   border-radius: 1.1vw;
+  animation: fillExperience 3s ease-out forwards;
+}
+/* C programming experience progress bar */
+#c-experience-progress {
+  background: linear-gradient(0deg, #004482 0%, #5c9fd9 100%);
   animation: fillExperience-c 3s ease-out forwards;
 }
 
 /* Generic experience progress bar */
-.experience-progress {
-  width: 0%;
-  height: 1.85vh;
+#html-experience-progress {
   background: linear-gradient(0deg, #de4a0f 0%, #f9c74f 100%);
-  border-radius: 1.1vw;
-  animation: fillExperience 3s ease-out forwards;
 }
 
 /* CSS experience progress bar */
-.css-experience-progress {
-  width: 0%;
-  height: 1.85vh;
+#css-experience-progress {
   background: linear-gradient(0deg, #004aad 0%, #00a8e8 100%);
-  border-radius: 1.1vw;
-  animation: fillExperience 3s ease-out forwards;
 }
 
 /* JavaScript experience progress bar */
-.javascript-experience-progress {
-  width: 0%;
-  height: 1.85vh;
+#javascript-experience-progress {
   background: linear-gradient(0deg, #a39317 0%, #e4c300 100%);
-  border-radius: 1.1vw;
-  animation: fillExperience 3s ease-out forwards;
 }
 
 /* React experience progress bar */
-.react-experience-progress {
-  width: 0%;
-  height: 1.85vh;
+#react-experience-progress {
   background: linear-gradient(90deg, #00d8ff 0%, #007bff 100%);
-  border-radius: 1.1vw;
   animation: fillExperience-react 3s ease-out forwards;
 }
 
@@ -632,75 +431,32 @@ nav a.active::after {
 
 /* Media queries for responsive design */
 @media (max-width: 1024px) {
-  /* Adjust body for mobile scrolling */
-  body {
-    height: 100vh;
-    overflow-y: scroll;
-  }
-  
-  /* Adjust navigation for mobile */
   nav {
-    padding: 2.5vh;
+    margin-top: 0vh;
+    padding: 1.5vh;
+    justify-content: center;
   }
-  
-  /* Mobile navigation menu styling */
+
+  /* Mobile navigation menu */
   nav ul {
-    gap: 5vw;
-    position: absolute;
-    top: 0;
-    padding-top: 7vh;
-    height: 38.61vh;
-    right: 0;
-    background: rgba(18, 18, 18, 0.9);
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
   }
-  
-  /* Larger font size for mobile navigation */
+
+  nav li {
+    margin: 0.5vh 0;
+  }
+
   nav a {
-    font-size: 5vw;
-    padding-bottom: 0.59vw;
+    font-size: 4vw;
+    padding: 1vh 2vw;
+    display: inline-block;
   }
-  
-  /* Show mobile navigation when active */
-  nav ul.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-  }
-  
-  /* Adjust underline for mobile navigation */
-  nav a::after {
-    bottom: -0.96vw;
-    height: 0.48vh;
-  }
-  
-  /* Show hamburger menu on mobile */
-  .menu-toggle {
-    display: flex;
-    transition: top 0.3s ease;
-    gap: 0.77vw;
-    left: 2.5vw;
-    top: 2.5vw;
-    z-index: 50;
-  }
-  
-  /* Larger hamburger menu lines for mobile */
-  .menu-toggle div {
-    width: 5.9vw;
-    height: 0.8vh;
-    border-radius: 0.9vw;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  }
-  
+
   /* Adjust skills container for mobile */
   .skills-container {
-    margin-top: -2.7vh;
+    margin-top: -5vh; 
     position: relative;
     z-index: 1;
     padding-top: calc(30px + 8vh);
@@ -708,12 +464,10 @@ nav a.active::after {
     padding-bottom: 10px;
     overflow-y: auto;
     gap: 1.33vw;
-    width: 100vw;
-    height: 100vh;
   }
-  
+
   /* Adjust technology section for mobile */
-  .technologys {
+  .skill-section {
     border: 0.4vw solid #eeeeee;
     box-shadow: 0vw 0vw 0.99vw rgba(255, 255, 255, 0.4);
     font-size: 3.2vw;
@@ -721,199 +475,197 @@ nav a.active::after {
     padding: 3.89vw;
     border-radius: 1.95vw;
   }
-  
-  /* Adjust languages section for mobile */
-  .languages {
-    border: 0.4vw solid #eeeeee;
-    box-shadow: 0vw 0vw 0.99vw rgba(255, 255, 255, 0.4);
-    font-size: 3.2vw;
-    width: 92vw;
-    padding: 3.89vw;
-    border-radius: 1.95vw;
-  }
-  
+
   /* Adjust skill cards for mobile */
   .skill-card {
     width: 92vw;
     height: 40vh;
     padding: 3.89vw;
     border-radius: 1.95vw;
+    margin-top: 0.77vw;
   }
-  
+
   /* Adjust specific skill cards for mobile */
-  .c_card {
-    padding: 3.89vw;
-    border-radius: 2vw;
+  #c_card {
     border: 0.4vw solid #004482;
     box-shadow: 0vw 0vw 1.95vw rgba(0, 68, 130, 0.4);
-    margin-top: 0.77vw;
   }
-  
-  .html_card {
-    padding: 3.89vw;
-    border-radius: 2vw;
+
+  #html_card {
     border: 0.4vw solid #ff914d;
     box-shadow: 0vw 0vw 1.95vw rgba(255, 145, 77, 0.4);
-    margin-top: 0.77vw;
   }
-  
-  .css_card {
-    padding: 3.89vw;
-    border-radius: 2vw;
+
+  #css_card {
     border: 0.4vw solid #007bff;
     box-shadow: 0vw 0vw 1.95vw rgba(0, 123, 255, 0.4);
-    margin-top: 0.77vw;
   }
-  
-  .javascript_card {
-    padding: 3.89vw;
-    border-radius: 2vw;
+
+  #javascript_card {
     border: 0.4vw solid #f7df1e;
     box-shadow: 0vw 0vw 1.95vw rgba(247, 223, 30, 0.4);
-    margin-top: 0.77vw;
   }
-  
-  .react_card {
-    padding: 3.89vw;
-    border-radius: 2vw;
+
+  #react_card {
     border: 0.4vw solid #4db8ff;
     box-shadow: 0vw 0vw 1.95vw rgba(77, 184, 255, 0.4);
-    margin-top: 0.77vw;
   }
-  
+
   /* Adjust language cards for mobile */
-  .arabic_card {
+  #arabic_card {
     height: 30vh;
-    padding: 3.89vw;
-    border-radius: 2vw;
     border: 0.4vw solid #067a5a;
     box-shadow: 0vw 0vw 1.95vw rgba(14, 210, 144, 0.4);
-    margin-top: 0.77vw;
   }
-  
-  .english_card {
+
+  #english_card {
     height: 30vh;
-    padding: 3.89vw;
-    border-radius: 2vw;
     border: 0.4vw solid #b50000;
     box-shadow: 0vw 0vw 1.95vw rgba(255, 0, 0, 0.6);
-    margin-top: 0.77vw;
   }
-  
-  .french_card {
+
+  #french_card {
     height: 30vh;
-    padding: 3.89vw;
-    border-radius: 2vw;
     border: 0.4vw solid #002654;
     box-shadow: 0vw 0vw 1.95vw rgba(0, 38, 84, 0.6);
-    margin-top: 0.77vw;
   }
-  
+
   /* Adjust logo size for mobile */
   .logo-container img {
     margin-top: 4.8vh;
-    width: 13.33vw;
+    width: 15.33vw;
   }
-  
+
   /* Larger text for skill names on mobile */
-  .skill-name {
+  .skill-languages-name {
     margin-top: 3.47vh;
-    font-size: 4vw;
+    font-size: 5.52vw;
   }
-  
-  /* Larger text for language names on mobile */
-  .language-name {
-    margin-top: 3.47vh;
-    font-size: 4vw;
-  }
-  
+
   /* Adjust level badges for mobile */
-  .c-level-badge {
+  .badge {
     top: 6.47vh;
-    font-size: 2.35vw;
+    font-size: 3.35vw;
     padding: 0.59vw 1.57vw;
     border-radius: 1.95vw;
   }
-  
-  .html-level-badge {
-    top: 6.47vh;
-    font-size: 2.35vw;
-    padding: 0.59vw 1.57vw;
-    border-radius: 1.95vw;
+
+  #c-level-badge {
+    top: 5.47vh;
+    right: -4vw;
   }
-  
-  .css-level-badge {
-    top: 6.47vh;
-    font-size: 2.35vw;
-    padding: 0.59vw 1.57vw;
-    border-radius: 1.95vw;
+
+  #javascript-level-badge {
+    right: 5.5vw;
   }
-  
-  .javascript-level-badge {
-    top: 6.47vh;
-    font-size: 2.35vw;
-    padding: 0.59vw 1.57vw;
-    border-radius: 1.95vw;
+
+  #react-level-badge {
+    top: 5.5vh;
+    right: 3vw;
   }
-  
-  .react-level-badge {
-    top: 6.47vh;
-    font-size: 2.35vw;
-    padding: 0.59vw 1.57vw;
-    border-radius: 1.95vw;
+
+  /* Arabic level badge with green gradient */
+  #arabic-level-badge {
+    top: 5.5vh;
   }
-  
-  .arabic-level-badge {
-    top: 6.47vh;
-    font-size: 2.35vw;
-    padding: 0.59vw 1.57vw;
-    border-radius: 1.95vw;
+
+  #english-level-badge {
+    top: 5.5vh;
   }
-  
-  .english-level-badge {
-    top: 6.47vh;
-    font-size: 2.35vw;
-    padding: 0.59vw 1.57vw;
-    border-radius: 1.95vw;
+
+  #french-level-badge {
+    top: 5vh;
   }
-  
-  .french-level-badge {
-    top: 6.47vh;
-    font-size: 2.35vw;
-    padding: 0.59vw 1.57vw;
-    border-radius: 1.95vw;
-  }
-  
   /* Larger loading text for mobile */
   .loading-text {
-    font-size: 3.52vw;
+    font-size: 5.52vw;
     margin-top: 1.23vh;
   }
-  
+
   /* Adjust dot spacing for mobile */
   .dot {
     margin-left: 0.59vw;
   }
-  
+
   /* Adjust experience container for mobile */
   .experience-container {
     margin-top: 2.46vh;
   }
-  
+
   /* Taller experience bars for mobile */
   .experience-bar {
-    height: 7.38vh;
+    height: 3.38vh;
     border-radius: 2.93vw;
     padding: 0.9vw;
   }
-  
+
   /* Taller experience progress for mobile */
-  .c-experience-progress, 
-  .experience-progress, 
-  .css-experience-progress, 
-  .javascript-experience-progress, 
-  .react-experience-progress {
-    height: 4.92vh;
+  #c-experience-progress,
+  #html-experience-progress,
+  #css-experience-progress,
+  #javascript-experience-progress,
+  #react-experience-progress {
+    height: 2.92vh;
     border-radius: 2.93vw;
   }
+}
+@media (max-width: 932px) and (orientation: landscape) {
+  nav{
+    margin-top: 0vh;
+  }
+  .skills-container {
+    margin-top: 2vh;
+  }
+
+    /* Adjust skill cards for mobile */
+    .skill-card {
+      height: 100vh;
+    }
+
+     /* Taller experience bars for mobile */
+  .experience-bar {
+    height: 7vh;
+  }
+
+  #c-experience-progress,
+  #html-experience-progress,
+  #css-experience-progress,
+  #javascript-experience-progress,
+  #react-experience-progress {
+    height: 5.2vh;
+  }
+
+  .languages-hieght {
+    height: 70vh !important;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #121212;
+}
+
+/* IE scrollbar */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
 }

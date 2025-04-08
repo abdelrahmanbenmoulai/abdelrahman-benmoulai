@@ -21,14 +21,9 @@
   </head>
 
   <body>
-    <!-- Navigation bar with hamburger menu for mobile -->
+    <!-- Navigation bar -->
     <nav>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-
+      <!-- Navigation links -->
       <ul id="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="skills.html" class="active">Skills</a></li> <!-- Current page -->
@@ -40,14 +35,14 @@
     <!-- Main skills container -->
     <div class="skills-container">
       <!-- Technology section header -->
-      <div class="technologys fade-in-up delay-1">technologys</div>
+      <div class="skill-section fade-in-up delay-1" id="technologys"">technologys</div>
 
       <!-- C++ skill card -->
-      <div class="skill-card c_card fade-in-up delay-2">
+      <div class="skill-card fade-in-up delay-2" id="c_card">
         <div class="logo-container">
           <img src="images/c++.png" alt="C++ Logo" />
-          <p class="skill-name">C++</p>
-          <span class="c-level-badge">Intermediate</span>
+          <p class="skill-languages-name">C++</p>
+          <span class="badge" id="c-level-badge">Intermediate</span>
         </div>
 
         <p class="loading-text">
@@ -57,17 +52,17 @@
 
         <div class="experience-container">
           <div class="experience-bar">
-            <div class="c-experience-progress"></div> <!-- Progress indicator -->
+            <div class="experience-progress" id="c-experience-progress"></div> <!-- Progress indicator -->
           </div>
         </div>
       </div>
 
       <!-- HTML skill card -->
-      <div class="skill-card html_card fade-in-up delay-3">
+      <div class="skill-card fade-in-up delay-3" id="html_card">
         <div class="logo-container">
           <img src="images/html.png" alt="HTML Logo" />
-          <p class="skill-name">HTML</p>
-          <span class="level-badge">Beginner</span>
+          <p class="skill-languages-name">HTML</p>
+          <span class="badge" id="html-level-badge">Beginner</span>
         </div>
 
         <p class="loading-text">
@@ -77,17 +72,17 @@
 
         <div class="experience-container">
           <div class="experience-bar">
-            <div class="experience-progress"></div>
+            <div class="experience-progress" id="html-experience-progress"></div>
           </div>
         </div>
       </div>
 
       <!-- CSS skill card -->
-      <div class="skill-card css_card fade-in-up delay-4">
+      <div class="skill-card fade-in-up delay-4" id="css_card">
         <div class="logo-container">
           <img src="images/css.png" alt="CSS Logo" />
-          <p class="skill-name">CSS</p>
-          <span class="css-level-badge">Beginner</span>
+          <p class="skill-languages-name">CSS</p>
+          <span class="badge" id="css-level-badge">Beginner</span>
         </div>
 
         <p class="loading-text">
@@ -97,17 +92,17 @@
 
         <div class="experience-container">
           <div class="experience-bar">
-            <div class="css-experience-progress"></div>
+            <div class="experience-progress" id="css-experience-progress"></div>
           </div>
         </div>
       </div>
 
       <!-- JavaScript skill card -->
-      <div class="skill-card javascript_card fade-in-up delay-5">
+      <div class="skill-card fade-in-up delay-5" id="javascript_card">
         <div class="logo-container">
           <img src="images/javascript.png" alt="JavaScript Logo" />
-          <p class="skill-name">JavaScript</p>
-          <span class="javascript-level-badge">Beginner</span>
+          <p class="skill-languages-name">JavaScript</p>
+          <span class="badge" id="javascript-level-badge">Beginner</span>
         </div>
 
         <p class="loading-text">
@@ -117,17 +112,17 @@
 
         <div class="experience-container">
           <div class="experience-bar">
-            <div class="javascript-experience-progress"></div>
+            <div class="experience-progress" id="javascript-experience-progress"></div>
           </div>
         </div>
       </div>
 
       <!-- React skill card -->
-      <div class="skill-card react_card fade-in-up delay-6">
+      <div class="skill-card fade-in-up delay-6" id="react_card">
         <div class="logo-container">
           <img src="images/react.png" alt="React Logo" />
-          <p class="skill-name">React.js</p>
-          <span class="react-level-badge">Novice</span>
+          <p class="skill-languages-name">React.js</p>
+          <span class="badge" id="react-level-badge">Novice</span>
         </div>
 
         <p class="loading-text">
@@ -137,46 +132,40 @@
 
         <div class="experience-container">
           <div class="experience-bar">
-            <div class="react-experience-progress"></div>
+            <div class="experience-progress" id="react-experience-progress"></div>
           </div>
         </div>
       </div>
 
       <!-- Languages section header -->
-      <div class="languages fade-in-up delay-7">Languages</div>
+      <div class="skill-section fade-in-up delay-7" id="Languages">Languages</div>
 
       <!-- Arabic language card -->
-      <div class="skill-card arabic_card fade-in-up delay-8">
+      <div class="skill-card languages-hieght fade-in-up delay-8" id="arabic_card">
         <div class="logo-container">
           <img src="images/arabic.png" alt="Arabic Logo" />
-          <p class="language-name">Arabic</p>
-          <span class="arabic-level-badge">Native</span>
+          <p class="skill-languages-name">Arabic</p>
+          <span class="badge" id="arabic-level-badge">Native</span>
         </div>
       </div>
 
       <!-- English language card -->
-      <div class="skill-card english_card fade-in-up delay-9">
+      <div class="skill-card languages-hieght fade-in-up delay-9" id="english_card">
         <div class="logo-container">
           <img src="images/english.png" alt="English Logo" />
-          <p class="language-name">English</p>
-          <span class="english-level-badge">Intermediate</span>
+          <p class="skill-languages-name">English</p>
+          <span class="badge" id="english-level-badge">Intermediate</span>
         </div>
       </div>
 
       <!-- French language card -->
-      <div class="skill-card french_card fade-in-up delay-10">
+      <div class="skill-card languages-hieght fade-in-up delay-10" id="french_card">
         <div class="logo-container">
           <img src="images/french.png" alt="French Logo" />
-          <p class="language-name">French</p>
-          <span class="french-level-badge">Intermediate</span>
+          <p class="skill-languages-name">French</p>
+          <span class="badge" id="french-level-badge">Intermediate</span>
         </div>
       </div>
     </div>
-
-    <!-- Menu overlay for mobile navigation -->
-    <div id="menuOverlay" onclick="toggleMenu()"></div>
-    
-    <!-- JavaScript file -->
-    <script src="scripts/skillsscript.js"></script>
   </body>
 </html>
