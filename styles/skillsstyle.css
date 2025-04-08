@@ -57,14 +57,14 @@ nav a {
 
 /* Hover state for navigation links */
 nav a:hover {
-  color: #ff7a01  !important;
-  border: 0.07vw solid #ff7a01 ;
+  color: #ff7a01 !important;
+  border: 0.07vw solid #ff7a01;
 }
 
 /* Active state for navigation links */
 nav a.active {
   color: #000000 !important;
-  background:  #ff7a01  !important;
+  background: #ff7a01 !important;
 }
 
 /* Container for skills section */
@@ -96,6 +96,7 @@ nav a.active {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -196,30 +197,39 @@ nav a.active {
 .delay-1 {
   animation-delay: 1s;
 }
+
 .delay-2 {
   animation-delay: 2s;
 }
+
 .delay-3 {
   animation-delay: 3s;
 }
+
 .delay-4 {
   animation-delay: 4s;
 }
+
 .delay-5 {
   animation-delay: 5s;
 }
+
 .delay-6 {
   animation-delay: 6s;
 }
+
 .delay-7 {
   animation-delay: 7s;
 }
+
 .delay-8 {
   animation-delay: 8s;
 }
+
 .delay-9 {
   animation-delay: 9s;
 }
+
 .delay-10 {
   animation-delay: 10s;
 }
@@ -258,6 +268,7 @@ nav a.active {
   transform: translate(50%, -50%);
   animation: pulseBadge 1.5s infinite alternate;
 }
+
 /* Level badge for C programming */
 #c-level-badge {
   background: linear-gradient(45deg, #0074b6, #004482);
@@ -309,6 +320,7 @@ nav a.active {
   0% {
     transform: translate(50%, -50%) scale(1);
   }
+
   100% {
     transform: translate(50%, -50%) scale(1.1);
   }
@@ -334,16 +346,19 @@ nav a.active {
 .dot:nth-child(2) {
   animation-delay: 0.3s;
 }
+
 .dot:nth-child(3) {
   animation-delay: 0.6s;
 }
 
 /* Blinking animation for loading dots */
 @keyframes blink {
+
   0%,
   100% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
@@ -372,6 +387,7 @@ nav a.active {
   border-radius: 1.1vw;
   animation: fillExperience 3s ease-out forwards;
 }
+
 /* C programming experience progress bar */
 #c-experience-progress {
   background: linear-gradient(0deg, #004482 0%, #5c9fd9 100%);
@@ -404,6 +420,7 @@ nav a.active {
   0% {
     width: 0%;
   }
+
   100% {
     width: 30%;
   }
@@ -414,6 +431,7 @@ nav a.active {
   0% {
     width: 0%;
   }
+
   100% {
     width: 20%;
   }
@@ -424,6 +442,7 @@ nav a.active {
   0% {
     width: 0%;
   }
+
   100% {
     width: 5%;
   }
@@ -456,7 +475,7 @@ nav a.active {
 
   /* Adjust skills container for mobile */
   .skills-container {
-    margin-top: -5vh; 
+    margin-top: -5vh;
     position: relative;
     z-index: 1;
     padding-top: calc(30px + 8vh);
@@ -576,6 +595,7 @@ nav a.active {
   #french-level-badge {
     top: 5vh;
   }
+
   /* Larger loading text for mobile */
   .loading-text {
     font-size: 5.52vw;
@@ -609,20 +629,22 @@ nav a.active {
     border-radius: 2.93vw;
   }
 }
+
 @media (max-width: 932px) and (orientation: landscape) {
-  nav{
+  nav {
     margin-top: 0vh;
   }
+
   .skills-container {
     margin-top: 2vh;
   }
 
-    /* Adjust skill cards for mobile */
-    .skill-card {
-      height: 100vh;
-    }
+  /* Adjust skill cards for mobile */
+  .skill-card {
+    height: 100vh;
+  }
 
-     /* Taller experience bars for mobile */
+  /* Taller experience bars for mobile */
   .experience-bar {
     height: 7vh;
   }

@@ -56,15 +56,16 @@ nav a {
 
 /* Hover state for navigation links */
 nav a:hover {
-  color: #ff7a01  !important;
-  border: 0.07vw solid #ff7a01 ;
+  color: #ff7a01 !important;
+  border: 0.07vw solid #ff7a01;
 }
 
 /* Active state for navigation links */
 nav a.active {
   color: #000000 !important;
-  background:  #ff7a01  !important;
+  background: #ff7a01 !important;
 }
+
 /* Projects grid layout */
 .projects-grid {
   margin-top: 7vh;
@@ -251,7 +252,7 @@ nav a.active {
   .projects-grid {
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 8vh;
     padding: 15px;
     gap: 10px;
   }
@@ -268,46 +269,15 @@ nav a.active {
 }
 
 /* Landscape orientation on tablets and mobile */
-@media (max-width: 1024px) and (orientation: landscape) {
+@media (max-width: 932px) and (orientation: landscape) {
 
   .projects-grid {
-    margin-top: 12vh;
+    margin-top: 15vh;
     grid-template-columns: 1fr;
   }
 
-  nav{
+  nav {
     margin-top: 0vh;
-  }
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-  .projects-grid {
-    margin-top: 60px;
-    padding: 10px;
-  }
-
-  .card-content {
-    height: 200px;
-  }
-}
-
-/* Extra small devices */
-@media screen and (max-width: 320px) {
-  .projects-grid {
-    margin-top: 8vh;
-  }
-}
-
-/* Medium-sized tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .projects-grid {
-    margin-top: 8vh;
-    grid-template-columns: 1fr;
-  }
-
-  .iframe-container {
-    height: clamp(350px, 45vh, 500px);
   }
 }
 

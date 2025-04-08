@@ -26,100 +26,45 @@ nav {
   width: 100%;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   padding: 1.09vw 3.66vw;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   z-index: 11;
   transition: top 0.3s;
+  backdrop-filter: blur(5px);
+  background-color: rgba(18, 18, 18, 0.5);
 }
 
-/* Navigation list styling */
+/* Navigation menu list */
 nav ul {
   list-style: none;
   display: flex;
   gap: 3vw;
 }
 
-/* Navigation links styling */
+/* Navigation links */
 nav a {
   text-decoration: none;
   font-size: 1.2vw;
   position: relative;
-  padding-bottom: 0.22vw;
-  transition: color 0.3s ease-in-out;
+  padding: 0.5vw 1vw;
+  transition: all 0.2s ease-in-out;
+  background: transparent;
+  border: 0.07vw solid transparent;
 }
 
-/* Hover and active states for navigation links */
-nav a:hover,
+/* Hover state for navigation links */
+nav a:hover {
+  color: #ff7a01 !important;
+  border: 0.07vw solid #ff7a01;
+}
+
+/* Active state for navigation links */
 nav a.active {
-  color: #ff914d !important;
-}
-
-/* Underline effect for navigation links */
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.36vw;
-  width: 100%;
-  height: 0.18vh;
-  background-color: #ff914d;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Active state underline for navigation links */
-nav a.active::after {
-  transform: scaleX(1);
-}
-
-/* Mobile menu toggle button */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 0.29vw;
-  z-index: 1000;
-  position: fixed;
-  left: 1.1vw;
-  top: 1.1vw;
-}
-
-/* Menu toggle button bars */
-.menu-toggle div {
-  width: 1.83vw;
-  height: 0.2vh;
-  background-color: #eeeeee;
-  border-radius: 0.14vw;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-/* Hover and active states for menu toggle */
-.menu-toggle:hover div,
-.menu-toggle.active div {
-  background-color: #ff914d;
-}
-
-/* Menu overlay for mobile */
-#menuOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 10;
-}
-
-/* Show menu overlay when menu is active */
-#menu.show~#menuOverlay {
-  opacity: 1;
-  pointer-events: all;
+  color: #000000 !important;
+  background: #ff7a01 !important;
 }
 
 /* Contact section container */
@@ -132,7 +77,6 @@ nav a.active::after {
   text-align: center;
   overflow-y: hidden;
   padding-bottom: 0.73vw;
-  margin-top: 50vh;
 }
 
 /* General container styling */
@@ -381,56 +325,26 @@ nav a.active::after {
   }
 
   nav {
-    padding: 2.5vh;
+    margin-top: 0vh;
+    padding: 1.5vh;
+    justify-content: center;
   }
 
+  /* Mobile navigation menu */
   nav ul {
-    gap: 3vw;
-    position: absolute;
-    top: 0;
-    padding-top: 2.77vh;
-    height: 25.61vh;
-    right: 0;
-    background: rgba(18, 18, 18, 0.9);
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  nav li {
+    margin: 0.5vh 0;
   }
 
   nav a {
-    font-size: 3.2vw;
-    padding-bottom: 0.59vw;
-  }
-
-  nav ul.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-  }
-
-  nav a::after {
-    bottom: -0.96vw;
-    height: 0.48vh;
-  }
-
-  .menu-toggle div {
-    width: 5.9vw;
-    height: 0.8vh;
-    border-radius: 0.9vw;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  }
-
-  .menu-toggle {
-    display: flex;
-    transition: top 0.3s ease;
-    gap: 0.77vw;
-    left: 2.5vw;
-    top: 2.5vw;
-    z-index: 50;
+    font-size: 4vw;
+    padding: 1vh 2vw;
+    display: inline-block;
   }
 
   .form-container {
@@ -521,37 +435,13 @@ nav a.active::after {
 }
 
 /* Responsive styles for landscape mode on mobile */
-@media only screen and (max-width: 932px) and (orientation: landscape) {
-  nav ul {
-    height: 80vh;
-    padding-top: 14vh;
+@media (max-width: 932px) and (orientation: landscape) {
+  nav {
+    margin-top: 0vh;
   }
 
-  nav a::after {
-    bottom: -0.1vw;
-    height: 1vh;
-  }
-}
-/* Responsive styles for landscape mode on mobile */
-@media only screen and (max-width: 932px) and (orientation: landscape) {
-  nav ul {
-    height: 80vh;
-    padding-top: 14vh;
-  }
-
-  nav a::after {
-    bottom: -0.1vw;
-    height: 1vh;
-  }
-
-  .menu-toggle {
-    left: 1.91vw;
-    top: 1.91vw;
-  }
-
-  .menu-toggle div {
-    width: 4vw;
-    height: 1.1vh;
+  .contact-container {
+    margin-top: 10vh;
   }
 
   .form-container {
@@ -593,51 +483,10 @@ nav a.active::after {
     height: 75vh;
   }
 
-  nav {
-    position: fixed;
-    padding: 15px;
-    justify-content: space-between;
-  }
-
-  nav a {
-    font-size: 5vw;
-  }
-
-  .menu-toggle {
-    display: flex !important;
-    position: fixed;
-  }
-
-  nav ul {
-    position: absolute;
-    top: 0px;
-    gap: 6vw;
-    padding-top: 30px;
-    height: 33vh;
-    right: 0;
-    background: rgba(18, 18, 18, 0.9);
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-  }
-
-  nav ul.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-  }
 }
 
 /* Responsive styles for extra small devices */
 @media screen and (max-width: 320px) {
-  nav ul {
-    height: 40vh;
-  }
-
   .form-container {
     height: 90vh;
   }
